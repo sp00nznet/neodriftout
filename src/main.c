@@ -22,17 +22,28 @@
 #include <string.h>
 
 /* ----- Forward declarations for recompiled functions ----- */
-/*
- * As functions are recompiled from the 68000 P ROM, they will be
- * declared here and registered in the function table below.
- *
- * Example (uncomment as functions are recompiled):
- *
- *   extern void func_000200(void);  // Reset vector entry
- *   extern void func_000400(void);  // VBlank handler
- *   extern void func_001000(void);  // Main game loop
- *   ...
- */
+
+/* vectors.c — Interrupt handlers */
+extern void func_00022C(void);  /* VBlank handler (IRQ1) */
+extern void func_00023E(void);  /* VBlank game handler */
+extern void func_0002AA(void);  /* Timer handler (IRQ2) */
+extern void func_0002C2(void);  /* Cold reset handler (IRQ3) */
+extern void func_0002CA(void);  /* TRAP handler */
+
+/* main_loop.c — USER subroutine and helpers */
+extern void func_000200(void);  /* Clear frame counters */
+extern void func_00020E(void);  /* Setup frame sync */
+extern void func_00068C(void);  /* USER subroutine (main frame handler) */
+extern void func_0009BC(void);  /* Set frame delays */
+extern void func_0009F4(void);  /* Set input mode */
+extern void func_000A04(void);  /* Clear work RAM ($100374-$103610) */
+extern void func_000FE8(void);  /* Check game active */
+
+/* states.c — Game state handlers */
+extern void func_000706(void);  /* State 0: Init/Logo */
+extern void func_00073E(void);  /* State 1: Title Screen */
+extern void func_000744(void);  /* State 2: Demo Play */
+extern void func_000756(void);  /* State 3: Car Select */
 
 /* ----- ROM Path Helpers ----- */
 
@@ -96,18 +107,29 @@ static int load_roms(void) {
 /* ----- Function Registration ----- */
 
 static void register_functions(void) {
-    /*
-     * Register recompiled functions at their original 68k addresses.
-     *
-     * As functions are lifted from the P ROM disassembly, add them here:
-     *
-     *   func_table_register(0x000200, func_000200);
-     *   func_table_register(0x000400, func_000400);
-     *   ...
-     */
+    /* --- Interrupt handlers (vectors.c) --- */
+    func_table_register(0x00022C, func_00022C);  /* VBlank handler */
+    func_table_register(0x00023E, func_00023E);  /* VBlank game handler */
+    func_table_register(0x0002AA, func_0002AA);  /* Timer handler */
+    func_table_register(0x0002C2, func_0002C2);  /* Cold reset handler */
+    func_table_register(0x0002CA, func_0002CA);  /* TRAP handler */
 
-    printf("[neodriftout] Function registration: %u functions\n",
-           func_table_count());
+    /* --- Main loop (main_loop.c) --- */
+    func_table_register(0x000200, func_000200);  /* Clear frame counters */
+    func_table_register(0x00020E, func_00020E);  /* Setup frame sync */
+    func_table_register(0x00068C, func_00068C);  /* USER subroutine */
+    func_table_register(0x0009BC, func_0009BC);  /* Set frame delays */
+    func_table_register(0x0009F4, func_0009F4);  /* Set input mode */
+    func_table_register(0x000A04, func_000A04);  /* Clear work RAM */
+    func_table_register(0x000FE8, func_000FE8);  /* Check game active */
+
+    /* --- State handlers (states.c) --- */
+    func_table_register(0x000706, func_000706);  /* State 0: Init */
+    func_table_register(0x00073E, func_00073E);  /* State 1: Title */
+    func_table_register(0x000744, func_000744);  /* State 2: Demo */
+    func_table_register(0x000756, func_000756);  /* State 3: Car Select */
+
+    printf("[neodriftout] Registered %u functions\n", func_table_count());
 }
 
 /* ----- Entry Point ----- */
