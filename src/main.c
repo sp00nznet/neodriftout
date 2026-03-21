@@ -45,6 +45,29 @@ extern void func_00073E(void);  /* State 1: Title Screen */
 extern void func_000744(void);  /* State 2: Demo Play */
 extern void func_000756(void);  /* State 3: Car Select */
 
+/* vram_dma.c — VRAM, palette, and sprite upload */
+extern void func_011C68(void);  /* VRAM DMA: 32-word copy to VRAM port */
+extern void func_011CAA(void);  /* VRAM fill: 128 words with d0 */
+extern void func_011DAA(void);  /* VRAM fill: 64 words with d0 */
+extern void func_011B96(void);  /* Palette entry copy (32 bytes) */
+extern void func_013646(void);  /* VRAM upload main (SCB2/3/4) */
+extern void func_0136BA(void);  /* Timer IRQ VRAM sub */
+extern void func_011F3E(void);  /* Palette DMA (ring buffer -> hardware) */
+extern void func_012188(void);  /* Sprite table upload */
+extern void func_011EEE(void);  /* Palette prep (init ring buffer) */
+extern void func_0120E0(void);  /* Sprite prep (clear VRAM, init buffers) */
+extern void func_0133FA(void);  /* VRAM prep (init double buffers) */
+
+/* subsystems.c — Sound, hardware setup, misc */
+extern void func_015150(void);  /* Slot switch / sound command handler */
+extern void func_015256(void);  /* Sound command queue enqueue */
+extern void func_0009A2(void);  /* Hardware setup (clear low Work RAM) */
+extern void func_000A26(void);  /* Fix layer setup */
+extern void func_0150FA(void);  /* Sound init */
+extern void func_014BA8(void);  /* Clear sound counter */
+extern void func_010F96(void);  /* Copy ROM data to Work RAM */
+extern void func_0009D6(void);  /* Set sound bank/mode */
+
 /* ----- ROM Path Helpers ----- */
 
 static char s_rom_path[512] = ".";
@@ -128,6 +151,29 @@ static void register_functions(void) {
     func_table_register(0x00073E, func_00073E);  /* State 1: Title */
     func_table_register(0x000744, func_000744);  /* State 2: Demo */
     func_table_register(0x000756, func_000756);  /* State 3: Car Select */
+
+    /* --- VRAM/Palette/Sprite upload (vram_dma.c) --- */
+    func_table_register(0x011C68, func_011C68);  /* VRAM DMA 32-word copy */
+    func_table_register(0x011CAA, func_011CAA);  /* VRAM fill 128 words */
+    func_table_register(0x011DAA, func_011DAA);  /* VRAM fill 64 words */
+    func_table_register(0x011B96, func_011B96);  /* Palette entry copy */
+    func_table_register(0x013646, func_013646);  /* VRAM upload main */
+    func_table_register(0x0136BA, func_0136BA);  /* Timer IRQ VRAM sub */
+    func_table_register(0x011F3E, func_011F3E);  /* Palette DMA */
+    func_table_register(0x012188, func_012188);  /* Sprite table upload */
+    func_table_register(0x011EEE, func_011EEE);  /* Palette prep */
+    func_table_register(0x0120E0, func_0120E0);  /* Sprite prep */
+    func_table_register(0x0133FA, func_0133FA);  /* VRAM prep */
+
+    /* --- Subsystems (subsystems.c) --- */
+    func_table_register(0x015150, func_015150);  /* Slot switch / sound cmds */
+    func_table_register(0x015256, func_015256);  /* Sound cmd queue */
+    func_table_register(0x0009A2, func_0009A2);  /* Hardware setup */
+    func_table_register(0x000A26, func_000A26);  /* Fix layer setup */
+    func_table_register(0x0150FA, func_0150FA);  /* Sound init */
+    func_table_register(0x014BA8, func_014BA8);  /* Clear sound counter */
+    func_table_register(0x010F96, func_010F96);  /* ROM data copy */
+    func_table_register(0x0009D6, func_0009D6);  /* Sound bank/mode */
 
     printf("[neodriftout] Registered %u functions\n", func_table_count());
 }
