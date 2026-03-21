@@ -68,6 +68,34 @@ extern void func_014BA8(void);  /* Clear sound counter */
 extern void func_010F96(void);  /* Copy ROM data to Work RAM */
 extern void func_0009D6(void);  /* Set sound bank/mode */
 
+/* init.c — State 0 data initialization */
+extern void func_0010D0(void);  /* Load initial tile data */
+extern void func_0011FC(void);  /* Additional tile setup */
+extern void func_001112(void);  /* Palette setup */
+extern void func_001278(void);  /* Sprite setup */
+extern void func_00D70C(void);  /* Region code lookup */
+extern void func_007D98(void);  /* Palette search */
+extern void func_007AC4(void);  /* Sprite palette search */
+extern void func_000A5A(void);  /* Fix layer tile write (19 words) */
+extern void func_011A02(void);  /* String copy */
+extern void func_000966(void);  /* Demo/game setup */
+extern void func_015108(void);  /* Sound system init */
+extern void func_000AA8(void);  /* Read BIOS config */
+
+/* helpers.c — Utility functions */
+extern void func_001004(void);  /* Region sub-dispatch */
+extern void func_001340(void);  /* Clear animation state */
+extern void func_0013B4(void);  /* Animation timer setup */
+extern void func_0013E6(void);  /* Animation timer tick 1 */
+extern void func_0014A6(void);  /* Animation timer tick 2 */
+extern void func_00148A(void);  /* Animation timer setup 2 */
+extern void func_0014E8(void);  /* Frame timing init */
+extern void func_0015B6(void);  /* Frame timing reset */
+extern void func_0014F6(void);  /* Input / frame rate management */
+extern void func_0015D0(void);  /* Frame timing apply */
+extern void func_002336(void);  /* Check game over flag */
+extern void func_00D704(void);  /* Store to $1014FC */
+
 /* ----- ROM Path Helpers ----- */
 
 static char s_rom_path[512] = ".";
@@ -174,6 +202,34 @@ static void register_functions(void) {
     func_table_register(0x014BA8, func_014BA8);  /* Clear sound counter */
     func_table_register(0x010F96, func_010F96);  /* ROM data copy */
     func_table_register(0x0009D6, func_0009D6);  /* Sound bank/mode */
+
+    /* --- Init routines (init.c) --- */
+    func_table_register(0x0010D0, func_0010D0);  /* Load tile data */
+    func_table_register(0x0011FC, func_0011FC);  /* Tile setup */
+    func_table_register(0x001112, func_001112);  /* Palette setup */
+    func_table_register(0x001278, func_001278);  /* Sprite setup */
+    func_table_register(0x00D70C, func_00D70C);  /* Region code lookup */
+    func_table_register(0x007D98, func_007D98);  /* Palette search */
+    func_table_register(0x007AC4, func_007AC4);  /* Sprite palette search */
+    func_table_register(0x000A5A, func_000A5A);  /* Fix layer tile write */
+    func_table_register(0x011A02, func_011A02);  /* String copy */
+    func_table_register(0x000966, func_000966);  /* Demo/game setup */
+    func_table_register(0x015108, func_015108);  /* Sound system init */
+    func_table_register(0x000AA8, func_000AA8);  /* Read BIOS config */
+
+    /* --- Helpers (helpers.c) --- */
+    func_table_register(0x001004, func_001004);  /* Region sub-dispatch */
+    func_table_register(0x001340, func_001340);  /* Clear animation state */
+    func_table_register(0x0013B4, func_0013B4);  /* Animation timer setup */
+    func_table_register(0x0013E6, func_0013E6);  /* Animation timer tick 1 */
+    func_table_register(0x0014A6, func_0014A6);  /* Animation timer tick 2 */
+    func_table_register(0x00148A, func_00148A);  /* Animation timer setup 2 */
+    func_table_register(0x0014E8, func_0014E8);  /* Frame timing init */
+    func_table_register(0x0015B6, func_0015B6);  /* Frame timing reset */
+    func_table_register(0x0014F6, func_0014F6);  /* Input / frame rate */
+    func_table_register(0x0015D0, func_0015D0);  /* Frame timing apply */
+    func_table_register(0x002336, func_002336);  /* Check game over */
+    func_table_register(0x00D704, func_00D704);  /* Store to $1014FC */
 
     printf("[neodriftout] Registered %u functions\n", func_table_count());
 }

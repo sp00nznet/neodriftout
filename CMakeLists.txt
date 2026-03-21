@@ -15,6 +15,8 @@ set(GAME_SOURCES
     recomp/states.c
     recomp/vram_dma.c
     recomp/subsystems.c
+    recomp/init.c
+    recomp/helpers.c
     # More recompiled function files as disassembly progresses:
     # recomp/gameplay.c       — main gameplay dispatcher ($000B34) and sub-states
     # recomp/car_physics.c    — vehicle physics, drift mechanics
