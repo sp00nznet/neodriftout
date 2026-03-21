@@ -1,0 +1,436 @@
+/* Auto-generated recompiled code for Neo Drift Out */
+/* Source range: $017ED0 - $0181A0 */
+/* Functions: 50 */
+
+#include <neogeorecomp/neogeorecomp.h>
+#include "recomp_funcs.h"
+
+/* $017ED0-$017EE4  (5 instructions, 20 bytes) */
+void jt_017ED0(void) {
+    g_m68k.d[0] = (g_m68k.d[0] & 0xFFFF0000u) | ((uint16_t)(0x8)); M68K_TST16((uint16_t)g_m68k.d[0]);
+    g_m68k.d[2] = (g_m68k.d[2] & 0xFFFF0000u) | ((uint16_t)(0x10)); M68K_TST16((uint16_t)g_m68k.d[2]);
+    g_m68k.d[1] = (g_m68k.d[1] & 0xFFFF0000u) | ((uint16_t)(0x0)); M68K_TST16((uint16_t)g_m68k.d[1]);
+    g_m68k.d[3] = (g_m68k.d[3] & 0xFFFF0000u) | ((uint16_t)(0x7d)); M68K_TST16((uint16_t)g_m68k.d[3]);
+    { func_table_call(0x016B04); return; }
+    /* WARNING: function did not end with RTS */
+}
+
+/* $017EE4-$017EF0  (3 instructions, 12 bytes) */
+void jt_017EE4(void) {
+    M68K_OR8(g_m68k.d[1], 0xf0);
+    M68K_OR8(g_m68k.d[1], 0x4c);
+    M68K_OR8(g_m68k.d[1], 0x4e);
+    /* WARNING: function did not end with RTS */
+}
+
+/* $017EF0-$017F00  (4 instructions, 16 bytes) */
+void jt_017EF0(void) {
+    g_m68k.d[0] = (g_m68k.d[0] & 0xFFFF0000u) | ((uint16_t)(0x8)); M68K_TST16((uint16_t)g_m68k.d[0]);
+    g_m68k.d[2] = (g_m68k.d[2] & 0xFFFF0000u) | ((uint16_t)(0x10)); M68K_TST16((uint16_t)g_m68k.d[2]);
+    g_m68k.d[3] = (g_m68k.d[3] & 0xFFFF0000u) | ((uint16_t)(0x7e)); M68K_TST16((uint16_t)g_m68k.d[3]);
+    { func_table_call(0x016B3E); return; }
+    /* WARNING: function did not end with RTS */
+}
+
+/* $017F00-$017F0C  (3 instructions, 12 bytes) */
+void jt_017F00(void) {
+    M68K_OR8(g_m68k.d[1], 0xc);
+    M68K_OR8(g_m68k.d[1], 0x2a);
+    M68K_OR8(g_m68k.d[1], 0x2c);
+    /* WARNING: function did not end with RTS */
+}
+
+/* $017F0C-$017F20  (5 instructions, 20 bytes) */
+void jt_017F0C(void) {
+    g_m68k.d[0] = (g_m68k.d[0] & 0xFFFF0000u) | ((uint16_t)(0x8)); M68K_TST16((uint16_t)g_m68k.d[0]);
+    g_m68k.d[2] = (g_m68k.d[2] & 0xFFFF0000u) | ((uint16_t)(0x10)); M68K_TST16((uint16_t)g_m68k.d[2]);
+    g_m68k.d[1] = (g_m68k.d[1] & 0xFFFF0000u) | ((uint16_t)(0x0)); M68K_TST16((uint16_t)g_m68k.d[1]);
+    g_m68k.d[3] = (g_m68k.d[3] & 0xFFFF0000u) | ((uint16_t)(0x7f)); M68K_TST16((uint16_t)g_m68k.d[3]);
+    { func_table_call(0x016B04); return; }
+    /* WARNING: function did not end with RTS */
+}
+
+/* $017F20-$017F2C  (3 instructions, 12 bytes) */
+void jt_017F20(void) {
+    M68K_OR8(g_m68k.d[1], 0x2c);
+    M68K_OR8(g_m68k.d[1], 0x4c);
+    M68K_OR8(g_m68k.d[1], 0x4e);
+    /* WARNING: function did not end with RTS */
+}
+
+/* $017F2C-$017F3C  (4 instructions, 16 bytes) */
+void jt_017F2C(void) {
+    g_m68k.d[0] = (g_m68k.d[0] & 0xFFFF0000u) | ((uint16_t)(0x8)); M68K_TST16((uint16_t)g_m68k.d[0]);
+    g_m68k.d[2] = (g_m68k.d[2] & 0xFFFF0000u) | ((uint16_t)(0x10)); M68K_TST16((uint16_t)g_m68k.d[2]);
+    g_m68k.d[3] = (g_m68k.d[3] & 0xFFFF0000u) | ((uint16_t)(0x80)); M68K_TST16((uint16_t)g_m68k.d[3]);
+    { func_table_call(0x016B3E); return; }
+    /* WARNING: function did not end with RTS */
+}
+
+/* $017F3C-$017F48  (3 instructions, 12 bytes) */
+void jt_017F3C(void) {
+    M68K_OR8(g_m68k.d[1], 0x48);
+    M68K_OR8(g_m68k.d[1], 0x2a);
+    M68K_OR8(g_m68k.d[1], 0x2c);
+    /* WARNING: function did not end with RTS */
+}
+
+/* $017F48-$017F5C  (5 instructions, 20 bytes) */
+void jt_017F48(void) {
+    g_m68k.d[0] = (g_m68k.d[0] & 0xFFFF0000u) | ((uint16_t)(0x8)); M68K_TST16((uint16_t)g_m68k.d[0]);
+    g_m68k.d[2] = (g_m68k.d[2] & 0xFFFF0000u) | ((uint16_t)(0x10)); M68K_TST16((uint16_t)g_m68k.d[2]);
+    g_m68k.d[1] = (g_m68k.d[1] & 0xFFFF0000u) | ((uint16_t)(0x0)); M68K_TST16((uint16_t)g_m68k.d[1]);
+    g_m68k.d[3] = (g_m68k.d[3] & 0xFFFF0000u) | ((uint16_t)(0x81)); M68K_TST16((uint16_t)g_m68k.d[3]);
+    { func_table_call(0x016B04); return; }
+    /* WARNING: function did not end with RTS */
+}
+
+/* $017F5C-$017F68  (3 instructions, 12 bytes) */
+void jt_017F5C(void) {
+    M68K_OR8(g_m68k.d[1], 0x68);
+    M68K_OR8(g_m68k.d[1], 0x4c);
+    M68K_OR8(g_m68k.d[1], 0x4e);
+    /* WARNING: function did not end with RTS */
+}
+
+/* $017F68-$017F78  (4 instructions, 16 bytes) */
+void jt_017F68(void) {
+    g_m68k.d[0] = (g_m68k.d[0] & 0xFFFF0000u) | ((uint16_t)(0x8)); M68K_TST16((uint16_t)g_m68k.d[0]);
+    g_m68k.d[2] = (g_m68k.d[2] & 0xFFFF0000u) | ((uint16_t)(0x10)); M68K_TST16((uint16_t)g_m68k.d[2]);
+    g_m68k.d[3] = (g_m68k.d[3] & 0xFFFF0000u) | ((uint16_t)(0x82)); M68K_TST16((uint16_t)g_m68k.d[3]);
+    { func_table_call(0x016B3E); return; }
+    /* WARNING: function did not end with RTS */
+}
+
+/* $017F78-$017F84  (3 instructions, 12 bytes) */
+void jt_017F78(void) {
+    M68K_OR8(g_m68k.d[1], 0x84);
+    M68K_OR8(g_m68k.d[1], 0x2a);
+    M68K_OR8(g_m68k.d[1], 0x2c);
+    /* WARNING: function did not end with RTS */
+}
+
+/* $017F84-$017F98  (5 instructions, 20 bytes) */
+void jt_017F84(void) {
+    g_m68k.d[0] = (g_m68k.d[0] & 0xFFFF0000u) | ((uint16_t)(0x8)); M68K_TST16((uint16_t)g_m68k.d[0]);
+    g_m68k.d[2] = (g_m68k.d[2] & 0xFFFF0000u) | ((uint16_t)(0x10)); M68K_TST16((uint16_t)g_m68k.d[2]);
+    g_m68k.d[1] = (g_m68k.d[1] & 0xFFFF0000u) | ((uint16_t)(0x0)); M68K_TST16((uint16_t)g_m68k.d[1]);
+    g_m68k.d[3] = (g_m68k.d[3] & 0xFFFF0000u) | ((uint16_t)(0x83)); M68K_TST16((uint16_t)g_m68k.d[3]);
+    { func_table_call(0x016B04); return; }
+    /* WARNING: function did not end with RTS */
+}
+
+/* $017F98-$017FA4  (3 instructions, 12 bytes) */
+void jt_017F98(void) {
+    M68K_OR8(g_m68k.d[1], 0xa4);
+    M68K_OR8(g_m68k.d[1], 0x4c);
+    M68K_OR8(g_m68k.d[1], 0x4e);
+    /* WARNING: function did not end with RTS */
+}
+
+/* $017FA4-$017FB4  (4 instructions, 16 bytes) */
+void jt_017FA4(void) {
+    g_m68k.d[0] = (g_m68k.d[0] & 0xFFFF0000u) | ((uint16_t)(0x8)); M68K_TST16((uint16_t)g_m68k.d[0]);
+    g_m68k.d[2] = (g_m68k.d[2] & 0xFFFF0000u) | ((uint16_t)(0x10)); M68K_TST16((uint16_t)g_m68k.d[2]);
+    g_m68k.d[3] = (g_m68k.d[3] & 0xFFFF0000u) | ((uint16_t)(0x84)); M68K_TST16((uint16_t)g_m68k.d[3]);
+    { func_table_call(0x016B3E); return; }
+    /* WARNING: function did not end with RTS */
+}
+
+/* $017FB4-$017FC0  (3 instructions, 12 bytes) */
+void jt_017FB4(void) {
+    M68K_OR8(g_m68k.d[1], 0xc0);
+    M68K_OR8(g_m68k.d[1], 0x2a);
+    M68K_OR8(g_m68k.d[1], 0x2c);
+    /* WARNING: function did not end with RTS */
+}
+
+/* $017FC0-$017FD4  (5 instructions, 20 bytes) */
+void jt_017FC0(void) {
+    g_m68k.d[0] = (g_m68k.d[0] & 0xFFFF0000u) | ((uint16_t)(0x8)); M68K_TST16((uint16_t)g_m68k.d[0]);
+    g_m68k.d[2] = (g_m68k.d[2] & 0xFFFF0000u) | ((uint16_t)(0x10)); M68K_TST16((uint16_t)g_m68k.d[2]);
+    g_m68k.d[1] = (g_m68k.d[1] & 0xFFFF0000u) | ((uint16_t)(0x0)); M68K_TST16((uint16_t)g_m68k.d[1]);
+    g_m68k.d[3] = (g_m68k.d[3] & 0xFFFF0000u) | ((uint16_t)(0x85)); M68K_TST16((uint16_t)g_m68k.d[3]);
+    { func_table_call(0x016B04); return; }
+    /* WARNING: function did not end with RTS */
+}
+
+/* $017FD4-$017FE0  (3 instructions, 12 bytes) */
+void jt_017FD4(void) {
+    M68K_OR8(g_m68k.d[1], 0xe0);
+    M68K_OR8(g_m68k.d[1], 0x4c);
+    M68K_OR8(g_m68k.d[1], 0x4e);
+    /* WARNING: function did not end with RTS */
+}
+
+/* $017FE0-$017FF0  (4 instructions, 16 bytes) */
+void jt_017FE0(void) {
+    g_m68k.d[0] = (g_m68k.d[0] & 0xFFFF0000u) | ((uint16_t)(0x38)); M68K_TST16((uint16_t)g_m68k.d[0]);
+    g_m68k.d[2] = (g_m68k.d[2] & 0xFFFF0000u) | ((uint16_t)(0x20)); M68K_TST16((uint16_t)g_m68k.d[2]);
+    g_m68k.d[3] = (g_m68k.d[3] & 0xFFFF0000u) | ((uint16_t)(0x86)); M68K_TST16((uint16_t)g_m68k.d[3]);
+    { func_table_call(0x016B3E); return; }
+    /* WARNING: function did not end with RTS */
+}
+
+/* $017FF0-$017FFC  (3 instructions, 12 bytes) */
+void jt_017FF0(void) {
+    M68K_OR8(g_m68k.d[1], 0xfc);
+    M68K_OR8(g_m68k.d[1], 0x2a);
+    M68K_OR8(g_m68k.d[1], 0x2c);
+    /* WARNING: function did not end with RTS */
+}
+
+/* $017FFC-$018000  (1 instructions, 4 bytes) */
+void jt_017FFC(void) {
+    g_m68k.d[0] = (g_m68k.d[0] & 0xFFFF0000u) | ((uint16_t)(0x38)); M68K_TST16((uint16_t)g_m68k.d[0]);
+    /* WARNING: function did not end with RTS */
+}
+
+/* $018000-$018010  (4 instructions, 16 bytes) */
+void jt_018000(void) {
+    g_m68k.d[2] = (g_m68k.d[2] & 0xFFFF0000u) | ((uint16_t)(0x20)); M68K_TST16((uint16_t)g_m68k.d[2]);
+    g_m68k.d[1] = (g_m68k.d[1] & 0xFFFF0000u) | ((uint16_t)(0x0)); M68K_TST16((uint16_t)g_m68k.d[1]);
+    g_m68k.d[3] = (g_m68k.d[3] & 0xFFFF0000u) | ((uint16_t)(0x87)); M68K_TST16((uint16_t)g_m68k.d[3]);
+    { func_table_call(0x016B04); return; }
+    /* WARNING: function did not end with RTS */
+}
+
+/* $018010-$01801C  (3 instructions, 12 bytes) */
+void jt_018010(void) {
+    M68K_OR8(g_m68k.d[1], 0x1c);
+    M68K_OR8(g_m68k.d[1], 0x4c);
+    M68K_OR8(g_m68k.d[1], 0x4e);
+    /* WARNING: function did not end with RTS */
+}
+
+/* $01801C-$018028  (3 instructions, 12 bytes) */
+void jt_01801C(void) {
+    g_m68k.d[0] = (g_m68k.d[0] & 0xFFFF0000u) | ((uint16_t)(0x38)); M68K_TST16((uint16_t)g_m68k.d[0]);
+    g_m68k.d[2] = (g_m68k.d[2] & 0xFFFF0000u) | ((uint16_t)(0x20)); M68K_TST16((uint16_t)g_m68k.d[2]);
+    g_m68k.d[3] = (g_m68k.d[3] & 0xFFFF0000u) | ((uint16_t)(0x88)); M68K_TST16((uint16_t)g_m68k.d[3]);
+    /* WARNING: function did not end with RTS */
+}
+
+/* $018028-$01802C  (1 instructions, 4 bytes) */
+void jt_018028(void) {
+    { func_table_call(0x016B3E); return; }
+    /* WARNING: function did not end with RTS */
+}
+
+/* $01802C-$018038  (3 instructions, 12 bytes) */
+void jt_01802C(void) {
+    M68K_OR8(g_m68k.d[1], 0x38);
+    M68K_OR8(g_m68k.d[1], 0x2a);
+    M68K_OR8(g_m68k.d[1], 0x2c);
+    /* WARNING: function did not end with RTS */
+}
+
+/* $018038-$01804C  (5 instructions, 20 bytes) */
+void jt_018038(void) {
+    g_m68k.d[0] = (g_m68k.d[0] & 0xFFFF0000u) | ((uint16_t)(0x38)); M68K_TST16((uint16_t)g_m68k.d[0]);
+    g_m68k.d[2] = (g_m68k.d[2] & 0xFFFF0000u) | ((uint16_t)(0x20)); M68K_TST16((uint16_t)g_m68k.d[2]);
+    g_m68k.d[1] = (g_m68k.d[1] & 0xFFFF0000u) | ((uint16_t)(0x0)); M68K_TST16((uint16_t)g_m68k.d[1]);
+    g_m68k.d[3] = (g_m68k.d[3] & 0xFFFF0000u) | ((uint16_t)(0x89)); M68K_TST16((uint16_t)g_m68k.d[3]);
+    { func_table_call(0x016B04); return; }
+    /* WARNING: function did not end with RTS */
+}
+
+/* $01804C-$018058  (3 instructions, 12 bytes) */
+void jt_01804C(void) {
+    M68K_OR8(g_m68k.d[1], 0x58);
+    M68K_OR8(g_m68k.d[1], 0x4c);
+    M68K_OR8(g_m68k.d[1], 0x4e);
+    /* WARNING: function did not end with RTS */
+}
+
+/* $018058-$018068  (4 instructions, 16 bytes) */
+void jt_018058(void) {
+    g_m68k.d[0] = (g_m68k.d[0] & 0xFFFF0000u) | ((uint16_t)(0x38)); M68K_TST16((uint16_t)g_m68k.d[0]);
+    g_m68k.d[2] = (g_m68k.d[2] & 0xFFFF0000u) | ((uint16_t)(0x20)); M68K_TST16((uint16_t)g_m68k.d[2]);
+    g_m68k.d[3] = (g_m68k.d[3] & 0xFFFF0000u) | ((uint16_t)(0x8a)); M68K_TST16((uint16_t)g_m68k.d[3]);
+    { func_table_call(0x016B3E); return; }
+    /* WARNING: function did not end with RTS */
+}
+
+/* $018068-$018074  (3 instructions, 12 bytes) */
+void jt_018068(void) {
+    M68K_OR8(g_m68k.d[1], 0x74);
+    M68K_OR8(g_m68k.d[1], 0x2a);
+    M68K_OR8(g_m68k.d[1], 0x2c);
+    /* WARNING: function did not end with RTS */
+}
+
+/* $018074-$018088  (5 instructions, 20 bytes) */
+void jt_018074(void) {
+    g_m68k.d[0] = (g_m68k.d[0] & 0xFFFF0000u) | ((uint16_t)(0x38)); M68K_TST16((uint16_t)g_m68k.d[0]);
+    g_m68k.d[2] = (g_m68k.d[2] & 0xFFFF0000u) | ((uint16_t)(0x20)); M68K_TST16((uint16_t)g_m68k.d[2]);
+    g_m68k.d[1] = (g_m68k.d[1] & 0xFFFF0000u) | ((uint16_t)(0x0)); M68K_TST16((uint16_t)g_m68k.d[1]);
+    g_m68k.d[3] = (g_m68k.d[3] & 0xFFFF0000u) | ((uint16_t)(0x8b)); M68K_TST16((uint16_t)g_m68k.d[3]);
+    { func_table_call(0x016B04); return; }
+    /* WARNING: function did not end with RTS */
+}
+
+/* $018088-$018094  (3 instructions, 12 bytes) */
+void jt_018088(void) {
+    M68K_OR8(g_m68k.d[1], 0x94);
+    M68K_OR8(g_m68k.d[1], 0x4c);
+    M68K_OR8(g_m68k.d[1], 0x4e);
+    /* WARNING: function did not end with RTS */
+}
+
+/* $018094-$0180A4  (4 instructions, 16 bytes) */
+void jt_018094(void) {
+    g_m68k.d[0] = (g_m68k.d[0] & 0xFFFF0000u) | ((uint16_t)(0x38)); M68K_TST16((uint16_t)g_m68k.d[0]);
+    g_m68k.d[2] = (g_m68k.d[2] & 0xFFFF0000u) | ((uint16_t)(0x20)); M68K_TST16((uint16_t)g_m68k.d[2]);
+    g_m68k.d[3] = (g_m68k.d[3] & 0xFFFF0000u) | ((uint16_t)(0x8c)); M68K_TST16((uint16_t)g_m68k.d[3]);
+    { func_table_call(0x016B3E); return; }
+    /* WARNING: function did not end with RTS */
+}
+
+/* $0180A4-$0180B0  (3 instructions, 12 bytes) */
+void jt_0180A4(void) {
+    M68K_OR8(g_m68k.d[1], 0xb0);
+    M68K_OR8(g_m68k.d[1], 0x2a);
+    M68K_OR8(g_m68k.d[1], 0x2c);
+    /* WARNING: function did not end with RTS */
+}
+
+/* $0180B0-$0180C4  (5 instructions, 20 bytes) */
+void jt_0180B0(void) {
+    g_m68k.d[0] = (g_m68k.d[0] & 0xFFFF0000u) | ((uint16_t)(0x38)); M68K_TST16((uint16_t)g_m68k.d[0]);
+    g_m68k.d[2] = (g_m68k.d[2] & 0xFFFF0000u) | ((uint16_t)(0x20)); M68K_TST16((uint16_t)g_m68k.d[2]);
+    g_m68k.d[1] = (g_m68k.d[1] & 0xFFFF0000u) | ((uint16_t)(0x0)); M68K_TST16((uint16_t)g_m68k.d[1]);
+    g_m68k.d[3] = (g_m68k.d[3] & 0xFFFF0000u) | ((uint16_t)(0x8d)); M68K_TST16((uint16_t)g_m68k.d[3]);
+    { func_table_call(0x016B04); return; }
+    /* WARNING: function did not end with RTS */
+}
+
+/* $0180C4-$0180D0  (3 instructions, 12 bytes) */
+void jt_0180C4(void) {
+    M68K_OR8(g_m68k.d[1], 0xd0);
+    M68K_OR8(g_m68k.d[1], 0x4c);
+    M68K_OR8(g_m68k.d[1], 0x4e);
+    /* WARNING: function did not end with RTS */
+}
+
+/* $0180D0-$0180E0  (4 instructions, 16 bytes) */
+void jt_0180D0(void) {
+    g_m68k.d[0] = (g_m68k.d[0] & 0xFFFF0000u) | ((uint16_t)(0x38)); M68K_TST16((uint16_t)g_m68k.d[0]);
+    g_m68k.d[2] = (g_m68k.d[2] & 0xFFFF0000u) | ((uint16_t)(0x20)); M68K_TST16((uint16_t)g_m68k.d[2]);
+    g_m68k.d[3] = (g_m68k.d[3] & 0xFFFF0000u) | ((uint16_t)(0x8e)); M68K_TST16((uint16_t)g_m68k.d[3]);
+    { func_table_call(0x016B3E); return; }
+    /* WARNING: function did not end with RTS */
+}
+
+/* $0180E0-$0180EC  (3 instructions, 12 bytes) */
+void jt_0180E0(void) {
+    M68K_OR8(g_m68k.d[1], 0xec);
+    M68K_OR8(g_m68k.d[1], 0x2a);
+    M68K_OR8(g_m68k.d[1], 0x2c);
+    /* WARNING: function did not end with RTS */
+}
+
+/* $0180EC-$018100  (5 instructions, 20 bytes) */
+void jt_0180EC(void) {
+    g_m68k.d[0] = (g_m68k.d[0] & 0xFFFF0000u) | ((uint16_t)(0x38)); M68K_TST16((uint16_t)g_m68k.d[0]);
+    g_m68k.d[2] = (g_m68k.d[2] & 0xFFFF0000u) | ((uint16_t)(0x20)); M68K_TST16((uint16_t)g_m68k.d[2]);
+    g_m68k.d[1] = (g_m68k.d[1] & 0xFFFF0000u) | ((uint16_t)(0x0)); M68K_TST16((uint16_t)g_m68k.d[1]);
+    g_m68k.d[3] = (g_m68k.d[3] & 0xFFFF0000u) | ((uint16_t)(0x8f)); M68K_TST16((uint16_t)g_m68k.d[3]);
+    { func_table_call(0x016B04); return; }
+    /* WARNING: function did not end with RTS */
+}
+
+/* $018100-$01810C  (3 instructions, 12 bytes) */
+void jt_018100(void) {
+    M68K_OR8(g_m68k.d[1], 0xc);
+    M68K_OR8(g_m68k.d[1], 0x4c);
+    M68K_OR8(g_m68k.d[1], 0x4e);
+    /* WARNING: function did not end with RTS */
+}
+
+/* $01810C-$01811C  (4 instructions, 16 bytes) */
+void jt_01810C(void) {
+    g_m68k.d[0] = (g_m68k.d[0] & 0xFFFF0000u) | ((uint16_t)(0x38)); M68K_TST16((uint16_t)g_m68k.d[0]);
+    g_m68k.d[2] = (g_m68k.d[2] & 0xFFFF0000u) | ((uint16_t)(0x20)); M68K_TST16((uint16_t)g_m68k.d[2]);
+    g_m68k.d[3] = (g_m68k.d[3] & 0xFFFF0000u) | ((uint16_t)(0x90)); M68K_TST16((uint16_t)g_m68k.d[3]);
+    { func_table_call(0x016B3E); return; }
+    /* WARNING: function did not end with RTS */
+}
+
+/* $01811C-$018128  (3 instructions, 12 bytes) */
+void jt_01811C(void) {
+    M68K_OR8(g_m68k.d[1], 0x28);
+    M68K_OR8(g_m68k.d[1], 0x2a);
+    M68K_OR8(g_m68k.d[1], 0x2c);
+    /* WARNING: function did not end with RTS */
+}
+
+/* $018128-$01813C  (5 instructions, 20 bytes) */
+void jt_018128(void) {
+    g_m68k.d[0] = (g_m68k.d[0] & 0xFFFF0000u) | ((uint16_t)(0x38)); M68K_TST16((uint16_t)g_m68k.d[0]);
+    g_m68k.d[2] = (g_m68k.d[2] & 0xFFFF0000u) | ((uint16_t)(0x20)); M68K_TST16((uint16_t)g_m68k.d[2]);
+    g_m68k.d[1] = (g_m68k.d[1] & 0xFFFF0000u) | ((uint16_t)(0x0)); M68K_TST16((uint16_t)g_m68k.d[1]);
+    g_m68k.d[3] = (g_m68k.d[3] & 0xFFFF0000u) | ((uint16_t)(0x91)); M68K_TST16((uint16_t)g_m68k.d[3]);
+    { func_table_call(0x016B04); return; }
+    /* WARNING: function did not end with RTS */
+}
+
+/* $01813C-$018148  (3 instructions, 12 bytes) */
+void jt_01813C(void) {
+    M68K_OR8(g_m68k.d[1], 0x48);
+    M68K_OR8(g_m68k.d[1], 0x4c);
+    M68K_OR8(g_m68k.d[1], 0x4e);
+    /* WARNING: function did not end with RTS */
+}
+
+/* $018148-$018158  (4 instructions, 16 bytes) */
+void jt_018148(void) {
+    g_m68k.d[0] = (g_m68k.d[0] & 0xFFFF0000u) | ((uint16_t)(0x38)); M68K_TST16((uint16_t)g_m68k.d[0]);
+    g_m68k.d[2] = (g_m68k.d[2] & 0xFFFF0000u) | ((uint16_t)(0x20)); M68K_TST16((uint16_t)g_m68k.d[2]);
+    g_m68k.d[3] = (g_m68k.d[3] & 0xFFFF0000u) | ((uint16_t)(0x92)); M68K_TST16((uint16_t)g_m68k.d[3]);
+    { func_table_call(0x016B3E); return; }
+    /* WARNING: function did not end with RTS */
+}
+
+/* $018158-$018164  (3 instructions, 12 bytes) */
+void jt_018158(void) {
+    M68K_OR8(g_m68k.d[1], 0x64);
+    M68K_OR8(g_m68k.d[1], 0x2a);
+    M68K_OR8(g_m68k.d[1], 0x2c);
+    /* WARNING: function did not end with RTS */
+}
+
+/* $018164-$018178  (5 instructions, 20 bytes) */
+void jt_018164(void) {
+    g_m68k.d[0] = (g_m68k.d[0] & 0xFFFF0000u) | ((uint16_t)(0x38)); M68K_TST16((uint16_t)g_m68k.d[0]);
+    g_m68k.d[2] = (g_m68k.d[2] & 0xFFFF0000u) | ((uint16_t)(0x20)); M68K_TST16((uint16_t)g_m68k.d[2]);
+    g_m68k.d[1] = (g_m68k.d[1] & 0xFFFF0000u) | ((uint16_t)(0x0)); M68K_TST16((uint16_t)g_m68k.d[1]);
+    g_m68k.d[3] = (g_m68k.d[3] & 0xFFFF0000u) | ((uint16_t)(0x93)); M68K_TST16((uint16_t)g_m68k.d[3]);
+    { func_table_call(0x016B04); return; }
+    /* WARNING: function did not end with RTS */
+}
+
+/* $018178-$018184  (3 instructions, 12 bytes) */
+void jt_018178(void) {
+    M68K_OR8(g_m68k.d[1], 0x84);
+    M68K_OR8(g_m68k.d[1], 0x4c);
+    M68K_OR8(g_m68k.d[1], 0x4e);
+    /* WARNING: function did not end with RTS */
+}
+
+/* $018184-$018194  (4 instructions, 16 bytes) */
+void jt_018184(void) {
+    g_m68k.d[0] = (g_m68k.d[0] & 0xFFFF0000u) | ((uint16_t)(0x38)); M68K_TST16((uint16_t)g_m68k.d[0]);
+    g_m68k.d[2] = (g_m68k.d[2] & 0xFFFF0000u) | ((uint16_t)(0x20)); M68K_TST16((uint16_t)g_m68k.d[2]);
+    g_m68k.d[3] = (g_m68k.d[3] & 0xFFFF0000u) | ((uint16_t)(0x94)); M68K_TST16((uint16_t)g_m68k.d[3]);
+    { func_table_call(0x016B3E); return; }
+    /* WARNING: function did not end with RTS */
+}
+
+/* $018194-$0181A0  (3 instructions, 12 bytes) */
+void jt_018194(void) {
+    M68K_OR8(g_m68k.d[1], 0xa0);
+    M68K_OR8(g_m68k.d[1], 0x2a);
+    M68K_OR8(g_m68k.d[1], 0x2c);
+    /* WARNING: function did not end with RTS */
+}

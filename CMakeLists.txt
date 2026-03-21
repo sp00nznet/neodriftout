@@ -8,25 +8,12 @@ set(CMAKE_C_STANDARD_REQUIRED ON)
 add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/../neogeorecomp neogeorecomp_build)
 
 # Game sources
+# Collect auto-generated recompiled sources (6,475 functions across 130 files)
+file(GLOB AUTORECOMP_SOURCES "src/autorecomp/recomp_*.c")
+
 set(GAME_SOURCES
     src/main.c
-    recomp/vectors.c
-    recomp/main_loop.c
-    recomp/states.c
-    recomp/vram_dma.c
-    recomp/subsystems.c
-    recomp/init.c
-    recomp/helpers.c
-    recomp/gameplay.c
-    # More recompiled function files as disassembly progresses:
-    # recomp/gameplay.c       — main gameplay dispatcher ($000B34) and sub-states
-    # recomp/car_physics.c    — vehicle physics, drift mechanics
-    # recomp/track_render.c   — isometric track rendering, scrolling
-    # recomp/hud.c            — HUD, timer, speedometer
-    # recomp/car_select.c     — car selection screen
-    # recomp/vram_dma.c       — VRAM/palette/sprite upload routines
-    # recomp/audio_cmds.c     — Z80 sound command interface
-    # recomp/subsystems.c     — palette prep, sprite prep, misc
+    ${AUTORECOMP_SOURCES}
 )
 
 add_executable(neodriftout ${GAME_SOURCES})
