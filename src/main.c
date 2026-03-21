@@ -96,6 +96,29 @@ extern void func_0015D0(void);  /* Frame timing apply */
 extern void func_002336(void);  /* Check game over flag */
 extern void func_00D704(void);  /* Store to $1014FC */
 
+/* gameplay.c — Gameplay dispatcher and sub-states */
+extern void func_000B34(void);  /* Main gameplay dispatcher */
+extern void func_000BFA(void);  /* Sub-state 0: initial setup */
+extern void func_000CC6(void);  /* Sub-state 1: title/intro anim */
+extern void func_000D34(void);  /* Sub-state 2: stage intro */
+extern void func_000D82(void);  /* Sub-state 3: pre-race countdown */
+extern void func_000D9A(void);  /* Sub-state 4: RACING */
+extern void func_000DC8(void);  /* Sub-state 5: checkpoint */
+extern void func_000DF6(void);  /* Sub-state 6: lap complete */
+extern void func_000E20(void);  /* Sub-state 7: stage transition */
+extern void func_000E38(void);  /* Sub-state 8: results intro */
+extern void func_000E6E(void);  /* Sub-state 9: results display */
+extern void func_000E9C(void);  /* Sub-state 10: post-stage */
+extern void func_000EC8(void);  /* Sub-state 11: ranking */
+extern void func_000EE0(void);  /* Sub-state 12: car select */
+extern void func_000EFC(void);  /* Sub-state 13: car->race transition */
+extern void func_000F28(void);  /* Sub-state 14: continue setup */
+extern void func_000F3E(void);  /* Sub-state 15: continue countdown */
+extern void func_000F64(void);  /* Sub-state 16: continue accepted */
+extern void func_000F7C(void);  /* Sub-state 17: continue transition */
+extern void func_000F98(void);  /* Sub-state 18: return to title */
+extern void func_000FB0(void);  /* Sub-state 19: return to title final */
+
 /* ----- ROM Path Helpers ----- */
 
 static char s_rom_path[512] = ".";
@@ -230,6 +253,29 @@ static void register_functions(void) {
     func_table_register(0x0015D0, func_0015D0);  /* Frame timing apply */
     func_table_register(0x002336, func_002336);  /* Check game over */
     func_table_register(0x00D704, func_00D704);  /* Store to $1014FC */
+
+    /* --- Gameplay dispatcher (gameplay.c) --- */
+    func_table_register(0x000B34, func_000B34);  /* Main dispatcher */
+    func_table_register(0x000BFA, func_000BFA);  /* Sub 0: init setup */
+    func_table_register(0x000CC6, func_000CC6);  /* Sub 1: title/intro */
+    func_table_register(0x000D34, func_000D34);  /* Sub 2: stage intro */
+    func_table_register(0x000D82, func_000D82);  /* Sub 3: countdown */
+    func_table_register(0x000D9A, func_000D9A);  /* Sub 4: RACING */
+    func_table_register(0x000DC8, func_000DC8);  /* Sub 5: checkpoint */
+    func_table_register(0x000DF6, func_000DF6);  /* Sub 6: lap complete */
+    func_table_register(0x000E20, func_000E20);  /* Sub 7: stage trans */
+    func_table_register(0x000E38, func_000E38);  /* Sub 8: results intro */
+    func_table_register(0x000E6E, func_000E6E);  /* Sub 9: results */
+    func_table_register(0x000E9C, func_000E9C);  /* Sub 10: post-stage */
+    func_table_register(0x000EC8, func_000EC8);  /* Sub 11: ranking */
+    func_table_register(0x000EE0, func_000EE0);  /* Sub 12: car select */
+    func_table_register(0x000EFC, func_000EFC);  /* Sub 13: car->race */
+    func_table_register(0x000F28, func_000F28);  /* Sub 14: continue */
+    func_table_register(0x000F3E, func_000F3E);  /* Sub 15: countdown */
+    func_table_register(0x000F64, func_000F64);  /* Sub 16: accepted */
+    func_table_register(0x000F7C, func_000F7C);  /* Sub 17: transition */
+    func_table_register(0x000F98, func_000F98);  /* Sub 18: ret title */
+    func_table_register(0x000FB0, func_000FB0);  /* Sub 19: ret final */
 
     printf("[neodriftout] Registered %u functions\n", func_table_count());
 }
