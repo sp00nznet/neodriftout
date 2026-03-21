@@ -37,8 +37,8 @@ target_include_directories(neodriftout PRIVATE
     ${CMAKE_CURRENT_SOURCE_DIR}/src
 )
 
-# Copy SDL2 DLL on Windows
-if(WIN32)
+# Copy SDL2 DLL on Windows (only if SDL2::SDL2 imported target exists)
+if(WIN32 AND TARGET SDL2::SDL2)
     add_custom_command(TARGET neodriftout POST_BUILD
         COMMAND ${CMAKE_COMMAND} -E copy_if_different
             $<TARGET_FILE:SDL2::SDL2>
