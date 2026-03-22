@@ -78,6 +78,24 @@ class NeoGeoROM:
             0x000D24,  # Sub-state 1 -> BIOS return (timeout)
             0x000D32,  # Sub-state 1 -> done exit
             0x000F26,  # Sub-state 14 handler entry (branch target)
+            0x007EDA,  # Continue screen sub (branch target from $7E86)
+            0x007F50,  # Continue screen animation
+            0x00805C,  # Continue screen sub
+            0x008172,  # Continue screen sub
+            0x011C98,  # Mid-point of unrolled VRAM copy (8 words)
+            0x013706,  # Sprite shrink calculation (called from VBlank)
+            0x013CAA,  # VRAM scroll sub
+            0x013D34,  # VRAM scroll sub
+            0x013DB4,  # VRAM scroll sub
+            0x00802A,  # Continue screen sub
+            0x008092,  # Continue screen sub
+            0x01321A,  # Sprite buffer write sub
+            0x0132AA,  # Sprite buffer write sub
+            0x011C78,  # Mid-point of unrolled VRAM copy (24 words)
+            0x0131E2,  # Sprite buffer sub
+            0x013212,  # Sprite buffer sub
+            0x01328E,  # Sprite buffer sub
+            0x0132A6,  # Sprite buffer sub
         ]
 
     def _parse_vectors(self):
