@@ -78,9 +78,12 @@ static void bios_return_to_system(void) {
     printf("[BIOS stub] return_to_system called, current state=%d\n", state);
 
     if (state <= 1) {
-        /* Skip to demo mode (state 2), sub-state 4 (racing) */
-        bus_write8(0x10FDAE, 2);
-        /* Sub-state 0 will handle initial setup then progress naturally */
+        /* Skip to car select (state 3) — the player-start path.
+         * Demo mode (state 2) can't work without a real BIOS because
+         * $10041A never gets set, so the title animation loops forever.
+         * State 3 enters the gameplay dispatcher at sub-state 12 (car select),
+         * which actually renders sprites and game graphics. */
+        bus_write8(0x10FDAE, 3);
 
         /* The BIOS would set up these before calling USER with state 2:
          * - VBlank active flag so the game's VBlank handler runs
