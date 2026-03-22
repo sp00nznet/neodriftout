@@ -78,8 +78,9 @@ static void bios_return_to_system(void) {
     printf("[BIOS stub] return_to_system called, current state=%d\n", state);
 
     if (state <= 1) {
-        /* Skip to demo mode (state 2) */
+        /* Skip to demo mode (state 2), sub-state 4 (racing) */
         bus_write8(0x10FDAE, 2);
+        /* Sub-state 0 will handle initial setup then progress naturally */
 
         /* The BIOS would set up these before calling USER with state 2:
          * - VBlank active flag so the game's VBlank handler runs
@@ -253,8 +254,14 @@ int main(int argc, char *argv[]) {
      */
     extern void func_007AC4(void);  /* Sprite palette search */
     extern void func_007D98(void);  /* Palette search */
+    extern void func_000C52(void);  /* Sub-state 0 standard mode path */
+    extern void func_000CC4(void);  /* RTS stub at $CC4 */
+    extern void func_000CBC(void);  /* Sub-state advance to 1 */
     func_table_register(0x007AC4, func_007AC4);
     func_table_register(0x007D98, func_007D98);
+    func_table_register(0x000C52, func_000C52);
+    func_table_register(0x000CC4, func_000CC4);
+    func_table_register(0x000CBC, func_000CBC);
 
     printf("[neodriftout] Registered %u total functions (with hand-written overrides)\n",
            func_table_count());

@@ -39,3 +39,4 @@ CMakeUserPresets.json
 *.lo
 *.zip
 *.7z
+build2/
