@@ -60,23 +60,43 @@ static void bios_vblank_default(void) {
 /* $C00444 — BIOS: return from game to system (eyecatcher, title) */
 static void bios_return_to_system(void) {
     /*
-     * On real hardware this returns control to the BIOS for the
-     * eyecatcher animation or title screen. In our recomp, we
-     * advance the game state to move past BIOS-managed screens.
+     * On real hardware, this returns control to the BIOS which handles
+     * the eyecatcher (SNK logo), then calls USER again with the next
+     * state. Since we don't have the BIOS, we simulate the state
+     * transitions it would make.
      *
-     * State 0 (init) calls this after setup -> advance to state 1
-     * State 1 (title) calls this immediately -> advance to state 2 (demo)
-     * State 9 (results) calls this -> we'd loop back
+     * The BIOS normally:
+     *   - After State 0 (init): plays eyecatcher, then sets state=1 (title)
+     *   - After State 1 (title): waits for coin/timeout, sets state=2 (demo)
+     *   - After State 9 (results): goes back to state=1 (title)
+     *
+     * We skip the eyecatcher and title, going straight to demo mode.
+     * We also need to set the VBlank active flag and other state that
+     * the BIOS would establish before re-entering the game.
      */
     uint8_t state = bus_read8(0x10FDAE);
-    if (state == 0) {
-        /* Init done -> skip to demo mode */
+    printf("[BIOS stub] return_to_system called, current state=%d\n", state);
+
+    if (state <= 1) {
+        /* Skip to demo mode (state 2) */
         bus_write8(0x10FDAE, 2);
-    } else if (state <= 1) {
-        /* Title screen -> go to demo */
-        bus_write8(0x10FDAE, 2);
+
+        /* The BIOS would set up these before calling USER with state 2:
+         * - VBlank active flag so the game's VBlank handler runs
+         * - Sub-state flag
+         * These are normally set by the game's $000966 (demo setup)
+         * which gets called from State 2's handler ($000744).
+         * But we need the game's VBlank handler to be active BEFORE
+         * USER returns, so the frame yield can fire VBlank properly. */
+        uint8_t flags = bus_read8(0x10FD80);
+        bus_write8(0x10FD80, flags | 0x80);  /* Enable game VBlank */
     }
-    /* For other states, just return and let the game handle it */
+    /* For other states (like 9 = results), go back to demo */
+    else {
+        bus_write8(0x10FDAE, 2);
+        uint8_t flags = bus_read8(0x10FD80);
+        bus_write8(0x10FD80, flags | 0x80);
+    }
 }
 
 /* $C0044A — BIOS VBlank processing (called from game's VBlank handler) */
@@ -221,10 +241,23 @@ int main(int argc, char *argv[]) {
         return 1;
     }
 
-    /* Register BIOS stubs first, then game functions */
+    /* Register BIOS stubs first, then auto-generated game functions */
     register_bios_stubs();
     recomp_register_all();
-    printf("[neodriftout] Registered %u total functions\n", func_table_count());
+
+    /*
+     * Override specific auto-generated functions with hand-written versions.
+     * The auto-generator can mis-split functions when jump table targets
+     * fall inside function bodies (e.g., dbhi search loops). The hand-written
+     * versions in recomp/*.c are verified correct.
+     */
+    extern void func_007AC4(void);  /* Sprite palette search */
+    extern void func_007D98(void);  /* Palette search */
+    func_table_register(0x007AC4, func_007AC4);
+    func_table_register(0x007D98, func_007D98);
+
+    printf("[neodriftout] Registered %u total functions (with hand-written overrides)\n",
+           func_table_count());
 
     /* Start execution */
     platform_set_title("Neo Drift Out: New Technology [neogeorecomp]");
