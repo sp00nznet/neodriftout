@@ -65,6 +65,7 @@ class NeoGeoROM:
             0x00109E,  # Cleanup sub (PC-relative)
             0x0010B0,  # Store to $10042C (PC-relative)
             0x0010B8,  # PRNG advance (PC-relative from $B34)
+            0x0122C4,  # Sprite commit continuation (push-return from $01229E)
         ]
 
     def _parse_vectors(self):

@@ -88,6 +88,51 @@ void func_000CC4(void) {
 }
 
 /*
+ * Sprite/VRAM commit — $01229E
+ *
+ * The auto-generator doesn't handle this correctly because the original
+ * code manually pushes a return address ($0122C4) onto the stack before
+ * JSR-ing to the VRAM write function. When that function does RTS, it
+ * returns to $0122C4 (the spin-wait + sprite commit code). But in our
+ * recomp, RTS returns to the C caller, so $0122C4 never executes.
+ *
+ * This hand-written version calls the dispatch function, then executes
+ * the $0122C4 continuation inline.
+ */
+void func_01229E(void) {
+    uint32_t save_d[8], save_a[7];
+    for (int i = 0; i < 8; i++) save_d[i] = g_m68k.d[i];
+    for (int i = 0; i < 7; i++) save_a[i] = g_m68k.a[i];
+
+    g_m68k.a[2] = 0x3C0002;
+
+    /* Dispatch to VRAM write function based on sprite count at $1020A0 */
+    uint16_t sprite_count = bus_read16(0x1020A0);
+    if (sprite_count == 0) {
+        func_table_call(0x0133A0);
+    } else if (sprite_count <= 8) {
+        func_table_call(0x013362);
+    } else {
+        func_table_call(0x013330);
+    }
+
+    /* $0122C4: Wait for sprite upload flag to clear (VBlank drain) */
+    while (bus_read16(0x102224) != 0) {
+        neogeo_frame_yield();
+    }
+
+    /* Now run the continuation code at $0122C4 which commits sprites
+     * to the upload buffer. This is complex — call the auto-generated
+     * version if it exists, or set the flags directly. */
+    func_table_call(0x0122C4);
+
+    /* Force the swap/upload flags so VBlank processes the data */
+    bus_write16(0x102532, 1);  /* VRAM buffer swap */
+    for (int i = 0; i < 8; i++) g_m68k.d[i] = save_d[i];
+    for (int i = 0; i < 7; i++) g_m68k.a[i] = save_a[i];
+}
+
+/*
  * $000CBC — Sub-state advance to 1
  * Branch target: set $100426 = 1 then RTS
  */

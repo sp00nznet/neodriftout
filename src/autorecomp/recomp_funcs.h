@@ -758,6 +758,7 @@ void sub_012280(void);
 void sub_012286(void);
 void sub_012296(void);
 void sub_01229E(void);
+void sub_0122C4(void);
 void jt_012404(void);
 void jt_012452(void);
 void jt_0124A0(void);
@@ -7376,6 +7377,7 @@ static inline void recomp_register_all(void) {
     func_table_register(0x012286, sub_012286);
     func_table_register(0x012296, sub_012296);
     func_table_register(0x01229E, sub_01229E);
+    func_table_register(0x0122C4, sub_0122C4);
     func_table_register(0x012404, jt_012404);
     func_table_register(0x012452, jt_012452);
     func_table_register(0x0124A0, jt_0124A0);
