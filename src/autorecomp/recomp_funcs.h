@@ -75,6 +75,7 @@ void jt_000EC8(void);
 void jt_000EE0(void);
 void jt_000EFC(void);
 void jt_000F1E(void);
+void sub_000F26(void);
 void jt_000F28(void);
 void jt_000F3E(void);
 void jt_000F64(void);
@@ -6701,6 +6702,7 @@ static inline void recomp_register_all(void) {
     func_table_register(0x000EE0, jt_000EE0);
     func_table_register(0x000EFC, jt_000EFC);
     func_table_register(0x000F1E, jt_000F1E);
+    func_table_register(0x000F26, sub_000F26);
     func_table_register(0x000F28, jt_000F28);
     func_table_register(0x000F3E, jt_000F3E);
     func_table_register(0x000F64, jt_000F64);

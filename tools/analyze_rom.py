@@ -73,6 +73,7 @@ class NeoGeoROM:
             0x0132D4,  # VRAM buffer write sub
             0x0131EA,  # VRAM write sub (from $01229E dispatch)
             0x013292,  # VRAM write sub (from $01229E dispatch)
+            0x000F26,  # Sub-state 14 handler entry (branch target)
         ]
 
     def _parse_vectors(self):
