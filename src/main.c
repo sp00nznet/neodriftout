@@ -78,22 +78,16 @@ static void bios_return_to_system(void) {
     printf("[BIOS stub] return_to_system called, current state=%d\n", state);
 
     if (state <= 1) {
-        /* Skip to car select (state 3) — the player-start path.
-         * Demo mode (state 2) can't work without a real BIOS because
-         * $10041A never gets set, so the title animation loops forever.
-         * State 3 enters the gameplay dispatcher at sub-state 12 (car select),
-         * which actually renders sprites and game graphics. */
-        bus_write8(0x10FDAE, 3);
+        /* Enter demo mode (state 2). The game will run sub-state 0
+         * (init + sound setup), then sub-state 1 (title animation).
+         * We set $10041A = 1 to simulate a demo timer event so the
+         * title animation exits to sub-state 2 (stage intro) instead
+         * of looping back to the BIOS. */
+        bus_write8(0x10FDAE, 2);
 
-        /* The BIOS would set up these before calling USER with state 2:
-         * - VBlank active flag so the game's VBlank handler runs
-         * - Sub-state flag
-         * These are normally set by the game's $000966 (demo setup)
-         * which gets called from State 2's handler ($000744).
-         * But we need the game's VBlank handler to be active BEFORE
-         * USER returns, so the frame yield can fire VBlank properly. */
+        /* Enable game VBlank handling */
         uint8_t flags = bus_read8(0x10FD80);
-        bus_write8(0x10FD80, flags | 0x80);  /* Enable game VBlank */
+        bus_write8(0x10FD80, flags | 0x80);
     }
     /* For other states (like 9 = results), go back to demo */
     else {
@@ -103,8 +97,18 @@ static void bios_return_to_system(void) {
     }
 }
 
+static int s_bios_frame = 0;
+
 /* $C0044A — BIOS VBlank processing (called from game's VBlank handler) */
 static void bios_vblank_process(void) {
+    s_bios_frame++;
+
+    /* After ~2 seconds, simulate a start press / demo trigger.
+     * Set $10041A = 1 HERE (inside VBlank processing, AFTER USER's
+     * clr.w $10041A but BEFORE the gameplay dispatcher reads it). */
+    if (s_bios_frame >= 120) {
+        bus_write16(0x10041A, 1);
+    }
     /* The BIOS reads controller inputs into system RAM here.
      * We handle input through the platform layer + io subsystem,
      * so this is mostly a no-op. Just ensure the input bytes
@@ -268,8 +272,10 @@ int main(int argc, char *argv[]) {
 
     extern void func_01229E(void);  /* Sprite/VRAM commit (push-return-addr fix) */
     extern void func_011C88(void);  /* Partial VRAM DMA copy (16 words) */
+    extern void func_000CC6(void);  /* Sub-state 1 handler (split fix) */
     func_table_register(0x01229E, func_01229E);
     func_table_register(0x011C88, func_011C88);
+    func_table_register(0x000CC6, func_000CC6);
 
     printf("[neodriftout] Registered %u total functions (with hand-written overrides)\n",
            func_table_count());

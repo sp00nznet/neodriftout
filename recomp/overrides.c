@@ -217,6 +217,47 @@ void func_01229E(void) {
 }
 
 /*
+ * Sub-state 1 handler — $000CC6
+ *
+ * Auto-gen splits this function at $CE4. When $002416 returns 0 and
+ * $10041A != 0, the original code falls through to $CE4 which handles
+ * the state transition. Our override inlines the continuation.
+ */
+void func_000CC6(void) {
+    func_table_call(0x0014F6);
+    func_table_call(0x002416);
+
+    M68K_CMP16(g_m68k.d[0], 0x0);
+    if (M68K_CC_NE) return;  /* Still animating */
+
+    /* Animation complete — check $10041A */
+    M68K_CMP16(bus_read16(0x10041A), 0x0);
+    if (M68K_CC_EQ) {
+        /* Timeout — return to BIOS */
+        uint8_t flags = bus_read8(0x10FD80);
+        bus_write8(0x10FD80, flags & ~0x80);
+        func_table_call(0xC00444);
+        return;
+    }
+
+    /* $10041A != 0: advance to next stage */
+    g_m68k.d[0] = (g_m68k.d[0] & 0xFFFF0000u) | 0x0001;
+    g_m68k.d[1] = (g_m68k.d[1] & 0xFFFF0000u) | bus_read16(0x1011FC);
+    func_table_call(0x0009D6);
+    func_table_call(0x001340);
+
+    if (bus_read8(0x10FD82) == 0) {
+        /* Standard mode: go to continue screen (sub-state 14) */
+        bus_write16(0x101210, 0);
+        bus_write16(0x100426, 14);
+    } else {
+        /* MVS mode: go to stage intro (sub-state 2) */
+        bus_write16(0x101210, 0);
+        bus_write16(0x100426, 2);
+    }
+}
+
+/*
  * $000CBC — Sub-state advance to 1
  * Branch target: set $100426 = 1 then RTS
  */
