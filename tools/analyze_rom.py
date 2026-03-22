@@ -73,6 +73,10 @@ class NeoGeoROM:
             0x0132D4,  # VRAM buffer write sub
             0x0131EA,  # VRAM write sub (from $01229E dispatch)
             0x013292,  # VRAM write sub (from $01229E dispatch)
+            0x000CE4,  # Sub-state 1 continuation (split from $CC6)
+            0x000D12,  # Sub-state 1 -> state advance (AES path)
+            0x000D24,  # Sub-state 1 -> BIOS return (timeout)
+            0x000D32,  # Sub-state 1 -> done exit
             0x000F26,  # Sub-state 14 handler entry (branch target)
         ]
 
