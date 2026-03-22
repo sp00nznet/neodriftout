@@ -66,6 +66,13 @@ class NeoGeoROM:
             0x0010B0,  # Store to $10042C (PC-relative)
             0x0010B8,  # PRNG advance (PC-relative from $B34)
             0x0122C4,  # Sprite commit continuation (push-return from $01229E)
+            0x011C88,  # Mid-point of unrolled VRAM copy (computed jump target)
+            0x012384,  # VRAM commit sub-dispatch
+            0x013166,  # VRAM buffer write sub
+            0x013246,  # VRAM buffer write sub
+            0x0132D4,  # VRAM buffer write sub
+            0x0131EA,  # VRAM write sub (from $01229E dispatch)
+            0x013292,  # VRAM write sub (from $01229E dispatch)
         ]
 
     def _parse_vectors(self):
