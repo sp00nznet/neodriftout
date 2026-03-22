@@ -43,6 +43,18 @@ class NeoGeoROM:
         self.size = len(self.data)
         self._parse_vectors()
 
+        # Explicit entry point seeds for functions the analyzer may miss
+        # (reachable only via computed jumps, PC-relative from unanalyzed
+        # code, or indirect call patterns)
+        self.explicit_seeds = [
+            0x000AA8,  # BIOS config reader (called via PC-relative from $966)
+            0x000B34,  # Gameplay dispatcher (called via JMP from state handlers)
+            0x001076,  # Input state update (called via PC-relative from $B34)
+            0x00109E,  # Cleanup sub (called via PC-relative)
+            0x0010B0,  # Store to $10042C (called via PC-relative)
+            0x0010B8,  # PRNG advance (called via PC-relative from $B34)
+        ]
+
     def _parse_vectors(self):
         self.initial_sp = struct.unpack('>I', self.data[0x00:0x04])[0]
         self.initial_pc = struct.unpack('>I', self.data[0x04:0x08])[0]
@@ -120,6 +132,16 @@ class M68KAnalyzer:
             self.labels[addr] = f"vec_{name}"
         self.labels[self.rom.initial_pc] = "entry_point"
 
+        # Explicit seeds for functions only reachable via PC-relative
+        # calls or indirect jumps that the analyzer can't auto-discover.
+        # These are identified during manual analysis of the game code.
+        explicit_seeds = getattr(self.rom, 'explicit_seeds', [])
+        for addr in explicit_seeds:
+            if 0x200 <= addr < self.rom.size and not (addr & 1):
+                entry_points.add(addr)
+                if addr not in self.labels:
+                    self.labels[addr] = f"sub_{addr:06X}"
+
         jt_targets = self._scan_jump_tables()
         entry_points.update(jt_targets)
 
@@ -151,6 +173,50 @@ class M68KAnalyzer:
             print(f"  Found {len(more_targets)} additional targets from address loads")
             work = list(more_targets - self.visited)
             all_func_entries.update(more_targets)
+            while work:
+                new_work = []
+                for addr in work:
+                    if addr in self.visited or addr >= self.rom.size or addr < 0x200 or (addr & 1):
+                        continue
+                    new_targets = self._disassemble_block(addr)
+                    for target, is_call in new_targets:
+                        if target not in self.visited and 0x200 <= target < self.rom.size and not (target & 1):
+                            new_work.append(target)
+                            if is_call:
+                                all_func_entries.add(target)
+                work = new_work
+
+        # Post-analysis: scan all disassembled JSR/BSR instructions for
+        # targets we may have missed (especially PC-relative calls where
+        # capstone resolves the target but the analyzer didn't follow it)
+        pc_rel_targets = set()
+        for addr, (mnemonic, op_str, size, raw) in self.instructions.items():
+            if mnemonic in ('jsr', 'bsr'):
+                # Try to extract absolute target from the op_str
+                target = None
+                op_clean = op_str.replace('.l', '').replace('.w', '').strip()
+                if op_clean.startswith('$'):
+                    try:
+                        target = int(op_clean[1:], 16) & 0xFFFFFF
+                    except ValueError:
+                        pass
+                # Also try capstone's resolved address for PC-relative
+                if target is None and '(pc' in op_str.lower():
+                    # Parse "$xxxx(pc)" format
+                    import re
+                    m = re.match(r'\$([0-9a-fA-F]+)\(pc', op_str)
+                    if m:
+                        target = int(m.group(1), 16) & 0xFFFFFF
+                if target and 0x200 <= target < self.rom.size and not (target & 1):
+                    if target not in all_func_entries:
+                        pc_rel_targets.add(target)
+                        all_func_entries.add(target)
+                        if target not in self.labels:
+                            self.labels[target] = f"sub_{target:06X}"
+
+        if pc_rel_targets:
+            print(f"  Found {len(pc_rel_targets)} additional call targets from PC-relative JSR/BSR")
+            work = list(pc_rel_targets - self.visited)
             while work:
                 new_work = []
                 for addr in work:

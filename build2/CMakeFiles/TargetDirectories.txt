@@ -1,0 +1,7 @@
+D:/recomp/neogeo/neodriftout/build2/CMakeFiles/neodriftout.dir
+D:/recomp/neogeo/neodriftout/build2/CMakeFiles/INSTALL.dir
+D:/recomp/neogeo/neodriftout/build2/CMakeFiles/ALL_BUILD.dir
+D:/recomp/neogeo/neodriftout/build2/CMakeFiles/ZERO_CHECK.dir
+D:/recomp/neogeo/neodriftout/build2/neogeorecomp_build/CMakeFiles/neogeorecomp.dir
+D:/recomp/neogeo/neodriftout/build2/neogeorecomp_build/CMakeFiles/INSTALL.dir
+D:/recomp/neogeo/neodriftout/build2/neogeorecomp_build/CMakeFiles/ALL_BUILD.dir

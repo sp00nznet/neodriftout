@@ -1,0 +1,12 @@
+D:\recomp\neogeo\neogeorecomp\src\neogeorecomp.c;D:\recomp\neogeo\neodriftout\build2\neogeorecomp_build\neogeorecomp.dir\Debug\neogeorecomp.obj
+D:\recomp\neogeo\neogeorecomp\src\m68k.c;D:\recomp\neogeo\neodriftout\build2\neogeorecomp_build\neogeorecomp.dir\Debug\m68k.obj
+D:\recomp\neogeo\neogeorecomp\src\bus.c;D:\recomp\neogeo\neodriftout\build2\neogeorecomp_build\neogeorecomp.dir\Debug\bus.obj
+D:\recomp\neogeo\neogeorecomp\src\func_table.c;D:\recomp\neogeo\neodriftout\build2\neogeorecomp_build\neogeorecomp.dir\Debug\func_table.obj
+D:\recomp\neogeo\neogeorecomp\src\video.c;D:\recomp\neogeo\neodriftout\build2\neogeorecomp_build\neogeorecomp.dir\Debug\video.obj
+D:\recomp\neogeo\neogeorecomp\src\palette.c;D:\recomp\neogeo\neodriftout\build2\neogeorecomp_build\neogeorecomp.dir\Debug\palette.obj
+D:\recomp\neogeo\neogeorecomp\src\io.c;D:\recomp\neogeo\neodriftout\build2\neogeorecomp_build\neogeorecomp.dir\Debug\io.obj
+D:\recomp\neogeo\neogeorecomp\src\ym2610.c;D:\recomp\neogeo\neodriftout\build2\neogeorecomp_build\neogeorecomp.dir\Debug\ym2610.obj
+D:\recomp\neogeo\neogeorecomp\src\z80.c;D:\recomp\neogeo\neodriftout\build2\neogeorecomp_build\neogeorecomp.dir\Debug\z80.obj
+D:\recomp\neogeo\neogeorecomp\src\timer.c;D:\recomp\neogeo\neodriftout\build2\neogeorecomp_build\neogeorecomp.dir\Debug\timer.obj
+D:\recomp\neogeo\neogeorecomp\src\platform.c;D:\recomp\neogeo\neodriftout\build2\neogeorecomp_build\neogeorecomp.dir\Debug\platform.obj
+D:\recomp\neogeo\neogeorecomp\src\debug.c;D:\recomp\neogeo\neodriftout\build2\neogeorecomp_build\neogeorecomp.dir\Debug\debug.obj

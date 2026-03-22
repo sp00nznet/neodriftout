@@ -1,0 +1,10 @@
+^D:\RECOMP\NEOGEO\NEODRIFTOUT\BUILD2\CMAKEFILES\93E474A6E80EEB54CD580E2E38868032\GENERATE.STAMP.RULE
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SD:/recomp/neogeo/neodriftout -BD:/recomp/neogeo/neodriftout/build2 --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file D:/recomp/neogeo/neodriftout/build2/neodriftout.sln
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

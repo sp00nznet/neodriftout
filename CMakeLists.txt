@@ -11,9 +11,15 @@ add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/../neogeorecomp neogeorecomp_build)
 # Collect auto-generated recompiled sources (6,475 functions across 130 files)
 file(GLOB AUTORECOMP_SOURCES "src/autorecomp/recomp_*.c")
 
+# Hand-written overrides for functions the auto-generator splits incorrectly
+set(HANDWRITTEN_SOURCES
+    recomp/init.c
+)
+
 set(GAME_SOURCES
     src/main.c
     ${AUTORECOMP_SOURCES}
+    ${HANDWRITTEN_SOURCES}
 )
 
 add_executable(neodriftout ${GAME_SOURCES})

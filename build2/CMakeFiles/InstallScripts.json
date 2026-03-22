@@ -1,0 +1,8 @@
+{
+	"InstallScripts" : 
+	[
+		"D:/recomp/neogeo/neodriftout/build2/cmake_install.cmake",
+		"D:/recomp/neogeo/neodriftout/build2/neogeorecomp_build/cmake_install.cmake"
+	],
+	"Parallel" : false
+}
