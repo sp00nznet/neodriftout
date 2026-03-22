@@ -237,9 +237,9 @@ void func_01229E(void) {
         g_m68k.a[4] += 2;
     }
 
-    /* Signal sprite upload ready */
-    uint16_t flag = bus_read16(0x102224);
-    bus_write16(0x102224, flag + 1);
+    /* Signal sprite upload ready + VRAM buffer swap */
+    bus_write16(0x102224, bus_read16(0x102224) + 1);
+    bus_write16(0x102532, 1);  /* Trigger VRAM double-buffer swap */
 
     for (int i = 0; i < 8; i++) g_m68k.d[i] = save_d[i];
     for (int i = 0; i < 7; i++) g_m68k.a[i] = save_a[i];

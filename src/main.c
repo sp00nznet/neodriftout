@@ -114,30 +114,56 @@ static void bios_vblank_process(void) {
      * so this is mostly a no-op. Just ensure the input bytes
      * at the BIOS locations are updated. */
 
-    /* Read raw input from I/O registers into BIOS RAM locations */
+    /* Read raw input from I/O registers into BIOS RAM locations.
+     *
+     * The Neo Geo BIOS processes hardware input registers each VBlank
+     * and stores processed results in system RAM for the game to read.
+     *
+     * Key BIOS RAM locations for input:
+     *   $10FD94: P1 raw joystick (active low)
+     *   $10FD95: P1 edge-detected (newly pressed, active high)
+     *   $10FD96: P1 raw (alternate location used by some games)
+     *   $10FD97: P2 raw
+     *   $10FD98: P1 start/select status
+     *   $10FD99: P2 start/select status
+     *   $10FD8A-$10FD8F: soft-DIP and player config
+     */
     uint8_t p1 = io_read_p1cnt();
     uint8_t p2 = io_read_p2cnt();
     uint8_t status = io_read_status_b();
 
-    /* BIOS stores current + previous input at these locations */
-    bus_write8(0x10FD82, 0);       /* System type flags */
-    bus_write8(0x10FD83, 0);       /* Region: 0=Japan */
-    /* Raw input: $10FD94-$10FD97 */
-    bus_write8(0x10FD96, p1);      /* P1 current raw input */
-    bus_write8(0x10FD97, p2);      /* P2 current raw input */
+    /* Store raw input */
+    bus_write8(0x10FD94, p1);
+    bus_write8(0x10FD96, p1);
+    bus_write8(0x10FD97, p2);
 
-    /* Edge-detected (newly pressed) inputs */
+    /* Edge detection: active-high bits for newly pressed buttons */
     static uint8_t prev_p1 = 0xFF, prev_p2 = 0xFF;
-    uint8_t p1_edge = ~p1 & prev_p1;  /* Active low -> active high edges */
+    static uint8_t prev_status = 0xFF;
+    uint8_t p1_edge = ~p1 & prev_p1;
     uint8_t p2_edge = ~p2 & prev_p2;
+    uint8_t status_edge = ~status & prev_status;
+    bus_write8(0x10FD95, p1_edge);
     bus_write8(0x10FD8E, p1_edge);
     bus_write8(0x10FD8F, p2_edge);
     prev_p1 = p1;
     prev_p2 = p2;
 
-    /* Start buttons (from STATUS_B) */
-    bus_write8(0x10FD8A, (~status >> 1) & 1);  /* P1 start */
-    bus_write8(0x10FD8B, (~status >> 3) & 1);  /* P2 start */
+    /* Start/Select from STATUS_B (active low):
+     * Bit 1 = P1 Start, Bit 0 = P1 Select
+     * Bit 3 = P2 Start, Bit 2 = P2 Select */
+    uint8_t p1_start = (~status >> 1) & 1;
+    uint8_t p1_select = (~status >> 0) & 1;
+    bus_write8(0x10FD8A, p1_start);
+    bus_write8(0x10FD8C, p1_start);  /* Credit/coin status */
+    bus_write8(0x10FD98, status);     /* Raw status_b for start/select */
+
+    /* If start is pressed, also set $10FE80 (game active flag) */
+    if (p1_start) {
+        bus_write16(0x10FE80, 1);
+    }
+
+    prev_status = status;
 }
 
 /* $C004C2 — BIOS: clear fix layer */
