@@ -10,6 +10,7 @@
  */
 
 #include <neogeorecomp/neogeorecomp.h>
+#include <stdio.h>
 
 /*
  * Sub-state 0 standard mode path — $000C52
@@ -284,6 +285,48 @@ void func_000CC6(void) {
         bus_write16(0x101210, 0);
         bus_write16(0x100426, 2);
     }
+}
+
+/*
+ * Sprite allocator — $012202 (with debug logging)
+ *
+ * Scans the sprite attribute table ($101B20, stride $16, 64 entries)
+ * for a free slot (flag word == 0). When found, initializes it with
+ * default values and returns the slot address in a0.
+ */
+void func_012202(void) {
+    uint32_t save_d1 = g_m68k.d[1], save_d2 = g_m68k.d[2];
+
+    g_m68k.a[0] = 0x101B20;
+    uint16_t stride = 0x16;  /* 22 bytes per entry */
+
+    for (int i = 0; i < 64; i++) {
+        uint16_t flag = bus_read16(g_m68k.a[0]);
+        if (flag == 0) {
+            /* Found free slot — initialize it */
+            fprintf(stderr, "[alloc] Sprite slot %d at $%06X\n", i, g_m68k.a[0]);
+            fflush(stderr);
+
+            bus_write32(g_m68k.a[0], 0x00010000);      /* flag=1, reserved=0 */
+            bus_write32(g_m68k.a[0] + 4, 0x00200020);  /* x=$20, y=$20 */
+            bus_write32(g_m68k.a[0] + 8, 0x01000100);   /* w=$100, h=$100 */
+            bus_write32(g_m68k.a[0] + 12, 0x00040004);  /* params */
+            bus_write32(g_m68k.a[0] + 16, 0x000292A2);  /* tile ref */
+            bus_write16(g_m68k.a[0] + 20, 0x0000);      /* reserved */
+
+            g_m68k.d[1] = save_d1;
+            g_m68k.d[2] = save_d2;
+            return;
+        }
+        g_m68k.a[0] += stride;
+    }
+
+    /* No free slot — return NULL */
+    fprintf(stderr, "[alloc] NO FREE SLOT!\n");
+    fflush(stderr);
+    g_m68k.a[0] = 0;
+    g_m68k.d[1] = save_d1;
+    g_m68k.d[2] = save_d2;
 }
 
 /*
