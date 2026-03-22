@@ -264,38 +264,12 @@ int main(int argc, char *argv[]) {
     func_table_register(0x000CBC, func_000CBC);
 
     extern void func_01229E(void);  /* Sprite/VRAM commit (push-return-addr fix) */
+    extern void func_011C88(void);  /* Partial VRAM DMA copy (16 words) */
     func_table_register(0x01229E, func_01229E);
+    func_table_register(0x011C88, func_011C88);
 
     printf("[neodriftout] Registered %u total functions (with hand-written overrides)\n",
            func_table_count());
-
-    /* Write a test pattern to VRAM/palette for proof-of-life:
-     * - Set backdrop color to dark blue
-     * - Write a test sprite with a visible tile
-     */
-    palette_write(255 * 16 + 15, 0x000F);  /* Backdrop: blue */
-    palette_write(2 * 16 + 1, 0x7FFF);     /* Palette 2 color 1: white */
-
-    /* Write a test sprite: tile 1, palette 2, at position (100, 100) */
-    /* SCB1: tile number at VRAM $0000 */
-    video_set_vram_addr(0x0000);
-    video_set_vram_mod(1);
-    video_write_vram(0x0001);   /* Tile 1 low */
-    video_write_vram(0x0200);   /* Palette 2, no flip */
-
-    /* SCB3: Y=100 (raw = 496-100 = 396 = $18C), height=1, no sticky */
-    video_set_vram_addr(0x8200);
-    video_write_vram((396 << 7) | 1);
-
-    /* SCB4: X=100 (raw = 100 << 7 = $3200) */
-    video_set_vram_addr(0x8400);
-    video_write_vram(100 << 7);
-
-    /* SCB2: full size shrink ($FF0F) */
-    video_set_vram_addr(0x8000);
-    video_write_vram(0x0FFF);
-
-    printf("[neodriftout] Test pattern written: backdrop=blue, sprite at (100,100)\n");
 
     /* Start execution */
     platform_set_title("Neo Drift Out: New Technology [neogeorecomp]");

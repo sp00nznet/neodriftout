@@ -80,6 +80,27 @@ void func_000C52(void) {
 }
 
 /*
+ * $011C88 — Partial VRAM DMA copy (16 words)
+ *
+ * This is a computed jump target into the middle of the 32-word
+ * unrolled copy at $011C68. The sprite table upload calculates
+ * the entry point based on sprite count: $011CA8 - count*2.
+ *
+ * $011C88 = $011CA8 - 16*2 = copy last 16 words
+ * Each instruction is `move.w (a4)+, (a2)` (2 bytes)
+ */
+void func_011C88(void) {
+    uint32_t src = g_m68k.a[4];
+    uint32_t dst = g_m68k.a[2];
+    for (int i = 0; i < 16; i++) {
+        uint16_t val = bus_read16(src);
+        bus_write16(dst, val);
+        src += 2;
+    }
+    g_m68k.a[4] = src;
+}
+
+/*
  * $000CC4 — RTS stub
  * The auto-gen creates a branch to $CC4 which is just an RTS.
  */
@@ -106,28 +127,91 @@ void func_01229E(void) {
 
     g_m68k.a[2] = 0x3C0002;
 
-    /* Dispatch to VRAM write function based on sprite count at $1020A0 */
-    uint16_t sprite_count = bus_read16(0x1020A0);
-    if (sprite_count == 0) {
+    /* Phase 1: Dispatch to VRAM scroll/tilemap write */
+    uint16_t spr_count = bus_read16(0x1020A0);
+    if (spr_count == 0) {
         func_table_call(0x0133A0);
-    } else if (sprite_count <= 8) {
+    } else if (spr_count <= 8) {
         func_table_call(0x013362);
     } else {
         func_table_call(0x013330);
     }
 
-    /* $0122C4: Wait for sprite upload flag to clear (VBlank drain) */
+    /* Phase 2 ($0122C4): Wait for previous sprite upload to drain */
     while (bus_read16(0x102224) != 0) {
-        neogeo_frame_yield();
+        /* bus_read16 hook yields to VBlank automatically */
     }
 
-    /* Now run the continuation code at $0122C4 which commits sprites
-     * to the upload buffer. This is complex — call the auto-generated
-     * version if it exists, or set the flags directly. */
-    func_table_call(0x0122C4);
+    /* Phase 3: Build sprite upload data from attribute table */
+    g_m68k.d[3] = (g_m68k.d[3] & 0xFFFF0000u) | 0x0080;  /* 128 slots */
+    g_m68k.a[1] = bus_read32(0x10222A);
+    g_m68k.d[4] = (g_m68k.d[4] & 0xFFFF0000u) | bus_read16(g_m68k.a[1]);
+    g_m68k.d[5] = 0x102230;
+    g_m68k.d[6] = 0x102330;
+    g_m68k.d[7] = 0x102430;
+    g_m68k.a[3] = 0x1020A4;
+    g_m68k.d[1] = (g_m68k.d[1] & 0xFFFF0000u) | bus_read16(0x1020A2);
 
-    /* Force the swap/upload flags so VBlank processes the data */
-    bus_write16(0x102532, 1);  /* VRAM buffer swap */
+    int16_t d1 = (int16_t)(uint16_t)g_m68k.d[1] - 1;
+    g_m68k.d[1] = (g_m68k.d[1] & 0xFFFF0000u) | (uint16_t)d1;
+
+    if (d1 >= 0) {
+        for (; d1 >= 0; d1--) {
+            g_m68k.a[0] = bus_read32(g_m68k.a[3] + 2);
+            uint16_t obj_h = bus_read16(g_m68k.a[0] + 0x0C);
+            int16_t d3_val = (int16_t)(uint16_t)g_m68k.d[3];
+            d3_val -= (int16_t)obj_h;
+            g_m68k.d[3] = (g_m68k.d[3] & 0xFFFF0000u) | (uint16_t)d3_val;
+
+            if (d3_val < 0) {
+                d3_val += (int16_t)obj_h;
+                g_m68k.d[3] = (g_m68k.d[3] & 0xFFFF0000u) | (uint16_t)d3_val;
+                break;
+            }
+
+            func_table_call(0x012384);
+            func_table_call(0x013166);
+            func_table_call(0x013246);
+            func_table_call(0x0132D4);
+
+            g_m68k.a[3] += 6;
+            g_m68k.d[1] = (g_m68k.d[1] & 0xFFFF0000u) | (uint16_t)d1;
+        }
+    }
+
+    /* Phase 4: Compute copy count and upload */
+    int16_t d3_s = (int16_t)(uint16_t)g_m68k.d[3];
+    d3_s = -d3_s;
+    d3_s += 0x80;
+    uint16_t copy_count = (uint16_t)d3_s;
+    bus_write16(0x10222E, copy_count);
+
+    /* Computed jump into unrolled copy: $11CA8 - d3*2 */
+    if (copy_count > 32) copy_count = 32;
+
+    /* Upload shrink data from $102230 */
+    g_m68k.a[2] = 0x3C0002;
+    bus_write16(0x3C0000, bus_read16(g_m68k.a[1] + 2));
+    bus_write16(0x3C0004, 0x0001);
+    g_m68k.a[4] = 0x102230;
+    for (uint16_t w = 0; w < copy_count; w++) {
+        bus_write16(0x3C0002, bus_read16(g_m68k.a[4]));
+        g_m68k.a[4] += 2;
+    }
+
+    /* Upload Y/position data from $102430 */
+    bus_write16(0x3C0000, bus_read16(g_m68k.a[1] + 6));
+    bus_write16(0x3C0004, 0x0001);
+    g_m68k.a[4] = 0x102430;
+    for (uint16_t w = 0; w < copy_count; w++) {
+        bus_write16(0x3C0002, bus_read16(g_m68k.a[4]));
+        g_m68k.a[4] += 2;
+    }
+
+    /* Signal sprite upload ready */
+    uint16_t flag = bus_read16(0x102224);
+    bus_write16(0x102224, flag + 1);
+
     for (int i = 0; i < 8; i++) g_m68k.d[i] = save_d[i];
     for (int i = 0; i < 7; i++) g_m68k.a[i] = save_a[i];
 }
