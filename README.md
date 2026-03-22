@@ -2,6 +2,38 @@
 
 **A native PC port of Neo Drift Out (1996) via static recompilation of the original Neo Geo 68000 code.**
 
+![Proof of Life](docs/screenshot_proof_of_life.png)
+
+*Game text rendering from the original ROM data: "© 1996 VISCO CORP. ALL RIGHTS RESERVED." — decoded from the S ROM fix layer tiles through the neogeorecomp runtime's software renderer.*
+
+## Current Status
+
+**The game boots and renders text from the original ROM data.** The complete 68000 program ROM has been statically recompiled into native x86-64 C code using an automated pipeline adapted from the [CPS1/SF2 toolchain](https://github.com/sp00nznet/sf2).
+
+| Metric | Value |
+|--------|-------|
+| Functions recompiled | **6,636** (auto-generated) + 12 hand-written overrides |
+| Lines of generated C | **~115,000** across 133 source files |
+| Frame rate | **60 fps** with VSync |
+| Rendering | Fix layer text (S ROM), palette system, backdrop |
+| Build | MSVC 2022 + vcpkg SDL2, ~23 MB debug executable |
+
+**What works:**
+- Full game boot sequence with BIOS stubs
+- Game state machine (init -> car select -> race transition)
+- VBlank interrupt simulation via bus read hooks
+- Fix layer text rendering (S ROM nibble-packed tile decode with scrambled column order)
+- Palette system (420+ entries loaded from game ROM, Neo Geo color format -> ARGB)
+- 60fps frame loop with SDL2 windowing and input
+- Z80/YM2610 audio subsystem stubs
+
+**In progress:**
+- Sprite rendering pipeline (C ROM tile decode works, sprite attribute system needs debugging)
+- Game's sprite object creation system
+- Audio playback
+
+## About
+
 Neo Drift Out: New Technology is a top-down isometric rally racing game by Visco Corporation — one of the few racing titles in the Neo Geo's fighting-game-dominated library. Players tear through World Rally Championship-inspired stages in licensed Mitsubishi, Subaru, and Toyota rally cars, drifting across tarmac, gravel, mud, and ice. This project recompiles the original 68000 machine code into native x86-64, producing a standalone PC executable.
 
 ## The Game
