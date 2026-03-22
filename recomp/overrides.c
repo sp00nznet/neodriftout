@@ -307,12 +307,19 @@ void func_012202(void) {
             fprintf(stderr, "[alloc] Sprite slot %d at $%06X\n", i, g_m68k.a[0]);
             fflush(stderr);
 
-            bus_write32(g_m68k.a[0], 0x00010000);      /* flag=1, reserved=0 */
-            bus_write32(g_m68k.a[0] + 4, 0x00200020);  /* x=$20, y=$20 */
-            bus_write32(g_m68k.a[0] + 8, 0x01000100);   /* w=$100, h=$100 */
-            bus_write32(g_m68k.a[0] + 12, 0x00040004);  /* params */
-            bus_write32(g_m68k.a[0] + 16, 0x000292A2);  /* tile ref */
-            bus_write16(g_m68k.a[0] + 20, 0x0000);      /* reserved */
+            /* Initialize with the EXACT same values as the original ROM code.
+             * The original at $012226 writes these 22 bytes: */
+            uint32_t base = g_m68k.a[0];
+            bus_write16(base + 0, 0x0001);    /* +0: flag = active */
+            bus_write16(base + 2, 0x0000);    /* +2: tile base (set by $012256) */
+            bus_write16(base + 4, 0x0020);    /* +4: X position (set by $01225C) */
+            bus_write16(base + 6, 0x0020);    /* +6: Y position (set by $01225C) */
+            bus_write16(base + 8, 0x0100);    /* +8: width in pixels */
+            bus_write16(base + 10, 0x0100);   /* +A: height in pixels */
+            bus_write16(base + 12, 0x0004);   /* +C: tile columns */
+            bus_write16(base + 14, 0x0004);   /* +E: tile rows */
+            bus_write32(base + 16, 0x000292A2); /* +10: tile data pointer */
+            bus_write16(base + 20, 0x0000);   /* +14: reserved */
 
             g_m68k.d[1] = save_d1;
             g_m68k.d[2] = save_d2;

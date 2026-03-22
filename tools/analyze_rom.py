@@ -96,6 +96,8 @@ class NeoGeoROM:
             0x013212,  # Sprite buffer sub
             0x01328E,  # Sprite buffer sub
             0x0132A6,  # Sprite buffer sub
+            0x01322E,  # SCB1 tilemap write continuation (branch from $013166)
+            0x0132B6,  # SCB3 Y/height write continuation (branch from $013246)
         ]
 
     def _parse_vectors(self):

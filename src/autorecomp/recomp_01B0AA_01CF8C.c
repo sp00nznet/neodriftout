@@ -1,0 +1,1657 @@
+/* Auto-generated recompiled code for Neo Drift Out */
+/* Source range: $01B0AA - $01CF8C */
+/* Functions: 50 */
+
+#include <neogeorecomp/neogeorecomp.h>
+#include "recomp_funcs.h"
+
+/* $01B0AA-$01B0E8  (30 instructions, 62 bytes) */
+void jt_01B0AA(void) {
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_BTST(g_m68k.d[7], g_m68k.d[1]);
+    M68K_BTST(g_m68k.d[7], g_m68k.d[3]);
+    M68K_BCLR(g_m68k.d[0], g_m68k.d[5]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_BTST(g_m68k.d[7], g_m68k.d[1]);
+    M68K_BTST(g_m68k.d[7], g_m68k.d[3]);
+    M68K_BCLR(g_m68k.d[0], g_m68k.d[5]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_BTST(g_m68k.d[7], g_m68k.d[1]);
+    /* TODO $01B0DA: movep.w $b0f(a3), d3  [07 0B 0B 0F] */
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    { uint8_t _mv = (uint8_t)(_postinc8(7)); g_m68k.a[7] -= 1; bus_write8(g_m68k.a[7], _mv); M68K_TST8(_mv); }
+    /* WARNING: function did not end with RTS */
+}
+
+/* $01B136-$01B13A  (2 instructions, 4 bytes) */
+void jt_01B136(void) {
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    /* WARNING: function did not end with RTS */
+}
+
+/* $01B1C2-$01B24E  (63 instructions, 140 bytes) */
+void jt_01B1C2(void) {
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR8(g_m68k.d[0], g_m68k.d[5]);
+    /* TODO $01B1D6: movep.w $90d(a1), d4  [09 09 09 0D] */
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR8(g_m68k.d[0], g_m68k.d[5]);
+    /* TODO $01B1E4: movep.w $90d(a1), d4  [09 09 09 0D] */
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_BTST(g_m68k.d[5], g_m68k.d[0]);
+    /* TODO $01B1F2: movep.w $90d(a1), d2  [05 09 09 0D] */
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_BTST(g_m68k.d[1], g_m68k.d[0]);
+    M68K_BTST(bus_read8(g_m68k.a[1]), g_m68k.d[0]);
+    { uint8_t _mv = (uint8_t)(bus_read8(g_m68k.a[1])); g_m68k.a[0] -= 1; bus_write8(g_m68k.a[0], _mv); M68K_TST8(_mv); }
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_BTST(g_m68k.d[1], g_m68k.d[0]);
+    M68K_BTST(bus_read8(g_m68k.a[1]), g_m68k.d[0]);
+    { uint8_t _mv = (uint8_t)(bus_read8(g_m68k.a[1])); g_m68k.a[0] -= 1; bus_write8(g_m68k.a[0], _mv); M68K_TST8(_mv); }
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR8(g_m68k.d[0], g_m68k.d[1]);
+    M68K_BTST(g_m68k.d[1], g_m68k.d[0]);
+    M68K_BTST(bus_read8(g_m68k.a[1]), g_m68k.d[0]);
+    { uint8_t _mv = (uint8_t)(g_m68k.d[0]); bus_write8(g_m68k.a[0] + (-0x80) + (int16_t)(uint16_t)g_m68k.a[0], _mv); M68K_TST8(_mv); }
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR8(g_m68k.d[0], _postinc8(5));
+    { uint8_t _mv = (uint8_t)(_postinc8(1)); g_m68k.a[6] -= 1; bus_write8(g_m68k.a[6], _mv); M68K_TST8(_mv); }
+    { uint8_t _mv = (uint8_t)(bus_read8(g_m68k.a[5])); g_m68k.a[4] -= 1; bus_write8(g_m68k.a[4], _mv); M68K_TST8(_mv); }
+    { uint8_t _mv = (uint8_t)(g_m68k.d[0]); bus_write8(g_m68k.a[2] + (-0x80) + (int16_t)(uint16_t)g_m68k.a[0], _mv); M68K_TST8(_mv); }
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR8(g_m68k.d[0], _postinc8(5));
+    { uint8_t _mv = (uint8_t)(_postinc8(1)); g_m68k.a[4] -= 1; bus_write8(g_m68k.a[4], _mv); M68K_TST8(_mv); }
+    { uint8_t _mv = (uint8_t)(_postinc8(1)); g_m68k.a[4] -= 1; bus_write8(g_m68k.a[4], _mv); M68K_TST8(_mv); }
+    { uint8_t _mv = (uint8_t)(g_m68k.d[0]); bus_write8(g_m68k.a[2] + (-0x80) + (int16_t)(uint16_t)g_m68k.a[0], _mv); M68K_TST8(_mv); }
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR8(g_m68k.d[0], _postinc8(5));
+    { uint8_t _mv = (uint8_t)(_postinc8(1)); g_m68k.a[4] -= 1; bus_write8(g_m68k.a[4], _mv); M68K_TST8(_mv); }
+    { uint8_t _mv = (uint8_t)(_postinc8(1)); g_m68k.a[4] -= 1; bus_write8(g_m68k.a[4], _mv); M68K_TST8(_mv); }
+    { uint8_t _mv = (uint8_t)(g_m68k.d[0]); bus_write8(g_m68k.a[2] + (-0x80) + (int16_t)(uint16_t)g_m68k.a[0], _mv); M68K_TST8(_mv); }
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    /* WARNING: function did not end with RTS */
+}
+
+/* $01B24E-$01B270  (16 instructions, 34 bytes) */
+void jt_01B24E(void) {
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_ADD8(g_m68k.d[6], 0xa);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR8(g_m68k.d[0], g_m68k.d[6]);
+    /* WARNING: function did not end with RTS */
+}
+
+/* $01B2DA-$01B366  (63 instructions, 140 bytes) */
+void jt_01B2DA(void) {
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR8(g_m68k.d[0], g_m68k.d[7]);
+    /* TODO $01B2F0: movep.w -$7f80(a3), d3  [07 0B 80 80] */
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_BTST(g_m68k.d[7], g_m68k.d[3]);
+    /* TODO $01B2FE: movep.w $b80(a3), d5  [0B 0B 0B 80] */
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR8(g_m68k.d[0], g_m68k.d[3]);
+    /* TODO $01B30A: movep.w $b0b(a3), d1  [03 0B 0B 0B] */
+    M68K_BCLR(g_m68k.d[0], g_m68k.d[5]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_BTST(g_m68k.d[3], g_m68k.d[1]);
+    M68K_BTST(bus_read8(g_m68k.a[3]), g_m68k.d[1]);
+    /* TODO $01B31A: movep.w $f80(a7), d5  [0B 0F 0F 80] */
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR8(g_m68k.d[0], _postinc8(7));
+    M68K_BTST(g_m68k.d[3], g_m68k.d[1]);
+    M68K_BTST(bus_read8(g_m68k.a[3]), g_m68k.d[1]);
+    /* TODO $01B328: movep.w $f80(a7), d7  [0F 0F 0F 80] */
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    { uint8_t _mv = (uint8_t)(_postinc8(7)); g_m68k.a[7] -= 1; bus_write8(g_m68k.a[7], _mv); M68K_TST8(_mv); }
+    { uint8_t _mv = (uint8_t)(g_m68k.d[3]); g_m68k.a[7] -= 1; bus_write8(g_m68k.a[7], _mv); M68K_TST8(_mv); }
+    { uint8_t _mv = (uint8_t)(bus_read8(g_m68k.a[3])); g_m68k.a[1] -= 1; bus_write8(g_m68k.a[1], _mv); M68K_TST8(_mv); }
+    { uint8_t _mv = (uint8_t)(bus_read8(g_m68k.a[3])); g_m68k.a[1] -= 1; bus_write8(g_m68k.a[1], _mv); M68K_TST8(_mv); }
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    { uint8_t _mv = (uint8_t)(_postinc8(3)); g_m68k.a[7] -= 1; bus_write8(g_m68k.a[7], _mv); M68K_TST8(_mv); }
+    { uint8_t _mv = (uint8_t)(_postinc8(3)); g_m68k.a[5] -= 1; bus_write8(g_m68k.a[5], _mv); M68K_TST8(_mv); }
+    { uint8_t _mv = (uint8_t)(bus_read8(g_m68k.a[3])); g_m68k.a[3] -= 1; bus_write8(g_m68k.a[3], _mv); M68K_TST8(_mv); }
+    { uint8_t _mv = (uint8_t)(g_m68k.d[0]); bus_write8(g_m68k.a[1] + (-0x80) + (int16_t)(uint16_t)g_m68k.a[0], _mv); M68K_TST8(_mv); }
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    { uint8_t _mv = (uint8_t)(_postinc8(3)); g_m68k.a[5] -= 1; bus_write8(g_m68k.a[5], _mv); M68K_TST8(_mv); }
+    { uint8_t _mv = (uint8_t)(_postinc8(3)); g_m68k.a[5] -= 1; bus_write8(g_m68k.a[5], _mv); M68K_TST8(_mv); }
+    { uint8_t _mv = (uint8_t)(bus_read8(g_m68k.a[3])); g_m68k.a[3] -= 1; bus_write8(g_m68k.a[3], _mv); M68K_TST8(_mv); }
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    { uint8_t _mv = (uint8_t)(bus_read8(g_m68k.a[7])); g_m68k.a[5] -= 1; bus_write8(g_m68k.a[5], _mv); M68K_TST8(_mv); }
+    { uint8_t _mv = (uint8_t)(g_m68k.d[0]); bus_write8(g_m68k.a[3] + (-0x80) + (int16_t)(uint16_t)g_m68k.a[0], _mv); M68K_TST8(_mv); }
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    /* WARNING: function did not end with RTS */
+}
+
+/* $01B366-$01B37C  (11 instructions, 22 bytes) */
+void jt_01B366(void) {
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    /* WARNING: function did not end with RTS */
+}
+
+/* $01B3F2-$01B47E  (66 instructions, 140 bytes) */
+void jt_01B3F2(void) {
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    /* TODO $01B408: movep.w -$7f80(a1), d4  [09 09 80 80] */
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    /* TODO $01B414: movep.w $90d(a1), d2  [05 09 09 0D] */
+    M68K_BCLR(g_m68k.d[0], g_m68k.d[6]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_BTST(g_m68k.d[5], g_m68k.d[2]);
+    M68K_BTST(g_m68k.d[5], g_m68k.d[2]);
+    /* TODO $01B424: movep.w $d0d(a5), d6  [0D 0D 0D 0D] */
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR8(g_m68k.d[0], g_m68k.d[1]);
+    M68K_BTST(g_m68k.d[5], g_m68k.d[2]);
+    M68K_BTST(g_m68k.d[5], g_m68k.d[2]);
+    M68K_BTST(bus_read8(g_m68k.a[1]), g_m68k.d[6]);
+    /* TODO $01B434: movep.w -$7f80(a5), d6  [0D 0D 80 80] */
+    M68K_OR8(g_m68k.d[0], g_m68k.d[1]);
+    M68K_BTST(g_m68k.d[1], g_m68k.d[0]);
+    M68K_BTST(g_m68k.d[5], g_m68k.d[2]);
+    { uint8_t _mv = (uint8_t)(bus_read8(g_m68k.a[5])); g_m68k.a[2] -= 1; bus_write8(g_m68k.a[2], _mv); M68K_TST8(_mv); }
+    { uint8_t _mv = (uint8_t)(bus_read8(g_m68k.a[1])); g_m68k.a[2] -= 1; bus_write8(g_m68k.a[2], _mv); M68K_TST8(_mv); }
+    { uint8_t _mv = (uint8_t)(bus_read8(g_m68k.a[1])); g_m68k.a[0] -= 1; bus_write8(g_m68k.a[0], _mv); M68K_TST8(_mv); }
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR8(g_m68k.d[0], _postinc8(5));
+    { uint8_t _mv = (uint8_t)(_postinc8(5)); g_m68k.a[6] -= 1; bus_write8(g_m68k.a[6], _mv); M68K_TST8(_mv); }
+    { uint8_t _mv = (uint8_t)(bus_read8(g_m68k.a[5])); g_m68k.a[6] -= 1; bus_write8(g_m68k.a[6], _mv); M68K_TST8(_mv); }
+    { uint8_t _mv = (uint8_t)(bus_read8(g_m68k.a[5])); g_m68k.a[2] -= 1; bus_write8(g_m68k.a[2], _mv); M68K_TST8(_mv); }
+    { uint8_t _mv = (uint8_t)(bus_read8(g_m68k.a[5])); g_m68k.a[2] -= 1; bus_write8(g_m68k.a[2], _mv); M68K_TST8(_mv); }
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR8(g_m68k.d[0], _postinc8(5));
+    { uint8_t _mv = (uint8_t)(_postinc8(5)); g_m68k.a[6] -= 1; bus_write8(g_m68k.a[6], _mv); M68K_TST8(_mv); }
+    { uint8_t _mv = (uint8_t)(bus_read8(g_m68k.a[5])); g_m68k.a[4] -= 1; bus_write8(g_m68k.a[4], _mv); M68K_TST8(_mv); }
+    { uint8_t _mv = (uint8_t)(bus_read8(g_m68k.a[5])); g_m68k.a[2] -= 1; bus_write8(g_m68k.a[2], _mv); M68K_TST8(_mv); }
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    { uint8_t _mv = (uint8_t)(_postinc8(1)); g_m68k.a[6] -= 1; bus_write8(g_m68k.a[6], _mv); M68K_TST8(_mv); }
+    { uint8_t _mv = (uint8_t)(_postinc8(1)); g_m68k.a[4] -= 1; bus_write8(g_m68k.a[4], _mv); M68K_TST8(_mv); }
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    /* WARNING: function did not end with RTS */
+}
+
+/* $01B47E-$01B4A2  (18 instructions, 36 bytes) */
+void jt_01B47E(void) {
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR8(g_m68k.d[0], g_m68k.d[6]);
+    /* WARNING: function did not end with RTS */
+}
+
+/* $01B50A-$01B596  (66 instructions, 140 bytes) */
+void jt_01B50A(void) {
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    /* TODO $01B52E: movep.w $b80(a3), d5  [0B 0B 0B 80] */
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR8(g_m68k.d[0], g_m68k.d[3]);
+    M68K_BTST(g_m68k.d[3], g_m68k.d[1]);
+    M68K_BTST(g_m68k.d[7], g_m68k.d[3]);
+    M68K_BTST(g_m68k.d[7], g_m68k.d[3]);
+    /* TODO $01B53C: movep.w $f0f(a3), d3  [07 0B 0F 0F] */
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR8(g_m68k.d[0], _postinc8(7));
+    { uint8_t _mv = (uint8_t)(g_m68k.d[3]); g_m68k.a[7] -= 1; bus_write8(g_m68k.a[7], _mv); M68K_TST8(_mv); }
+    M68K_BTST(g_m68k.d[7], g_m68k.d[3]);
+    M68K_BTST(g_m68k.d[7], g_m68k.d[3]);
+    /* TODO $01B54A: movep.w $f0f(a7), d3  [07 0F 0F 0F] */
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR8(g_m68k.d[0], _postinc8(7));
+    { uint8_t _mv = (uint8_t)(_postinc8(7)); g_m68k.a[7] -= 1; bus_write8(g_m68k.a[7], _mv); M68K_TST8(_mv); }
+    M68K_BTST(bus_read8(g_m68k.a[7]), g_m68k.d[3]);
+    { uint8_t _mv = (uint8_t)(bus_read8(g_m68k.a[7])); g_m68k.a[3] -= 1; bus_write8(g_m68k.a[3], _mv); M68K_TST8(_mv); }
+    { uint8_t _mv = (uint8_t)(bus_read8(g_m68k.a[3])); g_m68k.a[3] -= 1; bus_write8(g_m68k.a[3], _mv); M68K_TST8(_mv); }
+    /* TODO $01B55A: movep.w -$7f80(a7), d7  [0F 0F 80 80] */
+    M68K_OR8(g_m68k.d[0], _postinc8(7));
+    { uint8_t _mv = (uint8_t)(_postinc8(3)); g_m68k.a[7] -= 1; bus_write8(g_m68k.a[7], _mv); M68K_TST8(_mv); }
+    { uint8_t _mv = (uint8_t)(bus_read8(g_m68k.a[7])); g_m68k.a[3] -= 1; bus_write8(g_m68k.a[3], _mv); M68K_TST8(_mv); }
+    { uint8_t _mv = (uint8_t)(bus_read8(g_m68k.a[7])); g_m68k.a[3] -= 1; bus_write8(g_m68k.a[3], _mv); M68K_TST8(_mv); }
+    { uint8_t _mv = (uint8_t)(bus_read8(g_m68k.a[3])); g_m68k.a[3] -= 1; bus_write8(g_m68k.a[3], _mv); M68K_TST8(_mv); }
+    { uint8_t _mv = (uint8_t)(bus_read8(g_m68k.a[3])); g_m68k.a[1] -= 1; bus_write8(g_m68k.a[1], _mv); M68K_TST8(_mv); }
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR8(g_m68k.d[0], _postinc8(3));
+    { uint8_t _mv = (uint8_t)(_postinc8(3)); g_m68k.a[5] -= 1; bus_write8(g_m68k.a[5], _mv); M68K_TST8(_mv); }
+    { uint8_t _mv = (uint8_t)(bus_read8(g_m68k.a[7])); g_m68k.a[3] -= 1; bus_write8(g_m68k.a[3], _mv); M68K_TST8(_mv); }
+    { uint8_t _mv = (uint8_t)(bus_read8(g_m68k.a[7])); g_m68k.a[3] -= 1; bus_write8(g_m68k.a[3], _mv); M68K_TST8(_mv); }
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    /* WARNING: function did not end with RTS */
+}
+
+/* $01B596-$01B5C6  (23 instructions, 48 bytes) */
+void jt_01B596(void) {
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR8(g_m68k.d[0], g_m68k.d[4]);
+    M68K_SUB8(g_m68k.d[4], 0x8);
+    /* WARNING: function did not end with RTS */
+}
+
+/* $01B622-$01B6AE  (66 instructions, 140 bytes) */
+void jt_01B622(void) {
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR8(g_m68k.d[0], g_m68k.d[5]);
+    M68K_BTST(g_m68k.d[5], g_m68k.d[2]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR8(g_m68k.d[0], g_m68k.d[1]);
+    M68K_BTST(g_m68k.d[5], g_m68k.d[0]);
+    /* TODO $01B650: movep.w $909(a1), d4  [09 09 09 09] */
+    /* TODO $01B654: movep.w $d0d(a5), d4  [09 0D 0D 0D] */
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR8(g_m68k.d[0], g_m68k.d[1]);
+    M68K_BTST(g_m68k.d[1], g_m68k.d[0]);
+    /* TODO $01B65E: movep.w $909(a1), d4  [09 09 09 09] */
+    /* TODO $01B662: movep.w $1111(a5), d4  [09 0D 11 11] */
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR8(g_m68k.d[0], g_m68k.d[1]);
+    M68K_BTST(bus_read8(g_m68k.a[5]), g_m68k.d[0]);
+    { uint8_t _mv = (uint8_t)(_postinc8(1)); g_m68k.a[4] -= 1; bus_write8(g_m68k.a[4], _mv); M68K_TST8(_mv); }
+    { uint8_t _mv = (uint8_t)(_postinc8(1)); g_m68k.a[4] -= 1; bus_write8(g_m68k.a[4], _mv); M68K_TST8(_mv); }
+    { uint8_t _mv = (uint8_t)(bus_read8(g_m68k.a[1])); g_m68k.a[4] -= 1; bus_write8(g_m68k.a[4], _mv); M68K_TST8(_mv); }
+    { uint8_t _mv = (uint8_t)(bus_read8(g_m68k.a[1])); g_m68k.a[0] -= 1; bus_write8(g_m68k.a[0], _mv); M68K_TST8(_mv); }
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR8(g_m68k.d[0], _postinc8(5));
+    { uint8_t _mv = (uint8_t)(_postinc8(5)); g_m68k.a[6] -= 1; bus_write8(g_m68k.a[6], _mv); M68K_TST8(_mv); }
+    { uint8_t _mv = (uint8_t)(_postinc8(1)); g_m68k.a[4] -= 1; bus_write8(g_m68k.a[4], _mv); M68K_TST8(_mv); }
+    { uint8_t _mv = (uint8_t)(_postinc8(1)); g_m68k.a[4] -= 1; bus_write8(g_m68k.a[4], _mv); M68K_TST8(_mv); }
+    { uint8_t _mv = (uint8_t)(g_m68k.d[5]); g_m68k.a[4] -= 1; bus_write8(g_m68k.a[4], _mv); M68K_TST8(_mv); }
+    { uint8_t _mv = (uint8_t)(bus_read8(g_m68k.a[1])); g_m68k.a[0] -= 1; bus_write8(g_m68k.a[0], _mv); M68K_TST8(_mv); }
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    { uint8_t _mv = (uint8_t)(_postinc8(1)); g_m68k.a[4] -= 1; bus_write8(g_m68k.a[4], _mv); M68K_TST8(_mv); }
+    { uint8_t _mv = (uint8_t)(_postinc8(1)); g_m68k.a[4] -= 1; bus_write8(g_m68k.a[4], _mv); M68K_TST8(_mv); }
+    { uint8_t _mv = (uint8_t)(g_m68k.d[5]); g_m68k.a[4] -= 1; bus_write8(g_m68k.a[4], _mv); M68K_TST8(_mv); }
+    M68K_BTST(g_m68k.d[5], g_m68k.d[2]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    /* WARNING: function did not end with RTS */
+}
+
+/* $01B6AE-$01B6DE  (22 instructions, 48 bytes) */
+void jt_01B6AE(void) {
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR8(g_m68k.d[0], g_m68k.d[2]);
+    M68K_ADD8(g_m68k.d[6], 0xa);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR8(g_m68k.d[0], g_m68k.d[2]);
+    M68K_AND8(g_m68k.d[2], 0xa);
+    /* WARNING: function did not end with RTS */
+}
+
+/* $01B73A-$01B776  (29 instructions, 60 bytes) */
+void jt_01B73A(void) {
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR8(g_m68k.d[0], g_m68k.d[7]);
+    M68K_BCLR(g_m68k.d[0], g_m68k.d[3]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_BTST(g_m68k.d[3], g_m68k.d[1]);
+    M68K_BTST(g_m68k.d[7], g_m68k.d[3]);
+    M68K_BCLR(g_m68k.d[0], g_m68k.d[5]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR8(g_m68k.d[0], g_m68k.d[3]);
+    M68K_BTST(g_m68k.d[3], g_m68k.d[1]);
+    /* TODO $01B768: movep.w $b0b(a3), d5  [0B 0B 0B 0B] */
+    M68K_BCLR(g_m68k.d[0], g_m68k.d[5]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR8(g_m68k.d[0], _postinc8(7));
+    { uint8_t _mv = (uint8_t)(_postinc8(3)); g_m68k.a[7] -= 1; bus_write8(g_m68k.a[7], _mv); M68K_TST8(_mv); }
+    /* WARNING: function did not end with RTS */
+}
+
+/* $01B7C6-$01B7D8  (9 instructions, 18 bytes) */
+void jt_01B7C6(void) {
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR8(g_m68k.d[0], g_m68k.d[4]);
+    /* WARNING: function did not end with RTS */
+}
+
+/* $01B852-$01B880  (20 instructions, 46 bytes) */
+void jt_01B852(void) {
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    /* TODO $01B856: movep.w -$7f80(a1), d2  [05 09 80 80] */
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_BTST(g_m68k.d[5], g_m68k.d[2]);
+    /* TODO $01B864: movep.w $980(a1), d2  [05 09 09 80] */
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_BTST(g_m68k.d[5], g_m68k.d[0]);
+    M68K_BTST(g_m68k.d[5], g_m68k.d[2]);
+    /* TODO $01B874: movep.w -$7f80(a5), d4  [09 0D 80 80] */
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_BTST(g_m68k.d[1], g_m68k.d[0]);
+    /* WARNING: function did not end with RTS */
+}
+
+/* $01B8DE-$01B8E2  (2 instructions, 4 bytes) */
+void jt_01B8DE(void) {
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    /* WARNING: function did not end with RTS */
+}
+
+/* $01B96A-$01B99A  (22 instructions, 48 bytes) */
+void jt_01B96A(void) {
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR8(g_m68k.d[0], g_m68k.d[3]);
+    M68K_BTST(g_m68k.d[7], g_m68k.d[3]);
+    M68K_BTST(g_m68k.d[7], g_m68k.d[3]);
+    M68K_BCLR(g_m68k.d[0], g_m68k.d[5]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR8(g_m68k.d[0], g_m68k.d[3]);
+    M68K_BTST(g_m68k.d[7], g_m68k.d[1]);
+    /* TODO $01B97E: movep.w $b80(a3), d3  [07 0B 0B 80] */
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR8(g_m68k.d[0], _postinc8(7));
+    { uint8_t _mv = (uint8_t)(g_m68k.d[7]); g_m68k.a[7] -= 1; bus_write8(g_m68k.a[7], _mv); M68K_TST8(_mv); }
+    /* TODO $01B98C: movep.w $f80(a7), d3  [07 0F 0F 80] */
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    { uint8_t _mv = (uint8_t)(_postinc8(7)); g_m68k.a[7] -= 1; bus_write8(g_m68k.a[7], _mv); M68K_TST8(_mv); }
+    /* WARNING: function did not end with RTS */
+}
+
+/* $01B9F6-$01B9FA  (2 instructions, 4 bytes) */
+void jt_01B9F6(void) {
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    /* WARNING: function did not end with RTS */
+}
+
+/* $01BA82-$01BB0E  (64 instructions, 140 bytes) */
+void jt_01BA82(void) {
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR8(g_m68k.d[0], g_m68k.d[5]);
+    /* TODO $01BA88: movep.w $909(a1), d4  [09 09 09 09] */
+    M68K_BCLR(g_m68k.d[0], g_m68k.d[6]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR8(g_m68k.d[0], g_m68k.d[5]);
+    /* TODO $01BA96: movep.w $90d(a1), d2  [05 09 09 0D] */
+    M68K_BCLR(g_m68k.d[0], g_m68k.d[6]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR8(g_m68k.d[0], g_m68k.d[1]);
+    /* TODO $01BAA4: movep.w $911(a1), d0  [01 09 09 11] */
+    { uint8_t _mv = (uint8_t)(g_m68k.d[0]); bus_write8(g_m68k.a[0] + (-0x80) + (int16_t)(uint16_t)g_m68k.a[0], _mv); M68K_TST8(_mv); }
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR8(g_m68k.d[0], g_m68k.d[1]);
+    M68K_BTST(bus_read8(g_m68k.a[1]), g_m68k.d[0]);
+    { uint8_t _mv = (uint8_t)(bus_read8(g_m68k.a[1])); g_m68k.a[0] -= 1; bus_write8(g_m68k.a[0], _mv); M68K_TST8(_mv); }
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_BTST(g_m68k.d[1], g_m68k.d[0]);
+    M68K_BTST(bus_read8(g_m68k.a[1]), g_m68k.d[0]);
+    { uint8_t _mv = (uint8_t)(bus_read8(g_m68k.a[1])); g_m68k.a[0] -= 1; bus_write8(g_m68k.a[0], _mv); M68K_TST8(_mv); }
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_BTST(g_m68k.d[1], g_m68k.d[0]);
+    M68K_BTST(bus_read8(g_m68k.a[1]), g_m68k.d[0]);
+    { uint8_t _mv = (uint8_t)(bus_read8(g_m68k.a[1])); g_m68k.a[0] -= 1; bus_write8(g_m68k.a[0], _mv); M68K_TST8(_mv); }
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_BTST(g_m68k.d[1], g_m68k.d[0]);
+    { uint8_t _mv = (uint8_t)(bus_read8(g_m68k.a[1])); g_m68k.a[4] -= 1; bus_write8(g_m68k.a[4], _mv); M68K_TST8(_mv); }
+    { uint8_t _mv = (uint8_t)(bus_read8(g_m68k.a[1])); g_m68k.a[0] -= 1; bus_write8(g_m68k.a[0], _mv); M68K_TST8(_mv); }
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR8(g_m68k.d[0], _postinc8(5));
+    { uint8_t _mv = (uint8_t)(_postinc8(1)); g_m68k.a[6] -= 1; bus_write8(g_m68k.a[6], _mv); M68K_TST8(_mv); }
+    { uint8_t _mv = (uint8_t)(bus_read8(g_m68k.a[5])); g_m68k.a[4] -= 1; bus_write8(g_m68k.a[4], _mv); M68K_TST8(_mv); }
+    { uint8_t _mv = (uint8_t)(g_m68k.d[0]); bus_write8(g_m68k.a[2] + (-0x80) + (int16_t)(uint16_t)g_m68k.a[0], _mv); M68K_TST8(_mv); }
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR8(g_m68k.d[0], _postinc8(5));
+    { uint8_t _mv = (uint8_t)(_postinc8(1)); g_m68k.a[4] -= 1; bus_write8(g_m68k.a[4], _mv); M68K_TST8(_mv); }
+    { uint8_t _mv = (uint8_t)(_postinc8(1)); g_m68k.a[4] -= 1; bus_write8(g_m68k.a[4], _mv); M68K_TST8(_mv); }
+    { uint8_t _mv = (uint8_t)(g_m68k.d[0]); bus_write8(g_m68k.a[2] + (-0x80) + (int16_t)(uint16_t)g_m68k.a[0], _mv); M68K_TST8(_mv); }
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    /* WARNING: function did not end with RTS */
+}
+
+/* $01BB0E-$01BB16  (4 instructions, 8 bytes) */
+void jt_01BB0E(void) {
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR8(g_m68k.d[0], g_m68k.d[6]);
+    /* WARNING: function did not end with RTS */
+}
+
+/* $01BB9A-$01BC26  (65 instructions, 140 bytes) */
+void jt_01BB9A(void) {
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    /* TODO $01BBA2: movep.w -$7f80(a3), d3  [07 0B 80 80] */
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR8(g_m68k.d[0], g_m68k.d[7]);
+    /* TODO $01BBB0: movep.w $b0b(a3), d3  [07 0B 0B 0B] */
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_BTST(g_m68k.d[7], g_m68k.d[1]);
+    /* TODO $01BBBE: movep.w $b0f(a3), d5  [0B 0B 0B 0F] */
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR8(g_m68k.d[0], g_m68k.d[3]);
+    M68K_BTST(g_m68k.d[3], g_m68k.d[1]);
+    M68K_BTST(bus_read8(g_m68k.a[3]), g_m68k.d[1]);
+    /* TODO $01BBCE: movep.w -$7f80(a7), d7  [0F 0F 80 80] */
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_BTST(g_m68k.d[3], g_m68k.d[1]);
+    M68K_BTST(g_m68k.d[3], g_m68k.d[1]);
+    { uint8_t _mv = (uint8_t)(bus_read8(g_m68k.a[3])); g_m68k.a[1] -= 1; bus_write8(g_m68k.a[1], _mv); M68K_TST8(_mv); }
+    M68K_BCLR(g_m68k.d[0], g_m68k.d[7]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR8(g_m68k.d[0], _postinc8(7));
+    { uint8_t _mv = (uint8_t)(g_m68k.d[3]); g_m68k.a[7] -= 1; bus_write8(g_m68k.a[7], _mv); M68K_TST8(_mv); }
+    M68K_BTST(bus_read8(g_m68k.a[3]), g_m68k.d[1]);
+    { uint8_t _mv = (uint8_t)(bus_read8(g_m68k.a[3])); g_m68k.a[1] -= 1; bus_write8(g_m68k.a[1], _mv); M68K_TST8(_mv); }
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR8(g_m68k.d[0], _postinc8(7));
+    { uint8_t _mv = (uint8_t)(_postinc8(3)); g_m68k.a[5] -= 1; bus_write8(g_m68k.a[5], _mv); M68K_TST8(_mv); }
+    { uint8_t _mv = (uint8_t)(bus_read8(g_m68k.a[3])); g_m68k.a[5] -= 1; bus_write8(g_m68k.a[5], _mv); M68K_TST8(_mv); }
+    { uint8_t _mv = (uint8_t)(bus_read8(g_m68k.a[3])); g_m68k.a[1] -= 1; bus_write8(g_m68k.a[1], _mv); M68K_TST8(_mv); }
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR8(g_m68k.d[0], _postinc8(3));
+    { uint8_t _mv = (uint8_t)(_postinc8(3)); g_m68k.a[5] -= 1; bus_write8(g_m68k.a[5], _mv); M68K_TST8(_mv); }
+    { uint8_t _mv = (uint8_t)(bus_read8(g_m68k.a[7])); g_m68k.a[5] -= 1; bus_write8(g_m68k.a[5], _mv); M68K_TST8(_mv); }
+    { uint8_t _mv = (uint8_t)(g_m68k.d[0]); bus_write8(g_m68k.a[1] + (-0x80) + (int16_t)(uint16_t)g_m68k.a[0], _mv); M68K_TST8(_mv); }
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR8(g_m68k.d[0], _postinc8(3));
+    { uint8_t _mv = (uint8_t)(bus_read8(g_m68k.a[7])); g_m68k.a[3] -= 1; bus_write8(g_m68k.a[3], _mv); M68K_TST8(_mv); }
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    /* WARNING: function did not end with RTS */
+}
+
+/* $01BC26-$01BC3C  (11 instructions, 22 bytes) */
+void jt_01BC26(void) {
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    /* WARNING: function did not end with RTS */
+}
+
+/* $01BCB2-$01BCC8  (11 instructions, 22 bytes) */
+void jt_01BCB2(void) {
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    /* WARNING: function did not end with RTS */
+}
+
+/* $01BD3E-$01BD62  (18 instructions, 36 bytes) */
+void jt_01BD3E(void) {
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    /* WARNING: function did not end with RTS */
+}
+
+/* $01BDCA-$01BE1A  (37 instructions, 80 bytes) */
+void jt_01BDCA(void) {
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    /* TODO $01BDF0: movep.w $b80(a3), d5  [0B 0B 0B 80] */
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    M68K_BTST(g_m68k.d[3], g_m68k.d[1]);
+    M68K_BTST(g_m68k.d[7], g_m68k.d[1]);
+    M68K_BTST(g_m68k.d[7], g_m68k.d[3]);
+    M68K_BTST(g_m68k.d[7], g_m68k.d[3]);
+    /* TODO $01BDFE: movep.w $f80(a7), d5  [0B 0F 0F 80] */
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    { uint8_t _mv = (uint8_t)(_postinc8(7)); g_m68k.a[7] -= 1; bus_write8(g_m68k.a[7], _mv); M68K_TST8(_mv); }
+    M68K_BTST(g_m68k.d[7], g_m68k.d[1]);
+    M68K_BTST(g_m68k.d[7], g_m68k.d[3]);
+    M68K_BTST(g_m68k.d[7], g_m68k.d[3]);
+    /* TODO $01BE0C: movep.w $f80(a7), d7  [0F 0F 0F 80] */
+    M68K_OR32(g_m68k.d[0], g_m68k.d[0]);
+    { uint8_t _mv = (uint8_t)(_postinc8(7)); g_m68k.a[7] -= 1; bus_write8(g_m68k.a[7], _mv); M68K_TST8(_mv); }
+    { uint8_t _mv = (uint8_t)(bus_read8(g_m68k.a[7])); g_m68k.a[7] -= 1; bus_write8(g_m68k.a[7], _mv); M68K_TST8(_mv); }
+    { uint8_t _mv = (uint8_t)(bus_read8(g_m68k.a[7])); g_m68k.a[3] -= 1; bus_write8(g_m68k.a[3], _mv); M68K_TST8(_mv); }
+    { uint8_t _mv = (uint8_t)(bus_read8(g_m68k.a[7])); g_m68k.a[3] -= 1; bus_write8(g_m68k.a[3], _mv); M68K_TST8(_mv); }
+    /* WARNING: function did not end with RTS */
+}
+
+/* $01BE56-$01C08E  (110 instructions, 568 bytes) */
+void sub_01BE56(void) {
+    g_m68k.a[7] -= 4; bus_write32(g_m68k.a[7], g_m68k.a[6]); g_m68k.a[7] -= 4; bus_write32(g_m68k.a[7], g_m68k.a[5]); g_m68k.a[7] -= 4; bus_write32(g_m68k.a[7], g_m68k.a[4]); g_m68k.a[7] -= 4; bus_write32(g_m68k.a[7], g_m68k.a[3]); g_m68k.a[7] -= 4; bus_write32(g_m68k.a[7], g_m68k.a[2]); g_m68k.a[7] -= 4; bus_write32(g_m68k.a[7], g_m68k.a[1]); g_m68k.a[7] -= 4; bus_write32(g_m68k.a[7], g_m68k.a[0]); g_m68k.a[7] -= 4; bus_write32(g_m68k.a[7], g_m68k.d[3]); g_m68k.a[7] -= 4; bus_write32(g_m68k.a[7], g_m68k.d[2]); g_m68k.a[7] -= 4; bus_write32(g_m68k.a[7], g_m68k.d[1]);
+    func_table_call(0x000A26);
+    func_table_call(0x0120E0);
+    g_m68k.d[0] = (g_m68k.d[0] & 0xFFFF0000u) | ((uint16_t)(0x40)); M68K_TST16((uint16_t)g_m68k.d[0]);
+    g_m68k.d[1] = (g_m68k.d[1] & 0xFFFF0000u) | ((uint16_t)(0xb)); M68K_TST16((uint16_t)g_m68k.d[1]);
+    g_m68k.d[2] = (g_m68k.d[2] & 0xFFFF0000u) | ((uint16_t)(0x100)); M68K_TST16((uint16_t)g_m68k.d[2]);
+    g_m68k.a[3] = 0x01C56A;
+    func_table_call(0x012036);
+    bus_write16(0x103508, 0); g_m68k.flag_n = false; g_m68k.flag_z = true; g_m68k.flag_v = false; g_m68k.flag_c = false;
+    { uint16_t _mv = (uint16_t)(0xf0); bus_write16(0x10350A, _mv); M68K_TST16(_mv); }
+    { uint16_t _mv = (uint16_t)(0x15); bus_write16(0x10350E, _mv); M68K_TST16(_mv); }
+    { uint16_t _mv = (uint16_t)(0x9); bus_write16(0x103510, _mv); M68K_TST16(_mv); }
+    { uint16_t _mv = (uint16_t)(0x9); bus_write16(0x103512, _mv); M68K_TST16(_mv); }
+    { uint16_t _mv = (uint16_t)(0x9); bus_write16(0x103514, _mv); M68K_TST16(_mv); }
+    { uint16_t _mv = (uint16_t)(0x9); bus_write16(0x103516, _mv); M68K_TST16(_mv); }
+    bus_write16(0x1034FC, 0); g_m68k.flag_n = false; g_m68k.flag_z = true; g_m68k.flag_v = false; g_m68k.flag_c = false;
+    bus_write16(0x1034FE, 0); g_m68k.flag_n = false; g_m68k.flag_z = true; g_m68k.flag_v = false; g_m68k.flag_c = false;
+    bus_write16(0x103500, 0); g_m68k.flag_n = false; g_m68k.flag_z = true; g_m68k.flag_v = false; g_m68k.flag_c = false;
+    bus_write16(0x103502, 0); g_m68k.flag_n = false; g_m68k.flag_z = true; g_m68k.flag_v = false; g_m68k.flag_c = false;
+    bus_write16(0x103504, 0); g_m68k.flag_n = false; g_m68k.flag_z = true; g_m68k.flag_v = false; g_m68k.flag_c = false;
+    bus_write16(0x103506, 0); g_m68k.flag_n = false; g_m68k.flag_z = true; g_m68k.flag_v = false; g_m68k.flag_c = false;
+    { uint16_t _mv = (uint16_t)(0x1f); bus_write16(0x103518, _mv); M68K_TST16(_mv); }
+    bus_write16(0x10351A, 0); g_m68k.flag_n = false; g_m68k.flag_z = true; g_m68k.flag_v = false; g_m68k.flag_c = false;
+    g_m68k.d[3] = (g_m68k.d[3] & 0xFFFF0000u) | ((uint16_t)(bus_read16(0x101202))); M68K_TST16((uint16_t)g_m68k.d[3]);
+    M68K_ADD16(g_m68k.d[3], g_m68k.d[3]);
+    M68K_ADD16(g_m68k.d[3], g_m68k.d[3]);
+    g_m68k.a[2] = bus_read32(0x080018);
+    g_m68k.d[0] = (g_m68k.d[0] & 0xFFFF0000u) | ((uint16_t)(0x1d)); M68K_TST16((uint16_t)g_m68k.d[0]);
+    g_m68k.a[1] = 0x103534;
+loc_01BF00:
+    func_table_call(0x012202);
+    { uint32_t _mv = (uint32_t)(g_m68k.a[0]); bus_write32(g_m68k.a[1], _mv); g_m68k.a[1] += 4; M68K_TST32(_mv); }
+    { int16_t _cnt = (int16_t)(uint16_t)g_m68k.d[0]; _cnt--; g_m68k.d[0] = (g_m68k.d[0] & 0xFFFF0000u) | (uint16_t)_cnt; if (_cnt != -1) { goto loc_01BF00; } }
+    g_m68k.a[0] = bus_read32(0x103534);
+    g_m68k.d[0] = (g_m68k.d[0] & 0xFFFF0000u) | ((uint16_t)(0x0)); M68K_TST16((uint16_t)g_m68k.d[0]);
+    g_m68k.d[2] = (g_m68k.d[2] & 0xFFFF0000u) | ((uint16_t)(0x0)); M68K_TST16((uint16_t)g_m68k.d[2]);
+    func_table_call(0x01225C);
+    g_m68k.a[1] = bus_read32(g_m68k.a[2] + 0x8);
+    g_m68k.a[3] = bus_read32(g_m68k.a[1] + 0 + (int16_t)(uint16_t)g_m68k.d[3]);
+    func_table_call(0x012270);
+    g_m68k.d[0] = (g_m68k.d[0] & 0xFFFF0000u) | ((uint16_t)(0xffff)); M68K_TST16((uint16_t)g_m68k.d[0]);
+    func_table_call(0x012256);
+    g_m68k.a[1] = 0x01C08E;
+    g_m68k.d[0] = (g_m68k.d[0] & 0xFFFF0000u) | ((uint16_t)(0x4)); M68K_TST16((uint16_t)g_m68k.d[0]);
+loc_01BF42:
+    g_m68k.a[0] = _postinc32(1);
+    g_m68k.a[0] = bus_read32(g_m68k.a[0]);
+    g_m68k.a[4] = bus_read32(g_m68k.a[2] + 0x4);
+    g_m68k.a[4] = bus_read32(g_m68k.a[4] + 0 + (int16_t)(uint16_t)g_m68k.d[3]);
+    g_m68k.d[1] = (g_m68k.d[1] & 0xFFFF0000u) | ((uint16_t)(_postinc16(1))); M68K_TST16((uint16_t)g_m68k.d[1]);
+    g_m68k.a[3] = bus_read32(g_m68k.a[4] + 0 + (int16_t)(uint16_t)g_m68k.d[1]);
+    func_table_call(0x012270);
+    { int16_t _cnt = (int16_t)(uint16_t)g_m68k.d[0]; _cnt--; g_m68k.d[0] = (g_m68k.d[0] & 0xFFFF0000u) | (uint16_t)_cnt; if (_cnt != -1) { goto loc_01BF42; } }
+    g_m68k.a[4] = 0x1000B2;
+    g_m68k.a[4] = bus_read32(g_m68k.a[4] + 0 + (int16_t)(uint16_t)g_m68k.d[3]);
+    g_m68k.a[5] = bus_read32(g_m68k.a[4]);
+    g_m68k.d[1] = bus_read32(g_m68k.a[5]); M68K_TST32((uint32_t)g_m68k.d[1]);
+    M68K_ADD32(g_m68k.d[1], 0x8000);
+    M68K_SWAP(g_m68k.d[1]);
+    g_m68k.a[4] += 0x4;
+    g_m68k.a[1] = 0x10351C;
+    func_table_call(0x0112F8);
+    g_m68k.a[5] = 0x10354C;
+    g_m68k.a[2] = bus_read32(g_m68k.a[2]);
+    func_table_call(0x011522);
+    g_m68k.a[5] = bus_read32(g_m68k.a[4]);
+    g_m68k.d[1] = bus_read32(g_m68k.a[5]); M68K_TST32((uint32_t)g_m68k.d[1]);
+    M68K_ADD32(g_m68k.d[1], 0x8000);
+    M68K_SWAP(g_m68k.d[1]);
+    g_m68k.a[4] += 0x4;
+    g_m68k.a[1] = 0x10351C;
+    func_table_call(0x0112F8);
+    g_m68k.a[5] = 0x10356C;
+    func_table_call(0x011522);
+    g_m68k.a[5] = bus_read32(g_m68k.a[4]);
+    g_m68k.d[1] = bus_read32(g_m68k.a[5]); M68K_TST32((uint32_t)g_m68k.d[1]);
+    M68K_ADD32(g_m68k.d[1], 0x8000);
+    M68K_SWAP(g_m68k.d[1]);
+    g_m68k.a[4] += 0x4;
+    g_m68k.a[1] = 0x10351C;
+    func_table_call(0x0112F8);
+    g_m68k.a[5] = 0x10358C;
+    func_table_call(0x011522);
+    g_m68k.a[1] = 0x01C0B0;
+    g_m68k.a[3] = 0x01C1AC;
+    g_m68k.a[5] = 0x1034FE;
+    g_m68k.a[6] = 0x10350E;
+    func_table_call(0x0114C6);
+    g_m68k.a[1] = 0x01C0BC;
+    g_m68k.a[3] = 0x01C254;
+    g_m68k.a[5] = 0x103500;
+    g_m68k.a[6] = 0x103510;
+    func_table_call(0x0114C6);
+    g_m68k.a[1] = 0x01C0C8;
+    g_m68k.a[3] = 0x01C29C;
+    g_m68k.a[5] = 0x103502;
+    g_m68k.a[6] = 0x103512;
+    func_table_call(0x0114C6);
+    g_m68k.a[1] = 0x01C114;
+    g_m68k.a[3] = 0x01C2E4;
+    g_m68k.a[5] = 0x103504;
+    g_m68k.a[6] = 0x103514;
+    func_table_call(0x0114C6);
+    g_m68k.a[1] = 0x01C160;
+    g_m68k.a[3] = 0x01C32C;
+    g_m68k.a[5] = 0x103506;
+    g_m68k.a[6] = 0x103516;
+    func_table_call(0x0114C6);
+    func_table_call(0x01229E);
+    g_m68k.d[1] = bus_read32(g_m68k.a[7]); g_m68k.a[7] += 4; g_m68k.d[2] = bus_read32(g_m68k.a[7]); g_m68k.a[7] += 4; g_m68k.d[3] = bus_read32(g_m68k.a[7]); g_m68k.a[7] += 4; g_m68k.a[0] = bus_read32(g_m68k.a[7]); g_m68k.a[7] += 4; g_m68k.a[1] = bus_read32(g_m68k.a[7]); g_m68k.a[7] += 4; g_m68k.a[2] = bus_read32(g_m68k.a[7]); g_m68k.a[7] += 4; g_m68k.a[3] = bus_read32(g_m68k.a[7]); g_m68k.a[7] += 4; g_m68k.a[4] = bus_read32(g_m68k.a[7]); g_m68k.a[7] += 4; g_m68k.a[5] = bus_read32(g_m68k.a[7]); g_m68k.a[7] += 4; g_m68k.a[6] = bus_read32(g_m68k.a[7]); g_m68k.a[7] += 4;
+    g_m68k.d[0] = (g_m68k.d[0] & 0xFFFF0000u) | ((uint16_t)(0x0)); M68K_TST16((uint16_t)g_m68k.d[0]);
+    return;
+}
+
+/* $01C374-$01C3B8  (17 instructions, 68 bytes) */
+void sub_01C374(void) {
+    g_m68k.a[7] -= 4; bus_write32(g_m68k.a[7], g_m68k.a[6]); g_m68k.a[7] -= 4; bus_write32(g_m68k.a[7], g_m68k.a[5]); g_m68k.a[7] -= 4; bus_write32(g_m68k.a[7], g_m68k.a[3]); g_m68k.a[7] -= 4; bus_write32(g_m68k.a[7], g_m68k.a[2]); g_m68k.a[7] -= 4; bus_write32(g_m68k.a[7], g_m68k.a[1]); g_m68k.a[7] -= 4; bus_write32(g_m68k.a[7], g_m68k.a[0]); g_m68k.a[7] -= 4; bus_write32(g_m68k.a[7], g_m68k.d[3]); g_m68k.a[7] -= 4; bus_write32(g_m68k.a[7], g_m68k.d[2]); g_m68k.a[7] -= 4; bus_write32(g_m68k.a[7], g_m68k.d[1]);
+    g_m68k.d[0] = (g_m68k.d[0] & 0xFFFF0000u) | ((uint16_t)(bus_read16(0x103508))); M68K_TST16((uint16_t)g_m68k.d[0]);
+    M68K_ADD16(g_m68k.d[0], g_m68k.d[0]);
+    M68K_ADD16(g_m68k.d[0], g_m68k.d[0]);
+    g_m68k.a[0] = bus_read32(0x1c3b8 + (int16_t)(uint16_t)g_m68k.d[0]);
+    func_table_call(g_m68k.a[0]);
+    func_table_call(0x01C536);
+    M68K_CMP16(g_m68k.d[0], 0x0);
+    if (M68K_CC_NE) goto loc_01C3AE;
+    { uint32_t _ea = 0x103508; uint16_t _tmp = bus_read16(_ea); M68K_ADD16(_tmp, 0x1); bus_write16(_ea, _tmp); }
+    M68K_CMP16(bus_read16(0x103508), 0x3);
+    if (M68K_CC_CS) goto loc_01C3AE;
+    g_m68k.d[0] = (g_m68k.d[0] & 0xFFFF0000u) | ((uint16_t)(0x0)); M68K_TST16((uint16_t)g_m68k.d[0]);
+    goto loc_01C3B2;
+loc_01C3AE:
+    g_m68k.d[0] = (g_m68k.d[0] & 0xFFFF0000u) | ((uint16_t)(0x1)); M68K_TST16((uint16_t)g_m68k.d[0]);
+loc_01C3B2:
+    g_m68k.d[1] = bus_read32(g_m68k.a[7]); g_m68k.a[7] += 4; g_m68k.d[2] = bus_read32(g_m68k.a[7]); g_m68k.a[7] += 4; g_m68k.d[3] = bus_read32(g_m68k.a[7]); g_m68k.a[7] += 4; g_m68k.a[0] = bus_read32(g_m68k.a[7]); g_m68k.a[7] += 4; g_m68k.a[1] = bus_read32(g_m68k.a[7]); g_m68k.a[7] += 4; g_m68k.a[2] = bus_read32(g_m68k.a[7]); g_m68k.a[7] += 4; g_m68k.a[3] = bus_read32(g_m68k.a[7]); g_m68k.a[7] += 4; g_m68k.a[5] = bus_read32(g_m68k.a[7]); g_m68k.a[7] += 4; g_m68k.a[6] = bus_read32(g_m68k.a[7]); g_m68k.a[7] += 4;
+    return;
+}
+
+/* $01C3C4-$01C4E8  (64 instructions, 292 bytes) */
+void jt_01C3C4(void) {
+    g_m68k.d[1] = (g_m68k.d[1] & 0xFFFF0000u) | ((uint16_t)(bus_read16(0x103518))); M68K_TST16((uint16_t)g_m68k.d[1]);
+    g_m68k.d[0] = (g_m68k.d[0] & 0xFFFF0000u) | ((uint16_t)(g_m68k.d[1])); M68K_TST16((uint16_t)g_m68k.d[0]);
+    M68K_AND16(g_m68k.d[0], 0x1);
+    if (M68K_CC_EQ) goto loc_01C3FC;
+    g_m68k.a[1] = 0x01C0B0;
+    g_m68k.a[3] = 0x01C1AC;
+    g_m68k.a[5] = 0x1034FE;
+    g_m68k.a[6] = 0x10350E;
+    func_table_call(0x0114C6);
+    M68K_CMP16(g_m68k.d[0], 0x0);
+    if (M68K_CC_NE) goto loc_01C3FC;
+    M68K_AND16(g_m68k.d[1], 0xfffe);
+loc_01C3FC:
+    g_m68k.d[0] = (g_m68k.d[0] & 0xFFFF0000u) | ((uint16_t)(g_m68k.d[1])); M68K_TST16((uint16_t)g_m68k.d[0]);
+    M68K_AND16(g_m68k.d[0], 0x2);
+    if (M68K_CC_EQ) goto loc_01C42E;
+    g_m68k.a[1] = 0x01C0BC;
+    g_m68k.a[3] = 0x01C254;
+    g_m68k.a[5] = 0x103500;
+    g_m68k.a[6] = 0x103510;
+    func_table_call(0x0114C6);
+    M68K_CMP16(g_m68k.d[0], 0x0);
+    if (M68K_CC_NE) goto loc_01C42E;
+    M68K_AND16(g_m68k.d[1], 0xfffd);
+loc_01C42E:
+    g_m68k.d[0] = (g_m68k.d[0] & 0xFFFF0000u) | ((uint16_t)(g_m68k.d[1])); M68K_TST16((uint16_t)g_m68k.d[0]);
+    M68K_AND16(g_m68k.d[0], 0x4);
+    if (M68K_CC_EQ) goto loc_01C460;
+    g_m68k.a[1] = 0x01C0C8;
+    g_m68k.a[3] = 0x01C29C;
+    g_m68k.a[5] = 0x103502;
+    g_m68k.a[6] = 0x103512;
+    func_table_call(0x0114C6);
+    M68K_CMP16(g_m68k.d[0], 0x0);
+    if (M68K_CC_NE) goto loc_01C460;
+    M68K_AND16(g_m68k.d[1], 0xfffb);
+loc_01C460:
+    g_m68k.d[0] = (g_m68k.d[0] & 0xFFFF0000u) | ((uint16_t)(g_m68k.d[1])); M68K_TST16((uint16_t)g_m68k.d[0]);
+    M68K_AND16(g_m68k.d[0], 0x8);
+    if (M68K_CC_EQ) goto loc_01C492;
+    g_m68k.a[1] = 0x01C114;
+    g_m68k.a[3] = 0x01C2E4;
+    g_m68k.a[5] = 0x103504;
+    g_m68k.a[6] = 0x103514;
+    func_table_call(0x0114C6);
+    M68K_CMP16(g_m68k.d[0], 0x0);
+    if (M68K_CC_NE) goto loc_01C492;
+    M68K_AND16(g_m68k.d[1], 0xfff7);
+loc_01C492:
+    g_m68k.d[0] = (g_m68k.d[0] & 0xFFFF0000u) | ((uint16_t)(g_m68k.d[1])); M68K_TST16((uint16_t)g_m68k.d[0]);
+    M68K_AND16(g_m68k.d[0], 0x10);
+    if (M68K_CC_EQ) goto loc_01C4C4;
+    g_m68k.a[1] = 0x01C160;
+    g_m68k.a[3] = 0x01C32C;
+    g_m68k.a[5] = 0x103506;
+    g_m68k.a[6] = 0x103516;
+    func_table_call(0x0114C6);
+    M68K_CMP16(g_m68k.d[0], 0x0);
+    if (M68K_CC_NE) goto loc_01C4C4;
+    M68K_AND16(g_m68k.d[1], 0xffef);
+loc_01C4C4:
+    { uint16_t _mv = (uint16_t)(g_m68k.d[1]); bus_write16(0x103518, _mv); M68K_TST16(_mv); }
+    func_table_call(0x01229E);
+    M68K_CMP16(bus_read16(0x103518), 0x0);
+    if (M68K_CC_NE) goto loc_01C4E2;
+    g_m68k.d[0] = (g_m68k.d[0] & 0xFFFF0000u) | ((uint16_t)(0x0)); M68K_TST16((uint16_t)g_m68k.d[0]);
+    goto loc_01C4E6;
+loc_01C4E2:
+    g_m68k.d[0] = (g_m68k.d[0] & 0xFFFF0000u) | ((uint16_t)(0x1)); M68K_TST16((uint16_t)g_m68k.d[0]);
+loc_01C4E6:
+    return;
+}
+
+/* $01C4E8-$01C51A  (11 instructions, 50 bytes) */
+void jt_01C4E8(void) {
+    g_m68k.d[0] = (g_m68k.d[0] & 0xFFFF0000u) | ((uint16_t)(bus_read16(0x1011FC))); M68K_TST16((uint16_t)g_m68k.d[0]);
+    func_table_call(0x010E10);
+    M68K_CMP16(g_m68k.d[0], 0x1);
+    if (M68K_CC_NE) goto loc_01C504;
+    { uint16_t _mv = (uint16_t)(0x1); bus_write16(0x10350A, _mv); M68K_TST16(_mv); }
+loc_01C504:
+    { uint32_t _ea = 0x10350A; uint16_t _tmp = bus_read16(_ea); M68K_SUB16(_tmp, 0x1); bus_write16(_ea, _tmp); }
+    if (M68K_CC_LE) goto loc_01C514;
+    g_m68k.d[0] = (g_m68k.d[0] & 0xFFFF0000u) | ((uint16_t)(0x1)); M68K_TST16((uint16_t)g_m68k.d[0]);
+    goto loc_01C518;
+loc_01C514:
+    g_m68k.d[0] = (g_m68k.d[0] & 0xFFFF0000u) | ((uint16_t)(0x0)); M68K_TST16((uint16_t)g_m68k.d[0]);
+loc_01C518:
+    return;
+}
+
+/* $01C51A-$01C536  (7 instructions, 28 bytes) */
+void jt_01C51A(void) {
+    g_m68k.d[0] = (g_m68k.d[0] & 0xFFFF0000u) | ((uint16_t)(0x1d)); M68K_TST16((uint16_t)g_m68k.d[0]);
+    g_m68k.a[1] = 0x103534;
+loc_01C524:
+    g_m68k.a[0] = _postinc32(1);
+    func_table_call(0x012252);
+    { int16_t _cnt = (int16_t)(uint16_t)g_m68k.d[0]; _cnt--; g_m68k.d[0] = (g_m68k.d[0] & 0xFFFF0000u) | (uint16_t)_cnt; if (_cnt != -1) { goto loc_01C524; } }
+    g_m68k.d[0] = (g_m68k.d[0] & 0xFFFF0000u) | ((uint16_t)(0x0)); M68K_TST16((uint16_t)g_m68k.d[0]);
+    return;
+}
+
+/* $01C536-$01C55C  (8 instructions, 38 bytes) */
+void sub_01C536(void) {
+    M68K_CMP16(bus_read16(0x1034FC), 0x14);
+    if (M68K_CC_NE) goto loc_01C554;
+    g_m68k.d[0] = (g_m68k.d[0] & 0xFFFF0000u) | ((uint16_t)(bus_read16(0x101202))); M68K_TST16((uint16_t)g_m68k.d[0]);
+    M68K_ADD16(g_m68k.d[0], g_m68k.d[0]);
+    g_m68k.d[0] = (g_m68k.d[0] & 0xFFFF0000u) | ((uint16_t)(bus_read16(0x1c55c + (int16_t)(uint16_t)g_m68k.d[0]))); M68K_TST16((uint16_t)g_m68k.d[0]);
+    func_table_call(0x015256);
+loc_01C554:
+    { uint32_t _ea = 0x1034FC; uint16_t _tmp = bus_read16(_ea); M68K_ADD16(_tmp, 0x1); bus_write16(_ea, _tmp); }
+    return;
+}
+
+/* $01C77A-$01C788  (3 instructions, 14 bytes) */
+void sub_01C77A(void) {
+    { uint16_t _mv = (uint16_t)(0x0); bus_write16(0x1035AC, _mv); M68K_TST16(_mv); }
+    g_m68k.d[0] = (g_m68k.d[0] & 0xFFFF0000u) | ((uint16_t)(0x0)); M68K_TST16((uint16_t)g_m68k.d[0]);
+    return;
+}
+
+/* $01C788-$01C79A  (6 instructions, 18 bytes) */
+void sub_01C788(void) {
+    g_m68k.d[0] = (g_m68k.d[0] & 0xFFFF0000u) | ((uint16_t)(bus_read16(0x1035AC))); M68K_TST16((uint16_t)g_m68k.d[0]);
+    M68K_ADD16(g_m68k.d[0], g_m68k.d[0]);
+    M68K_ADD16(g_m68k.d[0], g_m68k.d[0]);
+    g_m68k.a[0] = bus_read32(0x1c79a + (int16_t)(uint16_t)g_m68k.d[0]);
+    func_table_call(g_m68k.a[0]);
+    return;
+}
+
+/* $01C7AA-$01C7BE  (4 instructions, 20 bytes) */
+void jt_01C7AA(void) {
+    func_table_call(0x00B978);
+    { uint16_t _mv = (uint16_t)(0x1); bus_write16(0x1035AC, _mv); M68K_TST16(_mv); }
+    g_m68k.d[0] = (g_m68k.d[0] & 0xFFFF0000u) | ((uint16_t)(0x1)); M68K_TST16((uint16_t)g_m68k.d[0]);
+    return;
+}
+
+/* $01C7BE-$01C7D8  (6 instructions, 26 bytes) */
+void jt_01C7BE(void) {
+    func_table_call(0x00B98C);
+    M68K_CMP16(g_m68k.d[0], 0x0);
+    if (M68K_CC_NE) goto loc_01C7D2;
+    { uint16_t _mv = (uint16_t)(0x2); bus_write16(0x1035AC, _mv); M68K_TST16(_mv); }
+loc_01C7D2:
+    g_m68k.d[0] = (g_m68k.d[0] & 0xFFFF0000u) | ((uint16_t)(0x1)); M68K_TST16((uint16_t)g_m68k.d[0]);
+    return;
+}
+
+/* $01C7D8-$01C806  (8 instructions, 46 bytes) */
+void jt_01C7D8(void) {
+    { uint16_t _mv = (uint16_t)(0x4b0); bus_write16(0x1035AE, _mv); M68K_TST16(_mv); }
+    func_table_call(0x00FD74);
+    func_table_call(0x00FDB8);
+    func_table_call(0x00FE60);
+    func_table_call(0x0100BE);
+    { uint16_t _mv = (uint16_t)(0x3); bus_write16(0x1035AC, _mv); M68K_TST16(_mv); }
+    g_m68k.d[0] = (g_m68k.d[0] & 0xFFFF0000u) | ((uint16_t)(0x1)); M68K_TST16((uint16_t)g_m68k.d[0]);
+    return;
+}
+
+/* $01C806-$01C876  (22 instructions, 112 bytes) */
+void jt_01C806(void) {
+    { uint32_t _ea = 0x1035AE; uint16_t _tmp = bus_read16(_ea); M68K_SUB16(_tmp, 0x1); bus_write16(_ea, _tmp); }
+    if (M68K_CC_PL) goto loc_01C828;
+    g_m68k.d[0] = (g_m68k.d[0] & 0xFFFF0000u) | ((uint16_t)(0x6)); M68K_TST16((uint16_t)g_m68k.d[0]);
+    func_table_call(0x015256);
+    g_m68k.d[0] = (g_m68k.d[0] & 0xFFFF0000u) | ((uint16_t)(0x9)); M68K_TST16((uint16_t)g_m68k.d[0]);
+    func_table_call(0x015256);
+    g_m68k.d[0] = (g_m68k.d[0] & 0xFFFF0000u) | ((uint16_t)(0x0)); M68K_TST16((uint16_t)g_m68k.d[0]);
+    goto loc_01C874;
+loc_01C828:
+    g_m68k.a[6] = 0x101508;
+    func_table_call(0x00D956);
+    func_table_call(0x00FE0A);
+    func_table_call(0x00FECC);
+    func_table_call(0x0100D2);
+    func_table_call(0x00F6EC);
+    func_table_call(0x00F5DA);
+    func_table_call(0x014760);
+    func_table_call(0x019F82);
+    func_table_call(0x014160);
+    func_table_call(0x01229E);
+    func_table_call(0x013546);
+    g_m68k.d[0] = (g_m68k.d[0] & 0xFFFF0000u) | ((uint16_t)(0x1)); M68K_TST16((uint16_t)g_m68k.d[0]);
+loc_01C874:
+    return;
+}
+
+/* $01C876-$01C996  (58 instructions, 288 bytes) */
+void sub_01C876(void) {
+    g_m68k.a[7] -= 4; bus_write32(g_m68k.a[7], g_m68k.a[4]); g_m68k.a[7] -= 4; bus_write32(g_m68k.a[7], g_m68k.a[3]); g_m68k.a[7] -= 4; bus_write32(g_m68k.a[7], g_m68k.a[2]); g_m68k.a[7] -= 4; bus_write32(g_m68k.a[7], g_m68k.a[1]); g_m68k.a[7] -= 4; bus_write32(g_m68k.a[7], g_m68k.a[0]); g_m68k.a[7] -= 4; bus_write32(g_m68k.a[7], g_m68k.d[4]); g_m68k.a[7] -= 4; bus_write32(g_m68k.a[7], g_m68k.d[3]); g_m68k.a[7] -= 4; bus_write32(g_m68k.a[7], g_m68k.d[2]); g_m68k.a[7] -= 4; bus_write32(g_m68k.a[7], g_m68k.d[1]);
+    func_table_call(0x000A26);
+    func_table_call(0x0120E0);
+    g_m68k.d[0] = (g_m68k.d[0] & 0xFFFF0000u) | ((uint16_t)(0x0)); M68K_TST16((uint16_t)g_m68k.d[0]);
+    func_table_call(0x011F22);
+    g_m68k.d[0] = (g_m68k.d[0] & 0xFFFF0000u) | ((uint16_t)(0x40)); M68K_TST16((uint16_t)g_m68k.d[0]);
+    g_m68k.d[1] = (g_m68k.d[1] & 0xFFFF0000u) | ((uint16_t)(0xb)); M68K_TST16((uint16_t)g_m68k.d[1]);
+    g_m68k.d[2] = (g_m68k.d[2] & 0xFFFF0000u) | ((uint16_t)(0x0)); M68K_TST16((uint16_t)g_m68k.d[2]);
+    g_m68k.a[3] = 0x01D298;
+    func_table_call(0x012036);
+    g_m68k.a[1] = 0x1035B2;
+    g_m68k.d[1] = (g_m68k.d[1] & 0xFFFF0000u) | ((uint16_t)(0xd)); M68K_TST16((uint16_t)g_m68k.d[1]);
+loc_01C8B2:
+    func_table_call(0x012202);
+    { uint32_t _mv = (uint32_t)(g_m68k.a[0]); bus_write32(g_m68k.a[1], _mv); g_m68k.a[1] += 4; M68K_TST32(_mv); }
+    { int16_t _cnt = (int16_t)(uint16_t)g_m68k.d[1]; _cnt--; g_m68k.d[1] = (g_m68k.d[1] & 0xFFFF0000u) | (uint16_t)_cnt; if (_cnt != -1) { goto loc_01C8B2; } }
+    g_m68k.a[1] = 0x01C996;
+loc_01C8C4:
+    g_m68k.a[0] = _postinc32(1);
+    M68K_CMP32(g_m68k.a[0], 0x0);
+    if (M68K_CC_EQ) goto loc_01C8E8;
+    g_m68k.a[0] = bus_read32(g_m68k.a[0]);
+    g_m68k.d[0] = (g_m68k.d[0] & 0xFFFF0000u) | ((uint16_t)(_postinc16(1))); M68K_TST16((uint16_t)g_m68k.d[0]);
+    g_m68k.d[2] = (g_m68k.d[2] & 0xFFFF0000u) | ((uint16_t)(_postinc16(1))); M68K_TST16((uint16_t)g_m68k.d[2]);
+    func_table_call(0x01225C);
+    g_m68k.d[0] = (g_m68k.d[0] & 0xFFFF0000u) | ((uint16_t)(_postinc16(1))); M68K_TST16((uint16_t)g_m68k.d[0]);
+    if (M68K_CC_EQ) goto loc_01C8C4;
+    func_table_call(0x012256);
+    goto loc_01C8C4;
+loc_01C8E8:
+    g_m68k.a[0] = bus_read32(0x1035DA);
+    g_m68k.d[0] = (g_m68k.d[0] & 0xFFFF0000u) | ((uint16_t)(0x0)); M68K_TST16((uint16_t)g_m68k.d[0]);
+    func_table_call(0x012286);
+    g_m68k.a[1] = bus_read32(0x01D4D8);
+    g_m68k.a[2] = 0x01CA26;
+    g_m68k.a[4] = bus_read32(g_m68k.a[1] + 0x0);
+loc_01C908:
+    g_m68k.a[0] = _postinc32(2);
+    M68K_CMP32(g_m68k.a[0], 0x0);
+    if (M68K_CC_EQ) goto loc_01C924;
+    g_m68k.a[0] = bus_read32(g_m68k.a[0]);
+    g_m68k.d[0] = (g_m68k.d[0] & 0xFFFF0000u) | ((uint16_t)(_postinc16(2))); M68K_TST16((uint16_t)g_m68k.d[0]);
+    g_m68k.a[3] = bus_read32(g_m68k.a[4] + 0 + (int16_t)(uint16_t)g_m68k.d[0]);
+    func_table_call(0x012270);
+    goto loc_01C908;
+loc_01C924:
+    g_m68k.d[0] = (g_m68k.d[0] & 0xFFFF0000u) | ((uint16_t)(0x1e)); M68K_TST16((uint16_t)g_m68k.d[0]);
+    g_m68k.d[1] = (g_m68k.d[1] & 0xFFFF0000u) | ((uint16_t)(0x5)); M68K_TST16((uint16_t)g_m68k.d[1]);
+    func_table_call(0x010EF4);
+    { uint32_t _mv = (uint32_t)(0x2a2a2b); bus_write32(0x1035F6, _mv); M68K_TST32(_mv); }
+    { uint16_t _mv = (uint16_t)(0x0); bus_write16(0x1035FA, _mv); M68K_TST16(_mv); }
+    { uint16_t _mv = (uint16_t)(0xe4b); bus_write16(0x1035EA, _mv); M68K_TST16(_mv); }
+    { uint16_t _mv = (uint16_t)(0x1e); bus_write16(0x1035EC, _mv); M68K_TST16(_mv); }
+    { uint16_t _mv = (uint16_t)(0x1); bus_write16(0x1035EE, _mv); M68K_TST16(_mv); }
+    { uint16_t _mv = (uint16_t)(0x0); bus_write16(0x1035F0, _mv); M68K_TST16(_mv); }
+    { uint16_t _mv = (uint16_t)(0x0); bus_write16(0x1035F2, _mv); M68K_TST16(_mv); }
+    { uint16_t _mv = (uint16_t)(0x78); bus_write16(0x1035F4, _mv); M68K_TST16(_mv); }
+    { uint16_t _mv = (uint16_t)(0x0); bus_write16(0x1035FE, _mv); M68K_TST16(_mv); }
+    { uint16_t _mv = (uint16_t)(0x0); bus_write16(0x103600, _mv); M68K_TST16(_mv); }
+    { uint16_t _mv = (uint16_t)(0x0); bus_write16(0x103604, _mv); M68K_TST16(_mv); }
+    g_m68k.d[1] = bus_read32(g_m68k.a[7]); g_m68k.a[7] += 4; g_m68k.d[2] = bus_read32(g_m68k.a[7]); g_m68k.a[7] += 4; g_m68k.d[3] = bus_read32(g_m68k.a[7]); g_m68k.a[7] += 4; g_m68k.d[4] = bus_read32(g_m68k.a[7]); g_m68k.a[7] += 4; g_m68k.a[0] = bus_read32(g_m68k.a[7]); g_m68k.a[7] += 4; g_m68k.a[1] = bus_read32(g_m68k.a[7]); g_m68k.a[7] += 4; g_m68k.a[2] = bus_read32(g_m68k.a[7]); g_m68k.a[7] += 4; g_m68k.a[3] = bus_read32(g_m68k.a[7]); g_m68k.a[7] += 4; g_m68k.a[4] = bus_read32(g_m68k.a[7]); g_m68k.a[7] += 4;
+    g_m68k.d[0] = (g_m68k.d[0] & 0xFFFF0000u) | ((uint16_t)(0x0)); M68K_TST16((uint16_t)g_m68k.d[0]);
+    return;
+}
+
+/* $01CA78-$01CAC2  (19 instructions, 74 bytes) */
+void sub_01CA78(void) {
+    g_m68k.a[7] -= 4; bus_write32(g_m68k.a[7], g_m68k.a[5]); g_m68k.a[7] -= 4; bus_write32(g_m68k.a[7], g_m68k.a[4]); g_m68k.a[7] -= 4; bus_write32(g_m68k.a[7], g_m68k.a[3]); g_m68k.a[7] -= 4; bus_write32(g_m68k.a[7], g_m68k.a[2]); g_m68k.a[7] -= 4; bus_write32(g_m68k.a[7], g_m68k.a[1]); g_m68k.a[7] -= 4; bus_write32(g_m68k.a[7], g_m68k.a[0]); g_m68k.a[7] -= 4; bus_write32(g_m68k.a[7], g_m68k.d[4]); g_m68k.a[7] -= 4; bus_write32(g_m68k.a[7], g_m68k.d[3]); g_m68k.a[7] -= 4; bus_write32(g_m68k.a[7], g_m68k.d[2]); g_m68k.a[7] -= 4; bus_write32(g_m68k.a[7], g_m68k.d[1]);
+    g_m68k.d[0] = (g_m68k.d[0] & 0xFFFF0000u) | ((uint16_t)(bus_read16(0x1035F0))); M68K_TST16((uint16_t)g_m68k.d[0]);
+    M68K_ADD16(g_m68k.d[0], g_m68k.d[0]);
+    M68K_ADD16(g_m68k.d[0], g_m68k.d[0]);
+    g_m68k.a[0] = bus_read32(0x1cac2 + (int16_t)(uint16_t)g_m68k.d[0]);
+    M68K_CMP32(g_m68k.a[0], 0x0);
+    if (M68K_CC_EQ) goto loc_01CAA6;
+    func_table_call(g_m68k.a[0]);
+    M68K_CMP16(g_m68k.d[0], 0x0);
+    if (M68K_CC_NE) goto loc_01CAB2;
+    { uint32_t _ea = 0x1035F0; uint16_t _tmp = bus_read16(_ea); M68K_ADD16(_tmp, 0x1); bus_write16(_ea, _tmp); }
+    goto loc_01CAB2;
+loc_01CAA6:
+    func_table_call(0x01229E);
+    g_m68k.d[0] = (g_m68k.d[0] & 0xFFFF0000u) | ((uint16_t)(0x0)); M68K_TST16((uint16_t)g_m68k.d[0]);
+    goto loc_01CABC;
+loc_01CAB2:
+    func_table_call(0x01229E);
+    g_m68k.d[0] = (g_m68k.d[0] & 0xFFFF0000u) | ((uint16_t)(0x1)); M68K_TST16((uint16_t)g_m68k.d[0]);
+loc_01CABC:
+    g_m68k.d[1] = bus_read32(g_m68k.a[7]); g_m68k.a[7] += 4; g_m68k.d[2] = bus_read32(g_m68k.a[7]); g_m68k.a[7] += 4; g_m68k.d[3] = bus_read32(g_m68k.a[7]); g_m68k.a[7] += 4; g_m68k.d[4] = bus_read32(g_m68k.a[7]); g_m68k.a[7] += 4; g_m68k.a[0] = bus_read32(g_m68k.a[7]); g_m68k.a[7] += 4; g_m68k.a[1] = bus_read32(g_m68k.a[7]); g_m68k.a[7] += 4; g_m68k.a[2] = bus_read32(g_m68k.a[7]); g_m68k.a[7] += 4; g_m68k.a[3] = bus_read32(g_m68k.a[7]); g_m68k.a[7] += 4; g_m68k.a[4] = bus_read32(g_m68k.a[7]); g_m68k.a[7] += 4; g_m68k.a[5] = bus_read32(g_m68k.a[7]); g_m68k.a[7] += 4;
+    return;
+}
+
+/* $01CAF4-$01CB36  (14 instructions, 66 bytes) */
+void jt_01CAF4(void) {
+    func_table_call(0x01D1CE);
+    g_m68k.d[0] = (g_m68k.d[0] & 0xFFFF0000u) | ((uint16_t)(bus_read16(0x1011FC))); M68K_TST16((uint16_t)g_m68k.d[0]);
+    func_table_call(0x010E36);
+    M68K_CMP16(g_m68k.d[0], 0x1);
+    if (M68K_CC_NE) goto loc_01CB20;
+    { uint16_t _mv = (uint16_t)(0x1); bus_write16(0x1035F4, _mv); M68K_TST16(_mv); }
+    g_m68k.d[0] = (g_m68k.d[0] & 0xFFFF0000u) | ((uint16_t)(0xc7)); M68K_TST16((uint16_t)g_m68k.d[0]);
+    func_table_call(0x015256);
+loc_01CB20:
+    { uint32_t _ea = 0x1035F4; uint16_t _tmp = bus_read16(_ea); M68K_SUB16(_tmp, 0x1); bus_write16(_ea, _tmp); }
+    if (M68K_CC_LE) goto loc_01CB30;
+    g_m68k.d[0] = (g_m68k.d[0] & 0xFFFF0000u) | ((uint16_t)(0x1)); M68K_TST16((uint16_t)g_m68k.d[0]);
+    goto loc_01CB34;
+loc_01CB30:
+    g_m68k.d[0] = (g_m68k.d[0] & 0xFFFF0000u) | ((uint16_t)(0x0)); M68K_TST16((uint16_t)g_m68k.d[0]);
+loc_01CB34:
+    return;
+}
+
+/* $01CB36-$01CB7C  (17 instructions, 70 bytes) */
+void jt_01CB36(void) {
+    func_table_call(0x01D1CE);
+    g_m68k.d[3] = (g_m68k.d[3] & 0xFFFF0000u) | ((uint16_t)(bus_read16(0x1035F2))); M68K_TST16((uint16_t)g_m68k.d[3]);
+    M68K_ADD16(g_m68k.d[3], 0x15);
+    M68K_CMP16(g_m68k.d[3], 0x100);
+    if (M68K_CC_LS) goto loc_01CB58;
+    g_m68k.d[3] = (g_m68k.d[3] & 0xFFFF0000u) | ((uint16_t)(0x100)); M68K_TST16((uint16_t)g_m68k.d[3]);
+    g_m68k.d[4] = (g_m68k.d[4] & 0xFFFF0000u) | ((uint16_t)(0x0)); M68K_TST16((uint16_t)g_m68k.d[4]);
+    goto loc_01CB5C;
+loc_01CB58:
+    g_m68k.d[4] = (g_m68k.d[4] & 0xFFFF0000u) | ((uint16_t)(0x1)); M68K_TST16((uint16_t)g_m68k.d[4]);
+loc_01CB5C:
+    { uint16_t _mv = (uint16_t)(g_m68k.d[3]); bus_write16(0x1035F2, _mv); M68K_TST16(_mv); }
+    g_m68k.d[0] = (g_m68k.d[0] & 0xFFFF0000u) | ((uint16_t)(0x40)); M68K_TST16((uint16_t)g_m68k.d[0]);
+    g_m68k.d[1] = (g_m68k.d[1] & 0xFFFF0000u) | ((uint16_t)(0xb)); M68K_TST16((uint16_t)g_m68k.d[1]);
+    g_m68k.d[2] = (g_m68k.d[2] & 0xFFFF0000u) | ((uint16_t)(g_m68k.d[3])); M68K_TST16((uint16_t)g_m68k.d[2]);
+    g_m68k.a[3] = 0x01D298;
+    func_table_call(0x012036);
+    g_m68k.d[0] = (g_m68k.d[0] & 0xFFFF0000u) | ((uint16_t)(g_m68k.d[4])); M68K_TST16((uint16_t)g_m68k.d[0]);
+    return;
+}
+
+/* $01CB7C-$01CBF6  (35 instructions, 122 bytes) */
+void jt_01CB7C(void) {
+    func_table_call(0x01D1CE);
+    g_m68k.a[1] = 0x1035CE;
+    g_m68k.a[2] = 0x01D4D8;
+    g_m68k.a[2] = bus_read32(g_m68k.a[2]);
+    g_m68k.a[4] = 0x1035F6;
+    g_m68k.d[1] = (g_m68k.d[1] & 0xFFFF0000u) | ((uint16_t)(bus_read16(0x1035FA))); M68K_TST16((uint16_t)g_m68k.d[1]);
+    g_m68k.d[3] = (g_m68k.d[3] & 0xFFFF0000u) | ((uint16_t)(g_m68k.d[1])); M68K_TST16((uint16_t)g_m68k.d[3]);
+    M68K_SUB16(g_m68k.d[3], 0x1);
+    g_m68k.d[4] = (g_m68k.d[4] & 0xFFFF0000u) | ((uint16_t)(0x3)); M68K_TST16((uint16_t)g_m68k.d[4]);
+loc_01CBA4:
+    M68K_CMP16(g_m68k.d[4], g_m68k.d[1]);
+    if (M68K_CC_GE) goto loc_01CBD8;
+    M68K_CMP16(g_m68k.d[4], g_m68k.d[3]);
+    if (M68K_CC_NE) goto loc_01CBD2;
+    g_m68k.d[0] = (g_m68k.d[0] & 0xFFFF0000u) | ((uint16_t)(0)); g_m68k.flag_n = false; g_m68k.flag_z = true; g_m68k.flag_v = false; g_m68k.flag_c = false;
+    g_m68k.d[0] = (g_m68k.d[0] & 0xFFFFFF00u) | ((uint8_t)(bus_read8(g_m68k.a[4] + 0 + (int16_t)(uint16_t)g_m68k.d[4]))); M68K_TST8((uint8_t)g_m68k.d[0]);
+    M68K_ADD16(g_m68k.d[0], g_m68k.d[0]);
+    M68K_ADD16(g_m68k.d[0], g_m68k.d[0]);
+    g_m68k.a[3] = bus_read32(g_m68k.a[2] + 0x4);
+    g_m68k.a[3] = bus_read32(g_m68k.a[3] + 0 + (int16_t)(uint16_t)g_m68k.d[0]);
+    g_m68k.d[0] = (g_m68k.d[0] & 0xFFFF0000u) | ((uint16_t)(g_m68k.d[4])); M68K_TST16((uint16_t)g_m68k.d[0]);
+    M68K_ADD16(g_m68k.d[0], g_m68k.d[0]);
+    M68K_ADD16(g_m68k.d[0], g_m68k.d[0]);
+    g_m68k.a[0] = bus_read32(g_m68k.a[1] + 0 + (int16_t)(uint16_t)g_m68k.d[0]);
+    func_table_call(0x012270);
+loc_01CBD2:
+    g_m68k.d[0] = (g_m68k.d[0] & 0xFFFF0000u) | ((uint16_t)(0x1)); M68K_TST16((uint16_t)g_m68k.d[0]);
+    goto loc_01CBDC;
+loc_01CBD8:
+    g_m68k.d[0] = (g_m68k.d[0] & 0xFFFF0000u) | ((uint16_t)(0x0)); M68K_TST16((uint16_t)g_m68k.d[0]);
+loc_01CBDC:
+    g_m68k.d[2] = (g_m68k.d[2] & 0xFFFF0000u) | ((uint16_t)(g_m68k.d[4])); M68K_TST16((uint16_t)g_m68k.d[2]);
+    M68K_ADD16(g_m68k.d[2], g_m68k.d[2]);
+    M68K_ADD16(g_m68k.d[2], g_m68k.d[2]);
+    g_m68k.a[0] = bus_read32(g_m68k.a[1] + 0 + (int16_t)(uint16_t)g_m68k.d[2]);
+    func_table_call(0x012286);
+    { int16_t _cnt = (int16_t)(uint16_t)g_m68k.d[4]; _cnt--; g_m68k.d[4] = (g_m68k.d[4] & 0xFFFF0000u) | (uint16_t)_cnt; if (_cnt != -1) { goto loc_01CBA4; } }
+    g_m68k.d[0] = (g_m68k.d[0] & 0xFFFF0000u) | ((uint16_t)(0x0)); M68K_TST16((uint16_t)g_m68k.d[0]);
+    return;
+}
+
+/* $01CBF6-$01CC44  (18 instructions, 78 bytes) */
+void jt_01CBF6(void) {
+    func_table_call(0x01D1CE);
+    g_m68k.d[3] = (g_m68k.d[3] & 0xFFFF0000u) | ((uint16_t)(bus_read16(0x1035F2))); M68K_TST16((uint16_t)g_m68k.d[3]);
+    M68K_SUB16(g_m68k.d[3], 0xf);
+    M68K_CMP16(g_m68k.d[3], 0x0);
+    if (M68K_CC_GE) goto loc_01CC18;
+    g_m68k.d[3] = (g_m68k.d[3] & 0xFFFF0000u) | ((uint16_t)(0x0)); M68K_TST16((uint16_t)g_m68k.d[3]);
+    g_m68k.d[4] = (g_m68k.d[4] & 0xFFFF0000u) | ((uint16_t)(0x0)); M68K_TST16((uint16_t)g_m68k.d[4]);
+    goto loc_01CC1C;
+loc_01CC18:
+    g_m68k.d[4] = (g_m68k.d[4] & 0xFFFF0000u) | ((uint16_t)(0x1)); M68K_TST16((uint16_t)g_m68k.d[4]);
+loc_01CC1C:
+    { uint16_t _mv = (uint16_t)(g_m68k.d[3]); bus_write16(0x1035F2, _mv); M68K_TST16(_mv); }
+    g_m68k.d[0] = (g_m68k.d[0] & 0xFFFF0000u) | ((uint16_t)(0x40)); M68K_TST16((uint16_t)g_m68k.d[0]);
+    g_m68k.d[1] = (g_m68k.d[1] & 0xFFFF0000u) | ((uint16_t)(0xb)); M68K_TST16((uint16_t)g_m68k.d[1]);
+    g_m68k.d[2] = (g_m68k.d[2] & 0xFFFF0000u) | ((uint16_t)(g_m68k.d[3])); M68K_TST16((uint16_t)g_m68k.d[2]);
+    g_m68k.a[3] = 0x01D298;
+    func_table_call(0x012036);
+    { uint32_t _ea = 0x1035F2; uint16_t _tmp = bus_read16(_ea); M68K_SUB16(_tmp, 0xf); bus_write16(_ea, _tmp); }
+    g_m68k.d[0] = (g_m68k.d[0] & 0xFFFF0000u) | ((uint16_t)(g_m68k.d[4])); M68K_TST16((uint16_t)g_m68k.d[0]);
+    return;
+}
+
+/* $01CC44-$01CC60  (7 instructions, 28 bytes) */
+void jt_01CC44(void) {
+    g_m68k.a[1] = 0x1035B2;
+    g_m68k.d[1] = (g_m68k.d[1] & 0xFFFF0000u) | ((uint16_t)(0xd)); M68K_TST16((uint16_t)g_m68k.d[1]);
+loc_01CC4E:
+    g_m68k.a[0] = _postinc32(1);
+    func_table_call(0x012252);
+    { int16_t _cnt = (int16_t)(uint16_t)g_m68k.d[1]; _cnt--; g_m68k.d[1] = (g_m68k.d[1] & 0xFFFF0000u) | (uint16_t)_cnt; if (_cnt != -1) { goto loc_01CC4E; } }
+    g_m68k.d[0] = (g_m68k.d[0] & 0xFFFF0000u) | ((uint16_t)(0x0)); M68K_TST16((uint16_t)g_m68k.d[0]);
+    return;
+}
+
+/* $01CC60-$01CDF0  (94 instructions, 400 bytes) */
+void jt_01CC60(void) {
+    func_table_call(0x01D1CE);
+    { uint32_t _ea = 0x1035EA; uint16_t _tmp = bus_read16(_ea); M68K_SUB16(_tmp, 0x1); bus_write16(_ea, _tmp); }
+    M68K_CMP16(bus_read16(0x1035EA), 0x0);
+    if (M68K_CC_GT) goto loc_01CCA6;
+    g_m68k.d[0] = (g_m68k.d[0] & 0xFFFF0000u) | ((uint16_t)(bus_read16(0x1035FA))); M68K_TST16((uint16_t)g_m68k.d[0]);
+    g_m68k.a[0] = 0x1035F6;
+    g_m68k.d[1] = (g_m68k.d[1] & 0xFFFFFF00u) | ((uint8_t)(bus_read8(g_m68k.a[0] + 0 + (int16_t)(uint16_t)g_m68k.d[0]))); M68K_TST8((uint8_t)g_m68k.d[1]);
+    M68K_CMP8(g_m68k.d[1], 0x2b);
+    if (M68K_CC_EQ) goto loc_01CC9E;
+    M68K_CMP8(g_m68k.d[1], 0x2c);
+    if (M68K_CC_EQ) goto loc_01CC9E;
+    { uint32_t _ea = 0x1035FA; uint16_t _tmp = bus_read16(_ea); M68K_ADD16(_tmp, 0x1); bus_write16(_ea, _tmp); }
+loc_01CC9E:
+    g_m68k.d[3] = (g_m68k.d[3] & 0xFFFF0000u) | ((uint16_t)(0x0)); M68K_TST16((uint16_t)g_m68k.d[3]);
+    goto loc_01CD38;
+loc_01CCA6:
+    g_m68k.d[0] = (g_m68k.d[0] & 0xFFFF0000u) | ((uint16_t)(bus_read16(0x1011FC))); M68K_TST16((uint16_t)g_m68k.d[0]);
+    func_table_call(0x010E36);
+    M68K_CMP16(g_m68k.d[0], 0x1);
+    if (M68K_CC_NE) goto loc_01CCF0;
+    g_m68k.d[0] = (g_m68k.d[0] & 0xFFFF0000u) | ((uint16_t)(bus_read16(0x1035FA))); M68K_TST16((uint16_t)g_m68k.d[0]);
+    g_m68k.a[3] = 0x1035F6;
+    g_m68k.d[0] = (g_m68k.d[0] & 0xFFFFFF00u) | ((uint8_t)(bus_read8(g_m68k.a[3] + 0 + (int16_t)(uint16_t)g_m68k.d[0]))); M68K_TST8((uint8_t)g_m68k.d[0]);
+    M68K_AND16(g_m68k.d[0], 0xff);
+    M68K_CMP16(g_m68k.d[0], 0x2b);
+    if (M68K_CC_NE) goto loc_01CCDC;
+    g_m68k.d[3] = (g_m68k.d[3] & 0xFFFF0000u) | ((uint16_t)(0x0)); M68K_TST16((uint16_t)g_m68k.d[3]);
+    goto loc_01CD38;
+loc_01CCDC:
+    M68K_CMP16(g_m68k.d[0], 0x2c);
+    if (M68K_CC_NE) goto loc_01CCEA;
+    g_m68k.d[3] = (g_m68k.d[3] & 0xFFFF0000u) | ((uint16_t)(0x4)); M68K_TST16((uint16_t)g_m68k.d[3]);
+    goto loc_01CD38;
+loc_01CCEA:
+    g_m68k.d[3] = (g_m68k.d[3] & 0xFFFF0000u) | ((uint16_t)(0x8)); M68K_TST16((uint16_t)g_m68k.d[3]);
+    goto loc_01CD38;
+loc_01CCF0:
+    g_m68k.d[0] = (g_m68k.d[0] & 0xFFFF0000u) | ((uint16_t)(bus_read16(0x1011FC))); M68K_TST16((uint16_t)g_m68k.d[0]);
+    func_table_call(0x010E82);
+    M68K_CMP16(g_m68k.d[0], 0x1);
+    if (M68K_CC_NE) goto loc_01CD0A;
+    g_m68k.d[3] = (g_m68k.d[3] & 0xFFFF0000u) | ((uint16_t)(0x4)); M68K_TST16((uint16_t)g_m68k.d[3]);
+    goto loc_01CD38;
+loc_01CD0A:
+    func_table_call(0x010F18);
+    g_m68k.d[3] = (g_m68k.d[3] & 0xFFFF0000u) | ((uint16_t)(g_m68k.d[0])); M68K_TST16((uint16_t)g_m68k.d[3]);
+    M68K_AND16(g_m68k.d[3], 0xc);
+    if (M68K_CC_EQ) goto loc_01CD34;
+    func_table_call(0x01CFD6);
+    M68K_AND16(g_m68k.d[0], 0x4);
+    if (M68K_CC_EQ) goto loc_01CD2E;
+    g_m68k.d[3] = (g_m68k.d[3] & 0xFFFF0000u) | ((uint16_t)(0x10)); M68K_TST16((uint16_t)g_m68k.d[3]);
+    goto loc_01CD38;
+loc_01CD2E:
+    g_m68k.d[3] = (g_m68k.d[3] & 0xFFFF0000u) | ((uint16_t)(0xc)); M68K_TST16((uint16_t)g_m68k.d[3]);
+    goto loc_01CD38;
+loc_01CD34:
+    g_m68k.d[3] = (g_m68k.d[3] & 0xFFFF0000u) | ((uint16_t)(0x14)); M68K_TST16((uint16_t)g_m68k.d[3]);
+loc_01CD38:
+    g_m68k.a[3] = 0x01CDF0;
+    g_m68k.a[3] = bus_read32(g_m68k.a[3] + 0 + (int16_t)(uint16_t)g_m68k.d[3]);
+    func_table_call(g_m68k.a[3]);
+    g_m68k.d[0] = (g_m68k.d[0] & 0xFFFF0000u) | ((uint16_t)(bus_read16(0x1035FE))); M68K_TST16((uint16_t)g_m68k.d[0]);
+    if (M68K_CC_EQ) goto loc_01CD54;
+    func_table_call(0x015256);
+loc_01CD54:
+    M68K_CMP16(g_m68k.d[4], 0x0);
+    if (M68K_CC_EQ) goto loc_01CDEC;
+    g_m68k.a[1] = 0x1035CE;
+    g_m68k.a[2] = 0x01D4D8;
+    g_m68k.a[2] = bus_read32(g_m68k.a[2]);
+    g_m68k.a[4] = 0x1035F6;
+    g_m68k.d[1] = (g_m68k.d[1] & 0xFFFF0000u) | ((uint16_t)(bus_read16(0x1035FA))); M68K_TST16((uint16_t)g_m68k.d[1]);
+    g_m68k.a[0] = bus_read32(0x1035DA);
+    M68K_CMP16(g_m68k.d[1], 0x3);
+    if (M68K_CC_NE) goto loc_01CD90;
+    g_m68k.d[0] = (g_m68k.d[0] & 0xFFFF0000u) | ((uint16_t)(0x1)); M68K_TST16((uint16_t)g_m68k.d[0]);
+    func_table_call(0x012286);
+    goto loc_01CD9E;
+loc_01CD90:
+    g_m68k.d[0] = (g_m68k.d[0] & 0xFFFF0000u) | ((uint16_t)(0x0)); M68K_TST16((uint16_t)g_m68k.d[0]);
+    func_table_call(0x012286);
+    g_m68k.d[1] = (g_m68k.d[1] & 0xFFFF0000u) | ((uint16_t)(0x2)); M68K_TST16((uint16_t)g_m68k.d[1]);
+loc_01CD9E:
+    g_m68k.a[5] = 0x1035CE;
+loc_01CDA4:
+    g_m68k.d[2] = (g_m68k.d[2] & 0xFFFF0000u) | ((uint16_t)(g_m68k.d[1])); M68K_TST16((uint16_t)g_m68k.d[2]);
+    M68K_ADD16(g_m68k.d[2], g_m68k.d[2]);
+    M68K_ADD16(g_m68k.d[2], g_m68k.d[2]);
+    g_m68k.a[0] = bus_read32(g_m68k.a[5] + 0 + (int16_t)(uint16_t)g_m68k.d[2]);
+    M68K_CMP16(g_m68k.d[1], bus_read16(0x1035FA));
+    if (M68K_CC_NE) goto loc_01CDC6;
+    func_table_call(0x01CF9A);
+    g_m68k.d[3] = (g_m68k.d[3] & 0xFFFF0000u) | ((uint16_t)(0x8)); M68K_TST16((uint16_t)g_m68k.d[3]);
+    goto loc_01CDCA;
+loc_01CDC6:
+    g_m68k.d[3] = (g_m68k.d[3] & 0xFFFF0000u) | ((uint16_t)(0x4)); M68K_TST16((uint16_t)g_m68k.d[3]);
+loc_01CDCA:
+    g_m68k.a[3] = bus_read32(g_m68k.a[2] + 0 + (int16_t)(uint16_t)g_m68k.d[3]);
+    g_m68k.d[3] = (g_m68k.d[3] & 0xFFFF0000u) | ((uint16_t)(0)); g_m68k.flag_n = false; g_m68k.flag_z = true; g_m68k.flag_v = false; g_m68k.flag_c = false;
+    g_m68k.d[3] = (g_m68k.d[3] & 0xFFFFFF00u) | ((uint8_t)(bus_read8(g_m68k.a[4] + 0 + (int16_t)(uint16_t)g_m68k.d[1]))); M68K_TST8((uint8_t)g_m68k.d[3]);
+    M68K_ADD16(g_m68k.d[3], g_m68k.d[3]);
+    M68K_ADD16(g_m68k.d[3], g_m68k.d[3]);
+    g_m68k.a[3] = bus_read32(g_m68k.a[3] + 0 + (int16_t)(uint16_t)g_m68k.d[3]);
+    func_table_call(0x012270);
+    { int16_t _cnt = (int16_t)(uint16_t)g_m68k.d[1]; _cnt--; g_m68k.d[1] = (g_m68k.d[1] & 0xFFFF0000u) | (uint16_t)_cnt; if (_cnt != -1) { goto loc_01CDA4; } }
+    func_table_call(0x01CFE8);
+loc_01CDEC:
+    g_m68k.d[0] = (g_m68k.d[0] & 0xFFFF0000u) | ((uint16_t)(g_m68k.d[4])); M68K_TST16((uint16_t)g_m68k.d[0]);
+    return;
+}
+
+/* $01CE08-$01CE5A  (18 instructions, 82 bytes) */
+void jt_01CE08(void) {
+    g_m68k.a[0] = 0x1035F6;
+    g_m68k.d[0] = (g_m68k.d[0] & 0xFFFF0000u) | ((uint16_t)(bus_read16(0x1035FA))); M68K_TST16((uint16_t)g_m68k.d[0]);
+    { uint16_t _mv = (uint16_t)(0x0); bus_write16(0x1035EA, _mv); M68K_TST16(_mv); }
+loc_01CE1C:
+    M68K_CMP16(g_m68k.d[0], 0x3);
+    if (M68K_CC_HI) goto loc_01CE2E;
+    { uint8_t _mv = (uint8_t)(0x2b); bus_write8(g_m68k.a[0] + 0 + (int16_t)(uint16_t)g_m68k.d[0], _mv); M68K_TST8(_mv); }
+    M68K_ADD16(g_m68k.d[0], 0x1);
+    goto loc_01CE1C;
+loc_01CE2E:
+    g_m68k.d[1] = (g_m68k.d[1] & 0xFFFF0000u) | ((uint16_t)(0x3)); M68K_TST16((uint16_t)g_m68k.d[1]);
+    g_m68k.a[1] = 0x1011FE;
+loc_01CE38:
+    g_m68k.d[0] = (g_m68k.d[0] & 0xFFFF0000u) | ((uint16_t)(0)); g_m68k.flag_n = false; g_m68k.flag_z = true; g_m68k.flag_v = false; g_m68k.flag_c = false;
+    g_m68k.d[0] = (g_m68k.d[0] & 0xFFFFFF00u) | ((uint8_t)(bus_read8(g_m68k.a[0] + 0 + (int16_t)(uint16_t)g_m68k.d[1]))); M68K_TST8((uint8_t)g_m68k.d[0]);
+    func_table_call(0x011548);
+    { uint8_t _mv = (uint8_t)(g_m68k.d[0]); bus_write8(g_m68k.a[1] + 0 + (int16_t)(uint16_t)g_m68k.d[1], _mv); M68K_TST8(_mv); }
+    { int16_t _cnt = (int16_t)(uint16_t)g_m68k.d[1]; _cnt--; g_m68k.d[1] = (g_m68k.d[1] & 0xFFFF0000u) | (uint16_t)_cnt; if (_cnt != -1) { goto loc_01CE38; } }
+    { uint16_t _mv = (uint16_t)(0xc7); bus_write16(0x1035FE, _mv); M68K_TST16(_mv); }
+    g_m68k.d[4] = (g_m68k.d[4] & 0xFFFF0000u) | ((uint16_t)(0x0)); M68K_TST16((uint16_t)g_m68k.d[4]);
+    return;
+}
+
+/* $01CE5A-$01CEA4  (16 instructions, 74 bytes) */
+void jt_01CE5A(void) {
+    g_m68k.d[0] = (g_m68k.d[0] & 0xFFFF0000u) | ((uint16_t)(bus_read16(0x1035FA))); M68K_TST16((uint16_t)g_m68k.d[0]);
+    if (M68K_CC_EQ) goto loc_01CE9E;
+    M68K_ADD16(g_m68k.d[0], g_m68k.d[0]);
+    M68K_ADD16(g_m68k.d[0], g_m68k.d[0]);
+    g_m68k.a[0] = 0x1035CE;
+    g_m68k.a[0] = bus_read32(g_m68k.a[0] + 0 + (int16_t)(uint16_t)g_m68k.d[0]);
+    g_m68k.d[0] = (g_m68k.d[0] & 0xFFFF0000u) | ((uint16_t)(0x1)); M68K_TST16((uint16_t)g_m68k.d[0]);
+    func_table_call(0x012286);
+    g_m68k.d[0] = (g_m68k.d[0] & 0xFFFF0000u) | ((uint16_t)(bus_read16(0x1035FA))); M68K_TST16((uint16_t)g_m68k.d[0]);
+    g_m68k.a[0] = 0x1035F6;
+    { uint8_t _mv = (uint8_t)(0x2a); bus_write8(g_m68k.a[0] + 0 + (int16_t)(uint16_t)g_m68k.d[0], _mv); M68K_TST8(_mv); }
+    M68K_SUB16(g_m68k.d[0], 0x1);
+    { uint16_t _mv = (uint16_t)(g_m68k.d[0]); bus_write16(0x1035FA, _mv); M68K_TST16(_mv); }
+    { uint16_t _mv = (uint16_t)(0xc6); bus_write16(0x1035FE, _mv); M68K_TST16(_mv); }
+loc_01CE9E:
+    g_m68k.d[4] = (g_m68k.d[4] & 0xFFFF0000u) | ((uint16_t)(0x1)); M68K_TST16((uint16_t)g_m68k.d[4]);
+    return;
+}
+
+/* $01CEA4-$01CEFA  (19 instructions, 86 bytes) */
+void jt_01CEA4(void) {
+    g_m68k.d[0] = (g_m68k.d[0] & 0xFFFF0000u) | ((uint16_t)(bus_read16(0x1035FA))); M68K_TST16((uint16_t)g_m68k.d[0]);
+    M68K_ADD16(g_m68k.d[0], g_m68k.d[0]);
+    M68K_ADD16(g_m68k.d[0], g_m68k.d[0]);
+    g_m68k.a[0] = 0x1035CE;
+    g_m68k.a[0] = bus_read32(g_m68k.a[0] + 0 + (int16_t)(uint16_t)g_m68k.d[0]);
+    g_m68k.d[0] = (g_m68k.d[0] & 0xFFFF0000u) | ((uint16_t)(0x1)); M68K_TST16((uint16_t)g_m68k.d[0]);
+    func_table_call(0x012286);
+    g_m68k.d[0] = (g_m68k.d[0] & 0xFFFF0000u) | ((uint16_t)(bus_read16(0x1035FA))); M68K_TST16((uint16_t)g_m68k.d[0]);
+    M68K_ADD16(g_m68k.d[0], 0x1);
+    g_m68k.a[0] = 0x1035F6;
+    M68K_CMP16(g_m68k.d[0], 0x3);
+    if (M68K_CC_EQ) goto loc_01CEE0;
+    { uint8_t _mv = (uint8_t)(0x0); bus_write8(g_m68k.a[0] + 0 + (int16_t)(uint16_t)g_m68k.d[0], _mv); M68K_TST8(_mv); }
+    goto loc_01CEE6;
+loc_01CEE0:
+    { uint8_t _mv = (uint8_t)(0x2b); bus_write8(g_m68k.a[0] + 0 + (int16_t)(uint16_t)g_m68k.d[0], _mv); M68K_TST8(_mv); }
+loc_01CEE6:
+    { uint16_t _mv = (uint16_t)(g_m68k.d[0]); bus_write16(0x1035FA, _mv); M68K_TST16(_mv); }
+    { uint16_t _mv = (uint16_t)(0xc7); bus_write16(0x1035FE, _mv); M68K_TST16(_mv); }
+    g_m68k.d[4] = (g_m68k.d[4] & 0xFFFF0000u) | ((uint16_t)(0x1)); M68K_TST16((uint16_t)g_m68k.d[4]);
+    return;
+}
+
+/* $01CEFA-$01CF44  (19 instructions, 74 bytes) */
+void jt_01CEFA(void) {
+    g_m68k.d[0] = (g_m68k.d[0] & 0xFFFF0000u) | ((uint16_t)(bus_read16(0x1035FA))); M68K_TST16((uint16_t)g_m68k.d[0]);
+    g_m68k.a[0] = 0x1035F6;
+    g_m68k.d[1] = (g_m68k.d[1] & 0xFFFF0000u) | ((uint16_t)(0)); g_m68k.flag_n = false; g_m68k.flag_z = true; g_m68k.flag_v = false; g_m68k.flag_c = false;
+    g_m68k.d[1] = (g_m68k.d[1] & 0xFFFFFF00u) | ((uint8_t)(bus_read8(g_m68k.a[0] + 0 + (int16_t)(uint16_t)g_m68k.d[0]))); M68K_TST8((uint8_t)g_m68k.d[1]);
+    M68K_CMP16(g_m68k.d[0], 0x3);
+    if (M68K_CC_CS) goto loc_01CF22;
+    M68K_SUB16(g_m68k.d[1], 0x2b);
+    M68K_EOR16(g_m68k.d[1], 0x1);
+    M68K_ADD16(g_m68k.d[1], 0x2b);
+    goto loc_01CF32;
+loc_01CF22:
+    M68K_CMP16(g_m68k.d[1], 0x2c);
+    if (M68K_CC_CS) goto loc_01CF30;
+    g_m68k.d[1] = (g_m68k.d[1] & 0xFFFF0000u) | ((uint16_t)(0x0)); M68K_TST16((uint16_t)g_m68k.d[1]);
+    goto loc_01CF32;
+loc_01CF30:
+    M68K_ADD16(g_m68k.d[1], 0x1);
+loc_01CF32:
+    { uint8_t _mv = (uint8_t)(g_m68k.d[1]); bus_write8(g_m68k.a[0] + 0 + (int16_t)(uint16_t)g_m68k.d[0], _mv); M68K_TST8(_mv); }
+    { uint16_t _mv = (uint16_t)(0xc6); bus_write16(0x1035FE, _mv); M68K_TST16(_mv); }
+    g_m68k.d[4] = (g_m68k.d[4] & 0xFFFF0000u) | ((uint16_t)(0x1)); M68K_TST16((uint16_t)g_m68k.d[4]);
+    return;
+}
+
+/* $01CF44-$01CF8C  (19 instructions, 72 bytes) */
+void jt_01CF44(void) {
+    g_m68k.d[0] = (g_m68k.d[0] & 0xFFFF0000u) | ((uint16_t)(bus_read16(0x1035FA))); M68K_TST16((uint16_t)g_m68k.d[0]);
+    g_m68k.a[0] = 0x1035F6;
+    g_m68k.d[1] = (g_m68k.d[1] & 0xFFFF0000u) | ((uint16_t)(0)); g_m68k.flag_n = false; g_m68k.flag_z = true; g_m68k.flag_v = false; g_m68k.flag_c = false;
+    g_m68k.d[1] = (g_m68k.d[1] & 0xFFFFFF00u) | ((uint8_t)(bus_read8(g_m68k.a[0] + 0 + (int16_t)(uint16_t)g_m68k.d[0]))); M68K_TST8((uint8_t)g_m68k.d[1]);
+    M68K_CMP16(g_m68k.d[0], 0x3);
+    if (M68K_CC_LT) goto loc_01CF6C;
+    M68K_SUB16(g_m68k.d[1], 0x2b);
+    M68K_EOR16(g_m68k.d[1], 0x1);
+    M68K_ADD16(g_m68k.d[1], 0x2b);
+    goto loc_01CF7A;
+loc_01CF6C:
+    g_m68k.d[1] = (g_m68k.d[1] & 0xFFFF0000u) | ((uint16_t)(g_m68k.d[1])); M68K_TST16((uint16_t)g_m68k.d[1]);
+    if (M68K_CC_NE) goto loc_01CF78;
+    g_m68k.d[1] = (g_m68k.d[1] & 0xFFFF0000u) | ((uint16_t)(0x2c)); M68K_TST16((uint16_t)g_m68k.d[1]);
+    goto loc_01CF7A;
+loc_01CF78:
+    M68K_SUB16(g_m68k.d[1], 0x1);
+loc_01CF7A:
+    { uint8_t _mv = (uint8_t)(g_m68k.d[1]); bus_write8(g_m68k.a[0] + 0 + (int16_t)(uint16_t)g_m68k.d[0], _mv); M68K_TST8(_mv); }
+    { uint16_t _mv = (uint16_t)(0xc6); bus_write16(0x1035FE, _mv); M68K_TST16(_mv); }
+    g_m68k.d[4] = (g_m68k.d[4] & 0xFFFF0000u) | ((uint16_t)(0x1)); M68K_TST16((uint16_t)g_m68k.d[4]);
+    return;
+}
