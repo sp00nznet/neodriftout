@@ -14,6 +14,7 @@ file(GLOB AUTORECOMP_SOURCES "src/autorecomp/recomp_*.c")
 # Hand-written overrides for functions the auto-generator splits incorrectly
 set(HANDWRITTEN_SOURCES
     recomp/init.c
+    recomp/overrides.c
 )
 
 set(GAME_SOURCES

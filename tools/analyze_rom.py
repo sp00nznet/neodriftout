@@ -47,12 +47,24 @@ class NeoGeoROM:
         # (reachable only via computed jumps, PC-relative from unanalyzed
         # code, or indirect call patterns)
         self.explicit_seeds = [
-            0x000AA8,  # BIOS config reader (called via PC-relative from $966)
-            0x000B34,  # Gameplay dispatcher (called via JMP from state handlers)
-            0x001076,  # Input state update (called via PC-relative from $B34)
-            0x00109E,  # Cleanup sub (called via PC-relative)
-            0x0010B0,  # Store to $10042C (called via PC-relative)
-            0x0010B8,  # PRNG advance (called via PC-relative from $B34)
+            0x000AA8,  # BIOS config reader (PC-relative from $966)
+            0x000B34,  # Gameplay dispatcher (JMP from state handlers)
+            0x000C5C,  # Sub-state 0 common path after sound setup
+            0x000D32,  # Sub-state 1 exit (branch target in $CC6)
+            0x001602,  # Called from $002336 fall-through path
+            0x002FB4,  # Called from game setup path
+            0x003070,  # Called from $002336 (game init)
+            0x0028C6,  # Called from game init
+            0x0028EC,  # Called from game init
+            0x0133A0,  # VRAM-related init sub
+            0x003018,  # Called every frame from game loop
+            0x011028,  # Called from init path
+            0x013330,  # Called from VRAM path
+            0x001034,  # Region 0 (Japan) handler from $1004 dispatch
+            0x001076,  # Input state update (PC-relative from $B34)
+            0x00109E,  # Cleanup sub (PC-relative)
+            0x0010B0,  # Store to $10042C (PC-relative)
+            0x0010B8,  # PRNG advance (PC-relative from $B34)
         ]
 
     def _parse_vectors(self):
