@@ -101,6 +101,35 @@ void func_011C88(void) {
 }
 
 /*
+ * $011C78 — Partial VRAM DMA copy (24 words)
+ * $011C78 = $011CA8 - 24*2
+ */
+void func_011C78(void) {
+    uint32_t src = g_m68k.a[4];
+    uint32_t dst = g_m68k.a[2];
+    for (int i = 0; i < 24; i++) {
+        bus_write16(dst, bus_read16(src));
+        src += 2;
+    }
+    g_m68k.a[4] = src;
+}
+
+/*
+ * $011C98 — Partial VRAM DMA copy (8 words)
+ * Same pattern as $011C88 but copies only 8 words.
+ * $011C98 = $011CA8 - 8*2 = entry for 8-word copy.
+ */
+void func_011C98(void) {
+    uint32_t src = g_m68k.a[4];
+    uint32_t dst = g_m68k.a[2];
+    for (int i = 0; i < 8; i++) {
+        bus_write16(dst, bus_read16(src));
+        src += 2;
+    }
+    g_m68k.a[4] = src;
+}
+
+/*
  * $000CC4 — RTS stub
  * The auto-gen creates a branch to $CC4 which is just an RTS.
  */

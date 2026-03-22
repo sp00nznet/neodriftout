@@ -272,9 +272,13 @@ int main(int argc, char *argv[]) {
 
     extern void func_01229E(void);  /* Sprite/VRAM commit (push-return-addr fix) */
     extern void func_011C88(void);  /* Partial VRAM DMA copy (16 words) */
+    extern void func_011C78(void);  /* Partial VRAM DMA copy (24 words) */
+    extern void func_011C98(void);  /* Partial VRAM DMA copy (8 words) */
     extern void func_000CC6(void);  /* Sub-state 1 handler (split fix) */
     func_table_register(0x01229E, func_01229E);
+    func_table_register(0x011C78, func_011C78);
     func_table_register(0x011C88, func_011C88);
+    func_table_register(0x011C98, func_011C98);
     func_table_register(0x000CC6, func_000CC6);
 
     printf("[neodriftout] Registered %u total functions (with hand-written overrides)\n",
