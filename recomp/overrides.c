@@ -157,15 +157,6 @@ void func_01229E(void) {
 
     g_m68k.a[2] = 0x3C0002;
 
-    /* Save SCB1 attribute words (palettes) before $0133A0 overwrites them.
-     * $013546 writes correct palette data to VRAM, but $0133A0 overwrites
-     * the SCB1 odd words without the palette field. */
-    const uint16_t *vram = video_get_vram_ptr();
-    uint16_t saved_palettes[64];
-    for (int i = 0; i < 64; i++) {
-        saved_palettes[i] = vram[(32 + i) * 64 + 1];  /* SCB1 odd word for sprites 32-95 */
-    }
-
     /* Phase 1: Dispatch to VRAM scroll/tilemap write */
     uint16_t spr_count = bus_read16(0x1020A0);
     if (spr_count == 0) {
@@ -174,18 +165,6 @@ void func_01229E(void) {
         func_table_call(0x013362);
     } else {
         func_table_call(0x013330);
-    }
-
-    /* Restore palette bits that $0133A0 may have cleared */
-    {
-        uint16_t *vw = (uint16_t *)video_get_vram_ptr();
-        for (int i = 0; i < 64; i++) {
-            uint16_t cur = vw[(32 + i) * 64 + 1];
-            uint8_t old_pal = saved_palettes[i] & 0xFF;
-            if ((cur & 0xFF) == 0 && old_pal != 0) {
-                vw[(32 + i) * 64 + 1] = (cur & 0xFF00) | old_pal;
-            }
-        }
     }
 
     /* Phase 2 ($0122C4): Wait for previous sprite upload to drain */

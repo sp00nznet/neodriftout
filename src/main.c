@@ -95,13 +95,6 @@ static void bios_return_to_system(void) {
         uint8_t flags = bus_read8(0x10FD80);
         bus_write8(0x10FD80, flags | 0x80);
     }
-
-    /* If Start was pressed ($10FE80 set), switch to car select */
-    if (bus_read16(0x10FE80) != 0) {
-        printf("[BIOS stub] Start pressed — entering car select!\n");
-        bus_write8(0x10FDAE, 3);
-        bus_write16(0x10FE80, 0);
-    }
 }
 
 static int s_bios_frame = 0;
@@ -159,25 +152,15 @@ static void bios_vblank_process(void) {
     /* Start/Select from STATUS_B (active low):
      * Bit 1 = P1 Start, Bit 0 = P1 Select
      * Bit 3 = P2 Start, Bit 2 = P2 Select */
-    /* STATUS_B bit 1 = P1 Start (active low). When pressed, bit is 0. */
-    uint8_t p1_start = ((~status) >> 1) & 1;
+    uint8_t p1_start = (~status >> 1) & 1;
     uint8_t p1_select = (~status >> 0) & 1;
     bus_write8(0x10FD8A, p1_start);
     bus_write8(0x10FD8C, p1_start);  /* Credit/coin status */
     bus_write8(0x10FD98, status);     /* Raw status_b for start/select */
 
-    /* If start is pressed, set game active flag and try to advance state */
+    /* If start is pressed, also set $10FE80 (game active flag) */
     if (p1_start) {
         bus_write16(0x10FE80, 1);
-        bus_write16(0x10041A, 1);  /* Demo trigger */
-        /* If we're on the continue screen, advance the continue timer */
-        uint8_t game_state = bus_read8(0x10FDAE);
-        uint16_t sub_state = bus_read16(0x100426);
-        if (game_state == 2 && sub_state == 15) {
-            /* Force continue accepted — set the continue state to 1 */
-            bus_write16(0x1011AE, 1);
-            printf("[BIOS] Start pressed during continue screen!\n");
-        }
     }
 
     prev_status = status;
