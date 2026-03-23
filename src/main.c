@@ -158,9 +158,18 @@ static void bios_vblank_process(void) {
     bus_write8(0x10FD8C, p1_start);  /* Credit/coin status */
     bus_write8(0x10FD98, status);     /* Raw status_b for start/select */
 
-    /* If start is pressed, also set $10FE80 (game active flag) */
+    /* If start is pressed, set game active flag and try to advance state */
     if (p1_start) {
         bus_write16(0x10FE80, 1);
+        bus_write16(0x10041A, 1);  /* Demo trigger */
+        /* If we're on the continue screen, advance the continue timer */
+        uint8_t game_state = bus_read8(0x10FDAE);
+        uint16_t sub_state = bus_read16(0x100426);
+        if (game_state == 2 && sub_state == 15) {
+            /* Force continue accepted — set the continue state to 1 */
+            bus_write16(0x1011AE, 1);
+            printf("[BIOS] Start pressed during continue screen!\n");
+        }
     }
 
     prev_status = status;
