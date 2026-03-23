@@ -159,7 +159,8 @@ static void bios_vblank_process(void) {
     /* Start/Select from STATUS_B (active low):
      * Bit 1 = P1 Start, Bit 0 = P1 Select
      * Bit 3 = P2 Start, Bit 2 = P2 Select */
-    uint8_t p1_start = (~status >> 1) & 1;
+    /* STATUS_B bit 1 = P1 Start (active low). When pressed, bit is 0. */
+    uint8_t p1_start = ((~status) >> 1) & 1;
     uint8_t p1_select = (~status >> 0) & 1;
     bus_write8(0x10FD8A, p1_start);
     bus_write8(0x10FD8C, p1_start);  /* Credit/coin status */
