@@ -95,6 +95,13 @@ static void bios_return_to_system(void) {
         uint8_t flags = bus_read8(0x10FD80);
         bus_write8(0x10FD80, flags | 0x80);
     }
+
+    /* If Start was pressed ($10FE80 set), switch to car select */
+    if (bus_read16(0x10FE80) != 0) {
+        printf("[BIOS stub] Start pressed — entering car select!\n");
+        bus_write8(0x10FDAE, 3);
+        bus_write16(0x10FE80, 0);
+    }
 }
 
 static int s_bios_frame = 0;
