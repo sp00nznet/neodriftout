@@ -83,7 +83,7 @@ static void bios_return_to_system(void) {
          * We set $10041A = 1 to simulate a demo timer event so the
          * title animation exits to sub-state 2 (stage intro) instead
          * of looping back to the BIOS. */
-        bus_write8(0x10FDAE, 2);
+        bus_bios_write8(0x10FDAE, 2);
 
         /* Enable game VBlank handling */
         uint8_t flags = bus_read8(0x10FD80);
@@ -91,9 +91,16 @@ static void bios_return_to_system(void) {
     }
     /* For other states (like 9 = results), go back to demo */
     else {
-        bus_write8(0x10FDAE, 2);
+        bus_bios_write8(0x10FDAE, 2);
         uint8_t flags = bus_read8(0x10FD80);
         bus_write8(0x10FD80, flags | 0x80);
+    }
+
+    /* If Start was pressed ($10FE80 set), switch to car select */
+    if (bus_read16(0x10FE80) != 0) {
+        printf("[BIOS stub] Start pressed — entering car select!\n");
+        bus_bios_write8(0x10FDAE, 3);
+        bus_write16(0x10FE80, 0);
     }
 }
 
@@ -152,15 +159,21 @@ static void bios_vblank_process(void) {
     /* Start/Select from STATUS_B (active low):
      * Bit 1 = P1 Start, Bit 0 = P1 Select
      * Bit 3 = P2 Start, Bit 2 = P2 Select */
-    uint8_t p1_start = (~status >> 1) & 1;
+    /* STATUS_B bit 1 = P1 Start (active low) */
+    uint8_t p1_start = ((~status) >> 1) & 1;
     uint8_t p1_select = (~status >> 0) & 1;
     bus_write8(0x10FD8A, p1_start);
     bus_write8(0x10FD8C, p1_start);  /* Credit/coin status */
     bus_write8(0x10FD98, status);     /* Raw status_b for start/select */
 
-    /* If start is pressed, also set $10FE80 (game active flag) */
+    /* If start is pressed, set game active flag and advance continue screen */
     if (p1_start) {
         bus_write16(0x10FE80, 1);
+        bus_write16(0x10041A, 1);
+        uint16_t sub = bus_read16(0x100426);
+        if (bus_read8(0x10FDAE) == 2 && sub == 15) {
+            bus_write16(0x1011AE, 1);
+        }
     }
 
     prev_status = status;

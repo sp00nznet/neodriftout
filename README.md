@@ -12,24 +12,30 @@
 
 | Metric | Value |
 |--------|-------|
-| Functions recompiled | **6,636** (auto-generated) + 12 hand-written overrides |
+| Functions recompiled | **6,656** (auto-generated) + hand-written overrides |
 | Lines of generated C | **~115,000** across 133 source files |
 | Frame rate | **60 fps** with VSync |
-| Rendering | Fix layer text (S ROM), palette system, backdrop |
+| Rendering | Fix layer text, sprites, palette system, backdrop |
 | Build | MSVC 2022 + vcpkg SDL2, ~23 MB debug executable |
 
 **What works:**
 - Full game boot sequence with BIOS stubs
-- Game state machine (init -> car select -> race transition)
-- VBlank interrupt simulation via bus read hooks
+- Game state machine (init → demo → title screen) with correct state dispatch
+- BIOS RAM protection (bus-layer guard on $10FDAE prevents game block-copy corruption)
+- VBlank interrupt simulation via bus read hooks + time-based yield
 - Fix layer text rendering (S ROM nibble-packed tile decode with scrambled column order)
-- Palette system (420+ entries loaded from game ROM, Neo Geo color format -> ARGB)
+- Sprite rendering pipeline (C ROM tile decode, sprite attribute tables, SCB1-SCB4)
+- Palette system (420+ entries loaded from game ROM, Neo Geo color format → ARGB)
+- Title screen renders with "Start" / "Options" text and sprite graphics
+- Input handling (P1 joystick, Start/Select via STATUS_B edge detection)
 - 60fps frame loop with SDL2 windowing and input
 - Z80/YM2610 audio subsystem stubs
+- Palette preservation across sprite upload routines ($0133A0 override)
 
 **In progress:**
-- Sprite rendering pipeline (C ROM tile decode works, sprite attribute system needs debugging)
-- Game's sprite object creation system
+- Background color (currently teal instead of correct backdrop)
+- Start button → car select transition
+- Full sprite animation on title screen
 - Audio playback
 
 ## About
@@ -161,19 +167,23 @@ The ROM path should contain the Neo Drift Out ROM files (`213-p1.p1`, etc.) plus
 
 | Phase | Description | Status |
 |-------|-------------|--------|
-| ROM analysis | Disassemble P ROM, map function boundaries | Not started |
-| Vector table | Identify reset, VBlank, timer interrupt handlers | Not started |
-| BIOS interface | Map BIOS call conventions and system vectors | Not started |
-| Core game loop | Recompile main loop, VBlank handler, state machine | Not started |
-| Input handling | Steering, accelerate, brake, start/coin | Not started |
+| ROM analysis | Disassemble P ROM, map function boundaries | **Done** |
+| Vector table | Identify reset, VBlank, timer interrupt handlers | **Done** |
+| BIOS interface | Map BIOS call conventions and system vectors | **Done** — 6 stubs |
+| Core game loop | Recompile main loop, VBlank handler, state machine | **Done** |
+| Fix layer | Text/HUD tile rendering from S ROM | **Done** |
+| Sprite pipeline | C ROM decode, SCB tables, sprite upload | **Done** |
+| Palette system | Neo Geo color → ARGB, 256 palette banks | **Done** |
+| BIOS RAM protection | Guard $10FDAE from game block-copy overwrites | **Done** |
+| Input handling | Joystick, Start/Select, edge detection | **Working** |
+| Attract mode | Title screen with text and sprites | **Working** |
+| Car select | Vehicle selection screen, stat display | In progress |
 | Car physics | Acceleration, braking, drift mechanics, surface friction | Not started |
 | Track rendering | Isometric tilemap, scrolling, camera follow | Not started |
 | HUD | Timer, position, lap counter, speedometer | Not started |
-| Car select | Vehicle selection screen, stat display | Not started |
 | Stage progression | Stage loading, transitions, results screen | Not started |
 | AI opponents | CPU car behavior and pathfinding | Not started |
 | Audio commands | Engine sounds, skid effects, music cues | Not started |
-| Attract mode | Title screen, demo play, rankings | Not started |
 | Full playthrough | All 7 stages completable | Not started |
 
 ## Technical Notes
