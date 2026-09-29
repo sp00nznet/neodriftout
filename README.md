@@ -1,235 +1,106 @@
-# Neo Drift Out: New Technology — Static Recompilation
+# Neo Drift Out: static recompilation
 
-**A native PC port of Neo Drift Out (1996) via static recompilation of the original Neo Geo 68000 code.**
+**Neo Drift Out: New Technology (Visco, 1996) running as a native PC program: its 68000 code is recompiled to C and runs on the [neogeorecomp](https://github.com/sp00nznet/neogeorecomp) board model.**
 
-![Proof of Life](docs/screenshot_proof_of_life.png)
+This repo describes the ROM set and builds the game. The toolkit does the rest, with no Drift Out-specific code in it.
 
-*Game text rendering from the original ROM data: "© 1996 VISCO CORP. ALL RIGHTS RESERVED." — decoded from the S ROM fix layer tiles through the neogeorecomp runtime's software renderer.*
+> **No game data here.** You need your own Neo Drift Out and Neo Geo system ROM dumps (MAME sets `neodrift` and `neogeo`). The recompiled C is generated from your dump on your machine, into `build/`. It is never committed or distributed. (Earlier history of this repo contained ROMs and generated code; it was rewritten on 2026-09-29 to remove them.)
 
-## Current Status
+## Status
 
-**The game boots and renders text from the original ROM data.** The complete 68000 program ROM has been statically recompiled into native x86-64 C code using an automated pipeline adapted from the [CPS1/SF2 toolchain](https://github.com/sp00nznet/sf2).
+**v0.2.0-dev, alpha.** It boots, runs attract mode, takes a coin, and races on recompiled code. **There is no sound yet.**
 
-| Metric | Value |
-|--------|-------|
-| Functions recompiled | **6,656** (auto-generated) + hand-written overrides |
-| Lines of generated C | **~115,000** across 133 source files |
-| Frame rate | **60 fps** with VSync |
-| Rendering | Fix layer text, sprites, palette system, backdrop |
-| Build | MSVC 2022 + vcpkg SDL2, ~23 MB debug executable |
+- Boot through the real MVS system ROM → eyecatcher → car showcase → title → How to Play → name entry → practice and Stage 1.
+- A 6-minute scripted soak runs **100% natively** (0 interpreted instructions) after the profile pass, and `--verify` checks **46.67M** recompiled blocks against the Musashi interpreter with **0 mismatches**.
+- This is a port to the generic toolkit. The previous version was hand-lifted code plus a runtime patched for this one game (forced palettes, forced sprite shrink, BIOS state pokes), and it never got past the title with correct graphics. All of that is gone.
+- Not yet: sound, later stages checked by script, and gamepad support.
 
-**What works:**
-- Full game boot sequence with BIOS stubs
-- Game state machine (init → demo → title screen) with correct state dispatch
-- BIOS RAM protection (bus-layer guard on $10FDAE prevents game block-copy corruption)
-- VBlank interrupt simulation via bus read hooks + time-based yield
-- Fix layer text rendering (S ROM nibble-packed tile decode with scrambled column order)
-- Sprite rendering pipeline (C ROM tile decode, sprite attribute tables, SCB1-SCB4)
-- Palette system (420+ entries loaded from game ROM, Neo Geo color format → ARGB)
-- Title screen renders with "Start" / "Options" text and sprite graphics
-- Input handling (P1 joystick, Start/Select via STATUS_B edge detection)
-- 60fps frame loop with SDL2 windowing and input
-- Z80/YM2610 audio subsystem stubs
-- Palette preservation across sprite upload routines ($0133A0 override)
+## Screenshots
 
-**In progress:**
-- Background color (currently teal instead of correct backdrop)
-- Start button → car select transition
-- Full sprite animation on title screen
-- Audio playback
+All real output from the recompiled build (`--headless --screenshot`):
 
-## About
+| | |
+|---|---|
+| ![MVS eyecatcher](docs/screenshots/bios.png) | ![Title](docs/screenshots/title.png) |
+| ![Name entry](docs/screenshots/entry.png) | ![Start line](docs/screenshots/ready.png) |
+| ![Stage 1, the bridge](docs/screenshots/bridge.png) | ![Stage 1 start](docs/screenshots/stage1.png) |
 
-Neo Drift Out: New Technology is a top-down isometric rally racing game by Visco Corporation — one of the few racing titles in the Neo Geo's fighting-game-dominated library. Players tear through World Rally Championship-inspired stages in licensed Mitsubishi, Subaru, and Toyota rally cars, drifting across tarmac, gravel, mud, and ice. This project recompiles the original 68000 machine code into native x86-64, producing a standalone PC executable.
+## Getting started
 
-## The Game
+### Quick start (Windows)
 
-- **Title**: Neo Drift Out: New Technology (ネオ ドリフトアウト ニューテクノロジー)
-- **Developer**: Visco Corporation
-- **Publisher**: Visco Corporation
-- **Platform**: Neo Geo MVS / AES (NGH-213)
-- **Year**: 1996
-- **Genre**: Top-down isometric rally racing
-- **Players**: 1-2 (alternating)
+1. Download this repo: **Code → Download ZIP**, then unzip it. A `git clone` works too.
+2. Put your **`neodrift.zip`** and **`neogeo.zip`** (MAME sets) in the unzipped folder, or in `Downloads`. Note that `driftout.zip` is Taito's *Drift Out*, a different game.
+3. Double-click **`Setup.cmd`**.
 
-### Stages
+   It checks for Git, CMake, the Visual Studio C++ build tools and SDL2, and asks before installing anything that's missing (it says what and how big). It finds and checksums your ROMs, recompiles and builds the game (a few minutes), and leaves a **Neo Drift Out** launcher in the folder. If something fails, it stops with one sentence on what to do and keeps the details in `setup.log`. Running it again picks up where it stopped.
+4. Double-click **Neo Drift Out**.
 
-| # | Stage | Surface | Conditions |
-|---|-------|---------|------------|
-| P | Practice | Tarmac | Clear |
-| 1 | European Rally | Mixed | Varied |
-| 2 | African Rally | Dirt / Sand | Dry |
-| 3 | Snow Land | Ice / Packed snow | Winter |
-| 4 | Southern Hemisphere | Gravel / Mud | Wet |
-| 5 | Scandinavian Rally | Ice / Gravel | Cold |
-| 6 | Great Britain | Tarmac / Gravel | Rain |
+**On Linux**, run `./setup.sh` instead, optionally with `--rom-zip PATH --bios-zip PATH`. When it finishes, run `./neodriftout.sh`.
 
-### Cars
+Keys: **arrows** steer, **Z** accelerate, **X** brake, **5** insert coin, **1** start, **Esc** quit.
 
-| Car | Speed | Control | Body | Real-world Model |
-|-----|-------|---------|------|-----------------|
-| Car A | High | Low | Low | Mitsubishi Lancer Evolution |
-| Car B | Medium | High | Medium | Subaru Impreza WRX |
-| Car C | Low | Medium | High | Toyota Celica GT-Four |
+### Step by step
 
-The fourth entry in Visco's Drift Out series, this is the only one built for Neo Geo hardware. The isometric perspective and multi-directional scrolling make it technically interesting — unlike the horizontal scrolling of typical Neo Geo games, the camera follows the car through track curves using sprite rotation and scaling tricks within the Neo Geo's sprite-only rendering pipeline.
+These are the commands `Setup.cmd` runs.
 
-## ROM Details
+**Prerequisites:** Git; CMake 3.21+; a C compiler (Visual Studio 2022 with *Desktop development with C++* on Windows, or gcc on Linux); SDL2 for the window (optional, since headless builds need nothing). On Linux: `sudo apt install git cmake gcc libsdl2-dev`.
 
-| ROM | Type | Size | Purpose |
-|-----|------|------|---------|
-| `213-p1.p1` | P ROM | 2 MB | 68000 program code |
-| `213-s1.s1` | S ROM | 128 KB | Fix layer text/HUD tiles |
-| `213-c1.c1` / `c2` | C ROM pair | 4 MB each | Sprite graphics |
-| `213-m1.m1` | M ROM | 128 KB | Z80 audio driver |
-| `213-v1.v1` | V ROM | 2 MB | ADPCM audio samples |
-| `213-v2.v2` | V ROM | 2 MB | ADPCM audio samples |
+1. **Clone with the toolkit submodule:**
+   ```
+   git clone --recurse-submodules https://github.com/sp00nznet/neodriftout
+   cd neodriftout
+   ```
+2. **Unzip your ROMs into `roms/`.** From `neodrift.zip`: `213-p1.p1 213-s1.s1 213-m1.m1 213-c1.c1 213-c2.c2 213-v1.v1 213-v2.v2`. From `neogeo.zip`: `sp-s2.sp1 sfix.sfix sm1.sm1 000-lo.lo`. [docs/game-notes.md](docs/game-notes.md) lists the CRC32s.
+3. **Configure.** On Windows, point CMake at SDL2: vcpkg's toolchain file, or `-DSDL2_DIR=<SDL2-devel-VC>/cmake`.
+   ```
+   cmake -S . -B build -DNEODRIFT_ROM_DIR=roms
+   ```
+4. **Build.** The generator recompiles your ROMs into `build/generated` first:
+   ```
+   cmake --build build --config Release
+   ```
+   Expected in the output:
+   ```
+   [m68krecomp] pointer scan: 20705 seeds
+   [m68krecomp] neodrift: 405519 instructions emitted across routines
+   [m68krecomp] 21014 routines, 22910 dispatch entries -> .../build/generated
+   ```
+5. **Profile (optional).** This plays two scripted sessions headless to find code only reached at runtime, then rebuilds with it:
+   ```
+   cmake --build build --config Release --target profile
+   cmake --build build --config Release
+   ```
+6. **Play:**
+   ```
+   build/Release/neodriftout --rom-path roms          (Linux: build/neodriftout)
+   ```
 
-**Total: ~12.5 MB** — notably smaller than Metal Slug due to only one C ROM pair (vs two) and smaller V ROMs. No encryption, no protection, no bankswitching. A clean, straightforward ROM layout ideal for recompilation.
+Trip-ups:
+- *`error: cannot open roms/213-p1.p1`*: the ROMs are not in `roms/`, or you are running from a different folder. Pass `--rom-path`.
+- *"Submodules missing"*: you cloned without `--recurse-submodules`. Run `git submodule update --init --recursive`.
+- *No window, and "built without SDL2; run with --headless"*: CMake didn't find SDL2 (see step 3).
 
-### PCB Details
-- **PROG board**: PROGBK1 (standard)
-- **CHA board**: CHA256B
-- **MAME driver**: Standard `neogeo.cpp` — no game-specific handlers
-- **First MAME support**: v0.34b5 (October 1998), fully working since
-
-## Why Neo Drift Out?
-
-This is a strategic choice as a recompilation target:
-
-1. **Simpler game logic**: A racing game has fewer entity types and interactions than a run-and-gun. The core loop is physics + rendering + timer, not hundreds of enemy AI state machines.
-2. **Smaller ROM**: 12.5 MB total, only 2 MB of code. Fewer functions to recompile.
-3. **Only 2 C ROMs**: Half the sprite data of Metal Slug, meaning the video layer gets exercised but isn't overwhelmed.
-4. **Great proving ground**: If the Neo Geo runtime can handle Neo Drift Out's isometric scrolling, multi-directional camera, and surface physics, it can handle anything.
-5. **Completely uncharted**: No reverse engineering work exists for this game anywhere. We're starting fresh.
-6. **Minimal inputs**: Only 2 functional buttons (accelerate + brake) plus the joystick. Input handling is trivial.
-
-## How This Project Works
-
-This repository contains the game-specific recompiled code for Neo Drift Out. It depends on [neogeorecomp](https://github.com/sp00nznet/neogeorecomp), which provides the Neo Geo hardware runtime.
+## Usage
 
 ```
-┌──────────────────────────┐
-│  neodriftout (this repo)  │
-│  ┌────────────────────┐  │
-│  │  recomp/*.c        │  │  ← recompiled 68k functions
-│  │  src/main.c        │  │  ← entry point, function registration
-│  └────────┬───────────┘  │
-│           │ links        │
-│  ┌────────▼───────────┐  │
-│  │   neogeorecomp     │  │  ← Neo Geo hardware runtime
-│  │   (git submodule)  │  │
-│  └────────────────────┘  │
-└──────────────────────────┘
+neodriftout --rom-path roms                                # play
+neodriftout --headless --frames 5400 --input tests/coin_start.txt --record race.mp4
+neodriftout --headless --verify --frames 5401 --input tests/coin_start.txt
 ```
 
-### Project Structure
+The toolkit's [docs/running.md](https://github.com/sp00nznet/neogeorecomp/blob/master/docs/running.md) covers every option and the input-script format. `tests/coin_start.txt` reaches the practice race, and `tests/play_long.txt` is the 6-minute soak.
 
-```
-neodriftout/
-├── src/
-│   └── main.c              — entry point, ROM loading, function table setup
-├── recomp/
-│   └── (recompiled 68k function files will live here)
-├── docs/
-│   └── game_notes.md       — technical analysis, function map, game-specific quirks
-├── CMakeLists.txt
-└── README.md
-```
+## Documentation
 
-## Building
+- [docs/game-notes.md](docs/game-notes.md): the ROM set and what the port showed
+- [neogeorecomp](https://github.com/sp00nznet/neogeorecomp): the architecture and recompiler docs
+- [CHANGELOG.md](CHANGELOG.md) · [ROADMAP.md](ROADMAP.md) · [CONTRIBUTING.md](CONTRIBUTING.md)
 
-### Prerequisites
+## Contributors
 
-- **CMake** 3.20+
-- **C17 compiler** (MSVC 2022, Clang 14+, or GCC 12+)
-- **SDL2** development libraries
-- **A legally obtained Neo Drift Out ROM dump** (you must own the game)
-
-### Build Steps
-
-```bash
-git clone --recursive https://github.com/sp00nznet/neodriftout.git
-cd neodriftout
-cmake -B build -DCMAKE_BUILD_TYPE=Release
-cmake --build build
-```
-
-### Running
-
-```bash
-./build/neodriftout --rom-path /path/to/your/roms/
-```
-
-The ROM path should contain the Neo Drift Out ROM files (`213-p1.p1`, etc.) plus the Neo Geo BIOS files.
-
-## Recompilation Progress
-
-| Phase | Description | Status |
-|-------|-------------|--------|
-| ROM analysis | Disassemble P ROM, map function boundaries | **Done** |
-| Vector table | Identify reset, VBlank, timer interrupt handlers | **Done** |
-| BIOS interface | Map BIOS call conventions and system vectors | **Done** — 6 stubs |
-| Core game loop | Recompile main loop, VBlank handler, state machine | **Done** |
-| Fix layer | Text/HUD tile rendering from S ROM | **Done** |
-| Sprite pipeline | C ROM decode, SCB tables, sprite upload | **Done** |
-| Palette system | Neo Geo color → ARGB, 256 palette banks | **Done** |
-| BIOS RAM protection | Guard $10FDAE from game block-copy overwrites | **Done** |
-| Input handling | Joystick, Start/Select, edge detection | **Working** |
-| Attract mode | Title screen with text and sprites | **Working** |
-| Car select | Vehicle selection screen, stat display | In progress |
-| Car physics | Acceleration, braking, drift mechanics, surface friction | Not started |
-| Track rendering | Isometric tilemap, scrolling, camera follow | Not started |
-| HUD | Timer, position, lap counter, speedometer | Not started |
-| Stage progression | Stage loading, transitions, results screen | Not started |
-| AI opponents | CPU car behavior and pathfinding | Not started |
-| Audio commands | Engine sounds, skid effects, music cues | Not started |
-| Full playthrough | All 7 stages completable | Not started |
-
-## Technical Notes
-
-### What Makes This Interesting for Recomp
-
-Neo Drift Out exercises the Neo Geo hardware differently than the typical fighting/action game:
-
-- **Multi-directional scrolling**: Most Neo Geo games scroll horizontally. This game scrolls in all directions as the camera follows the car through corners, requiring more complex VRAM updates.
-- **Pseudo-3D perspective**: The isometric viewpoint is achieved entirely with 2D sprites — there's no mode-7 or rotation hardware. The perspective is baked into the sprite art and selected via animation frames.
-- **Physics simulation**: The 68000 handles real-time vehicle physics including momentum, drift angle, surface grip coefficients, and collision with track boundaries. This is atypical for Neo Geo games and will produce interesting recompiled code.
-- **Fewer sprites, more updates**: Racing games tend to use fewer sprites than action games but update their positions more frequently. This may reveal different performance characteristics in the runtime.
-
-### Visco Corporation
-
-Visco was a smaller third-party Neo Geo developer, less well-known than SNK, Nazca, or ADK. Their Neo Geo catalog includes:
-- **Andro Dunos** (1992) — horizontal shoot-em-up
-- **Neo Drift Out** (1996) — this game
-- **Bang Bead** (2000) — competitive ball game
-- **Goal! Goal! Goal!** (1995) — soccer
-- **Breakers / Breakers Revenge** (1996/1998) — fighting games
-- **Captain Tomaday** (1999) — quirky shoot-em-up
-- **Ganryu** (1999) — side-scrolling action
-- **Flip Shot** (1998) — air hockey
-
-They are an underappreciated part of Neo Geo history, and this project helps preserve one of their most distinctive titles.
-
-## Legal Notice
-
-This project contains no copyrighted game code or data. You must provide your own legally obtained ROM dump from a Neo Drift Out MVS cartridge that you own. The recompiled source code in this repository represents a transformative reimplementation of the game's logic.
-
-## Related Projects
-
-- [neogeorecomp](https://github.com/sp00nznet/neogeorecomp) — the Neo Geo hardware runtime this project depends on
-- [Metal Slug recomp](https://github.com/sp00nznet/metalslug) — our other Neo Geo recomp target
-- [genrecomp](https://github.com/sp00nznet/genrecomp) — Sega Genesis 68000 recompiler (sister project, same CPU)
-- [ngdevkit](https://github.com/dciabrin/ngdevkit) — open-source Neo Geo development toolkit
-- [N64Recomp](https://github.com/N64Recomp/N64Recomp) — the pioneering static recompiler for N64 games
-
-## Community
-
-- [Neo Geo Forever](https://neogeoforever.com) — forums and Discord
-- [Neo-Geo.com Forums](https://www.neo-geo.com/forums/)
-- [Neo Geo Dev Wiki](https://wiki.neogeodev.org)
-- [Arcade-Projects](https://www.arcade-projects.com)
+No outside contributions yet. [CONTRIBUTING.md](CONTRIBUTING.md) explains how to send one.
 
 ## License
 
-MIT — see [LICENSE](LICENSE) for details.
+The code in this repo is MIT ([LICENSE](LICENSE)). *Neo Drift Out* is © Visco; this project contains none of its code or data and needs your own dump to do anything.

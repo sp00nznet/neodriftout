@@ -39,4 +39,17 @@ CMakeUserPresets.json
 *.lo
 *.zip
 *.7z
-build2/
+
+# Your ROM files, and everything derived from them: the recompiled C
+# (written to build/generated) and runtime entry-point lists. Never commit.
+roms/
+generated/
+entries*.txt
+*.mp4
+
+# Setup.cmd output
+deps/
+setup.log
+Neo Drift Out.cmd
+Neo Drift Out.lnk
+neodriftout.sh

@@ -1,0 +1,12 @@
+# Insert a coin once the title is up, start a 1P game, confirm the menus
+# with A, then drive: hold A (accelerate) with some steering.
+3100 coin
+3200 start
+3400 a
+3520 a
+3640 a
+3760 a
+3880 a
+4000-5400 a
+4300-4360 left
+4700-4760 right
