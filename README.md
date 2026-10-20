@@ -8,12 +8,12 @@ This repo describes the ROM set and builds the game. The toolkit does the rest, 
 
 ## Status
 
-**v0.2.0-dev, alpha.** It boots, runs attract mode, takes a coin, and races on recompiled code. **There is no sound yet.**
+**v0.2.0-dev, alpha.** It boots, runs attract mode, takes a coin, and races on recompiled code. Sound plays through the YM2610 synthesis neogeorecomp gained in [#3](https://github.com/sp00nznet/neogeorecomp/pull/3).
 
 - Boot through the real MVS system ROM → eyecatcher → car showcase → title → How to Play → name entry → practice and Stage 1.
 - A 6-minute scripted soak runs **100% natively** (0 interpreted instructions) after the profile pass, and `--verify` checks **46.67M** recompiled blocks against the Musashi interpreter with **0 mismatches**.
 - This is a port to the generic toolkit. The previous version was hand-lifted code plus a runtime patched for this one game (forced palettes, forced sprite shrink, BIOS state pokes), and it never got past the title with correct graphics. All of that is gone.
-- Not yet: sound, later stages checked by script, and gamepad support.
+- Not yet: later stages checked by script, and gamepad support.
 
 ## Screenshots
 
@@ -44,7 +44,7 @@ Keys: **arrows** steer, **Z** accelerate, **X** brake, **5** insert coin, **1** 
 
 These are the commands `Setup.cmd` runs.
 
-**Prerequisites:** Git; CMake 3.21+; a C compiler (Visual Studio 2022 with *Desktop development with C++* on Windows, or gcc on Linux); SDL2 for the window (optional, since headless builds need nothing). On Linux: `sudo apt install git cmake gcc libsdl2-dev`.
+**Prerequisites:** Git; CMake 3.21+; a C and C++ compiler (Visual Studio 2022 with *Desktop development with C++* on Windows, or gcc and g++ on Linux); SDL2 for the window (optional, since headless builds need nothing). On Linux: `sudo apt install git cmake gcc g++ libsdl2-dev`.
 
 1. **Clone with the toolkit submodule:**
    ```
@@ -79,6 +79,7 @@ These are the commands `Setup.cmd` runs.
 Trip-ups:
 - *`error: cannot open roms/213-p1.p1`*: the ROMs are not in `roms/`, or you are running from a different folder. Pass `--rom-path`.
 - *"Submodules missing"*: you cloned without `--recurse-submodules`. Run `git submodule update --init --recursive`.
+- *`python` or PATH trouble*: none of this needs Python. If a freshly installed tool isn't found, open a new terminal so it sees the updated PATH.
 - *No window, and "built without SDL2; run with --headless"*: CMake didn't find SDL2 (see step 3).
 
 ## Usage
@@ -87,9 +88,14 @@ Trip-ups:
 neodriftout --rom-path roms                                # play
 neodriftout --headless --frames 5400 --input tests/coin_start.txt --record race.mp4
 neodriftout --headless --verify --frames 5401 --input tests/coin_start.txt
+neodriftout --headless --frames 5400 --input tests/coin_start.txt --wav race.wav   # audio to a file
 ```
 
 The toolkit's [docs/running.md](https://github.com/sp00nznet/neogeorecomp/blob/master/docs/running.md) covers every option and the input-script format. `tests/coin_start.txt` reaches the practice race, and `tests/play_long.txt` is the 6-minute soak.
+
+## Building from source
+
+See *Step by step* above. `NEODRIFT_ROM_DIR` is the only game-specific option. Without it, the build is interpreter-only, which is useful for working on the toolkit without regenerating.
 
 ## Documentation
 

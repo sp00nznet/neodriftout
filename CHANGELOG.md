@@ -4,6 +4,10 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/); versions follo
 
 ## [Unreleased]
 
+### Added
+- **Sound**: the toolkit is pinned at neogeorecomp #3 (YM2610 synthesis through ymfm). The window plays it, `--wav FILE` writes it, `--mute` silences it. The build now enables C++ for ymfm, and `setup.sh` checks for g++.
+- CI: builds the interpreter-only player on Ubuntu and Windows on every push and PR.
+
 ### Changed
 - Ported to the generic neogeorecomp runtime (neogeorecomp #1). The game boots through the real MVS BIOS and races on recompiled 68000 code; the repo holds only the ROM layout and test scripts.
 
