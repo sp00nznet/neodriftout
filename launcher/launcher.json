@@ -1,0 +1,42 @@
+{
+  "title": "Neo Drift Out",
+  "repo": "sp00nznet/neodriftout",
+  "accent": "#2f7fd8",
+  "note": {
+    "windows": "Pick the folder holding your neodrift.zip and neogeo.zip (MAME sets). The first build takes about 10 minutes and 500 MB. Git, CMake and the Visual Studio Build Tools (about 3 GB) are installed if they are missing; Windows asks for permission.",
+    "darwin": "Pick the folder holding your neodrift.zip and neogeo.zip (MAME sets). The first build takes about 10 minutes. It needs Xcode's command line tools and Homebrew, and installs CMake and SDL2 with Homebrew.",
+    "default": "Pick the folder holding your neodrift.zip and neogeo.zip (MAME sets). The first build takes about 10 minutes. Anything missing (git, cmake, g++, SDL2) is installed with apt, which asks for your password."
+  },
+  "game": {
+    "name": "Neo Drift Out ROMs",
+    "files": [
+      "neodrift.zip",
+      "neogeo.zip"
+    ]
+  },
+  "setup": {
+    "windows": [
+      "powershell",
+      "-NoProfile",
+      "-ExecutionPolicy",
+      "Bypass",
+      "-File",
+      "scripts\\setup.ps1",
+      "-Yes",
+      "-RomZip",
+      "{game}\\neodrift.zip",
+      "-BiosZip",
+      "{game}\\neogeo.zip"
+    ],
+    "default": [
+      "bash",
+      "setup.sh",
+      "--yes",
+      "--rom-zip",
+      "{game}/neodrift.zip",
+      "--bios-zip",
+      "{game}/neogeo.zip"
+    ]
+  },
+  "play": "?eo*rift*ut.[cs][mh]*"
+}
