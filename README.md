@@ -8,12 +8,12 @@ This repo describes the ROM set and builds the game. The toolkit does the rest, 
 
 ## Status
 
-**v0.2.0-dev, alpha.** It boots, runs attract mode, takes a coin, and races on recompiled code. Sound plays through the YM2610 synthesis neogeorecomp gained in [#3](https://github.com/sp00nznet/neogeorecomp/pull/3).
+**v0.2.0, alpha.** It boots, runs attract mode, takes a coin, and races on recompiled code. Sound plays through the YM2610 synthesis neogeorecomp gained in [#3](https://github.com/sp00nznet/neogeorecomp/pull/3).
 
 - Boot through the real MVS system ROM → eyecatcher → car showcase → title → How to Play → name entry → practice and Stage 1.
 - A 6-minute scripted soak runs **100% natively** (0 interpreted instructions) after the profile pass, and `--verify` checks **46.67M** recompiled blocks against the Musashi interpreter with **0 mismatches**.
 - This is a port to the generic toolkit. The previous version was hand-lifted code plus a runtime patched for this one game (forced palettes, forced sprite shrink, BIOS state pokes), and it never got past the title with correct graphics. All of that is gone.
-- Not yet: later stages checked by script, and gamepad support.
+- Not yet: later stages checked by script.
 
 ## Screenshots
 
@@ -47,6 +47,8 @@ The installer holds no game data and builds from your ROMs on your machine ([rec
 **On Linux or macOS**, run `./setup.sh` instead, optionally with `--rom-zip PATH --bios-zip PATH`. It does the same steps and offers to install anything missing with `apt`, or with Homebrew on a Mac (which also needs Xcode's command line tools: `xcode-select --install`). When it finishes, run `./neodriftout.sh`. macOS builds in CI, but no game has been played on a Mac yet; reports are welcome.
 
 Keys: **arrows** steer, **Z** accelerate, **X** brake, **5** insert coin, **1** start, **Esc** quit.
+
+**Gamepad**: D-pad or stick steer, **A** accelerate, **B** brake, **Back** coin, **Start** start. Two pads play as players 1 and 2; plug them in any time. The toolkit's [docs/running.md](https://github.com/sp00nznet/neogeorecomp/blob/master/docs/running.md) has the full layout.
 
 ### Step by step
 
